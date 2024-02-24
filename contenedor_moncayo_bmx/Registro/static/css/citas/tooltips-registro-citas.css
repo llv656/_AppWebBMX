@@ -1,0 +1,88 @@
+.tooltip.show {
+    opacity: 1 !important;
+}
+
+/*Tooltip para Barberos*/
+.tooltip-barbero{
+    padding: 10%;
+    width: 200px;
+}
+
+.C_contenedorEstrellas{
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.C_elementosFotoYDatosBarberosTooltip{
+    display: flex;
+    flex-direction: column;
+}
+
+.C_componenteDatosBarberosTooltip{
+    display: flex;
+    flex-direction: column;
+}
+
+#imagen-perfil-cliente-tooltip{
+    width: 100px;
+    border-radius: 50%;
+}
+
+
+
+/*Tooltip para Servicios */
+.tooltip-servicio{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+}
+.C_elementoInformacionDeServicio {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 5%;
+    text-align: justify;
+}
+.C_elementoImagenDeServicio {
+    width: 50%;
+    background-image: url('../../img/citas.jpg');
+    background-size: cover;
+    background-position: center;
+    align-self: normal;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.tooltip-inner {
+    max-width: 700px !important; /* Ancho máximo del tooltip */
+    padding: 0 !important;
+    border-radius: 25px !important;
+}
+
+/*Tooltip para Productos*/
+#tooltip-productos {
+    padding: 10%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+#products-carrusel-component-tooltip {
+    display: flex;
+    overflow-x: auto;
+    justify-content: center;
+    justify-content: space-between
+}
+
+/*Productos del carrusel*/
+#product-1-carrusel-component-tooltip {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+#img-product-1-carrusel-component-tooltip {
+    width: 100px;
+}
+

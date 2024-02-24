@@ -1,0 +1,112 @@
+/*Elemento 1 - TITULO*/
+#elemento1-titulo-pantalla2{
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#elemento1-titulo-pantalla2 h1{
+    color: #fff;
+    font-size: 4vw;/*70px*/
+    display: flex;
+}
+
+
+/*Elemento 2 NUMERO DE PERSONAS*/
+#elemento2-numero-de-personas-y-fecha-pantalla-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+
+#subelemento1-1-iconos-de-suma-resta{
+    display: flex;
+    gap: 50%;
+}
+
+#subelemento1-numero-clientes{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+
+/*Elemento 3*/
+#elemento3-fecha-clientes{
+    display: flex;
+    align-items: center;
+}
+
+#elemento3-fecha-clientes > input{
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    color: #fff;
+    border: none;
+}
+
+/*Color blanco en icono de calendario*/
+/* Para navegadores que admiten el selector ::-webkit-calendar-picker-indicator */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invierte los colores, haciendo el icono blanco */
+}
+
+/* Para navegadores que no admiten el selector ::-webkit-calendar-picker-indicator */
+input[type="date"] {
+    color: transparent; /* Oculta el texto del input */
+}
+
+/*Elemento 4 ICONOS*/
+#elemento4-iconos-home-menu-back{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#elemento-icono-home2, 
+#elemento-icono-menu2{
+    display: none;
+}
+
+
+@media screen and (min-width:706px){
+    #elemento2-numero-de-personas-y-fecha-pantalla-2{
+        width: -webkit fill available;
+    }
+}
+
+
+@media screen and (max-width:1050px){
+    #elemento3-fecha-clientes{
+        width: auto;
+    }    
+}
+
+@media screen and (max-width:730px){
+    #elemento2-numero-de-personas-y-fecha-pantalla-2{
+        width: -webkit-fill-available;
+    }
+
+    #elemento1-titulo-pantalla2 h1{
+        font-size: 7vw;
+        width: min-content;
+    }
+
+    #elemento4-iconos-home-menu-back{
+        width: min-content;
+    }
+
+}
+
+@media screen and (max-width:700px){
+    #elemento-icono-home2, 
+    #elemento-icono-menu2{
+        display: block;
+    }
+    
+}

@@ -1,0 +1,180 @@
+<section id="tercer-pantalla" class="C_tercerFormulario" style="display: none;">
+	<!--SECCION UNO(1) DE TERCER FORMULARIO-->
+	<div id="tercer-formulario-iconos" class="row C_tercerFormularioIconos">
+
+		<!--COLUMNA VACIA-->
+		<div class="col-sm-5"></div>
+		<!--COLUMNA VACIA-->
+
+		<!--IMAGEN BARBER-->
+		<div id="icono-barber-tercer-formulario" class="col-sm-1 C_iconoBarberTercerFormulario">
+			<img id="icono-barber" class="icono-suma C_iconoBarber" src="../../../static/img/barber_icono.png"
+				data-toggle="modal" data-target="#agregar-productos-tercerFormulario" data-bs-toggle="tooltip"
+				data-bs-placement="top" title="Agregar productos">
+		</div>
+		<!--IMAGEN BARBER-->
+
+		<!--Icono izquierdo-->
+		<div id="inputs-NumeroDePersonas-fecha-hora" class="col-sm-5 C_inputsNumeroDePersonasFechaHora">
+			<!--div para tener referencia de lo que se moverá en este contenedor-->
+			<div id="insertar-numeroDePersonas-fecha-hora-tercerFormulario" style="display: none;"></div>
+			<!--Se insertan los campos de Número de personas, fecha y hora-->
+		</div>
+
+		<!--Iconos de Home, Menu, Back-->
+		<div id="icono-C_divIconosTercerFormularioHomeMenuBack"
+			class="C_divIconosTercerFormularioHomeMenuBack col-sm-1">
+			<!--Home-->
+			<div class="C_rowDivIconosHomeMenuF3">
+				<img id="homeF3" src="../../../static/icons/home.svg">
+				<img id="menuF3" src="../../../static/icons/menu2.svg">
+			</div>
+			<!--Menu-->
+
+			<!--Back-->
+			<div class="C_rowDivIconobackF3">
+				<img id="backF3" src="../../../static/icons/back.svg">
+			</div>
+		</div>
+
+
+
+
+	</div>
+	<!--SECCION UNO(1) DE TERCER FORMULARIO-->
+
+	<!--SECCION DOS(2) DE TERCER FORMULARIO-->
+	<div id="row-2" class="row">
+		<!--Espacio en blanco-->
+		<div class="col-sm-1"></div>
+		<!--Titulo de Tercer formulario-->
+		<div class="col-sm-4 C_tituloFormularioTres">
+			<h1>Registro<br>citas</h1>
+		</div>
+
+
+		<!--Cuerpo de formulario-->
+		<div id="div-contenedor-formularioTres" class="col-sm-6 C_contenedorFormularioTres">
+
+			<form id="formulario-citas-tercerCampo" class="C_formulario-citas-tercerCampo">
+				<div id="div-primer-row-tercerF" class="row">
+					<div id="div-nombre3Form" class="col-sm-11 C_claseGridTercerFormulario">
+						<div class="C_nombreCliente C_labelNombreCliente">
+							<label>Nombre cliente</label>
+						</div>
+
+						<div class="C_nombreCliente C_inputNombreCliente input-group">
+							<input type="text" id="nombre-cliente" name="N_nombreCliente" class="form-control 
+							C_estilosInputFormularioTres C_BorderBase"></input>
+							<div class="input-group-prepend">
+								<span class="input-group-text C_spanSearchIcon"><i
+										class="fas fa-search filtroBusqueda"></i></span>
+							</div>
+						</div>
+					</div>
+
+
+					<div id="div-icono-agregarCliente-tercerFormulario" class="col-sm-1">
+						<br>
+						<i class="fa-solid fa-circle-plus" style="color: #86a135;"></i>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-11 C_claseGridTercerFormulario ">
+						<div class="C_contacto C_labelContacto">
+							<label>Contacto</label>
+						</div>
+
+						<div class="C_contacto C_selectContacto">
+							<select id="contacto" class="form-control C_BorderBase">
+								<option value="" disabled="" selected="" hidden="">Selecciona un contacto
+								</option>
+								<option>2287761654</option>
+								<option>2281037148</option>
+							</select>
+						</div>
+
+
+						<div class="C_barbero C_labelBarbero">
+							<label>Barbero</label>
+						</div>
+
+						<div class="C_barbero C_selectBarbero">
+							<select id="barbero" class="form-control C_BorderBase" name="N_barbero">
+								<option value="" disabled="" selected="" hidden="">Selecciona un barbero
+								</option>
+								<option>Charles Ans</option>
+							</select>
+						</div>
+
+
+						<div class="C_servicio C_labelServicio">
+							<label>Servicio</label>
+						</div>
+
+						<div class="C_servicio C_selectServicio">
+							<select id="servicio" class="form-control C_BorderBase" name="N_servicio">
+								<option value="" disabled="" selected="" hidden="">Selecciona una servicio
+								</option>
+								<option>Corte Tradicional</option>
+							</select>
+						</div>
+
+
+						<div class="C_canalComunicacion C_labelCanalComunicacion">
+							<label>Canal de comunicación</label>
+						</div>
+
+						<div class="C_canalComunicacion C_selectCanalComunicacion">
+							<select id="canal-comunicacion" class="form-control C_BorderBase"
+								name="N_canalComunicacion">
+								<option value="" disabled="" selected="" hidden="">Selecciona una canal</option>
+								<option>WhatsApp</option>
+								<option>X</option>
+								<option>Instagram</option>
+							</select>
+						</div>
+
+					</div>
+
+
+					<div class="col-sm-1"></div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+
+		<!--Icono de brocha-->
+		<div id="div-iconoBrush3-tercerFormulario" class="col-sm-1 C_btnBrush3">
+			<img id="btnBrush3" src="../../../static/icons/brushWhite.svg">
+		</div>
+
+
+	</div>
+	<!--SECCION DOS(2) DE TERCER FORMULARIO-->
+
+	<!--SECCION TRES(3) DE TERCER FORMULARIO-->
+	<div id="row-3" class="row">
+		<!--Label y span para cantidad-->
+		<div class="col-sm-8 C_totalAPagarTercerFormulario">
+			<label>Total a pagar: <span id="span-total-a-pagar-TercerFormulario">$280</span></label>
+		</div>
+
+
+		<!--Boton de Registrar-->
+		<div id="div-botonRegistrar-tercerFormulario" class="col-sm-2 C_botonRegistrarTercerFormulario">
+			<button id="btn-registro-cita-tercer-formulario" class="btn btn-success">Registrar</button>
+		</div>
+
+
+		<!--Espacio en blanco-->
+		<div class="col-sm-2"></div>
+
+	</div>
+	<!--SECCION TRES(3) DE TERCER FORMULARIO-->
+
+</section>

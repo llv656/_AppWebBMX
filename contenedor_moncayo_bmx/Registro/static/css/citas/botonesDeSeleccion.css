@@ -1,0 +1,559 @@
+/*Ajustes de html de la seccion de barberos*/
+
+.C_divHorarios_barbero1{
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.C_horariosBarbero1{
+    display: flex;
+    width: 90%;
+    height: 90px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    overflow: auto;
+}
+
+
+/*Botones de horarios*/
+.C_estiloBotonesHorarios {
+    border-radius: 25px !important;
+    background-color: #214569 !important;
+    border-color: #214569 !important;
+    color: #ffffff;
+    flex: none;
+    margin-right: 1%;
+}
+
+/*Boton seleccionado*/
+.C_estiloBotonesHorarios.selected{
+    background-color: #538898 !important; 
+    border-color: #FFFFFF !important;
+}
+
+
+
+/*Cambio de color de botones al pasar por encima*/
+
+.C_estiloBotonesHorarios:not(.selected):hover,
+.C_estiloBotonesHorarios:not(.selected):focus {
+    background-color: #3275C4 !important;
+    border-color: #3275C4 !important;
+}
+
+
+.C_estiloBotonesHorarios:disabled{
+    background-color: #1B1A3B !important;
+    border-color: #1B1A3B !important;
+    color: #726561 !important;
+}
+
+
+
+
+
+
+
+/*CSS GENERAL CSS GENERAL CSS GENERAL CSS GENERAL CSS GENERAL CSS GENERAL*/
+/*section#tercer-formulario {
+    margin: 10px auto;
+}*/
+
+
+/*Iconos Tercer Formulario*/
+/*Icono izquierdo*/
+div#div-icono-barber{
+    display: flex;
+    justify-content: end;
+}
+img#icono-barber{
+    height: 80px;
+    width: 80px;
+}
+
+#fecha-clientes.C_tercer_formulario {
+    border-radius: 25px 0px 0px 25px;
+    color: #ffffff;
+    background: #214569;
+}
+
+#hora-clientes.C_tercer_formulario {
+    border-radius: 0px 25px 25px 0px;
+    width: 40%;
+    color: #ffffff;
+    background: #214569;
+}
+
+#div-fecha-hora-inputs.C_divfechayHoraSalida{
+    display: flex;
+    justify-content: end;
+}
+
+.C_btnBackFormulario3 {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+/*MODIFICAR ESTO EN EL CSS GENERAL MODIFICAR ESTO EN EL CSS GENERAL*/
+#img-back:hover, #img-back3:hover{
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+/*Icono de Regresar (<-)*/
+#img-back, #img-back3 {
+    /*Definición de tamaño*/
+    height: 30px;
+    width: 30px;
+}
+
+
+
+/*FORMULARIO FORMULARIO FORMULARIO FORMULARIO FORMULARIO FORMULARIO FORMULARIO*/
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+.C_tituloFormularioTres {
+    display: flex;
+    justify-content: start;
+}
+
+.C_tituloFormularioTres h1 {
+    font-family: 'Open Sans Semibold', sans-serif;
+    font-size: 70px;
+    color: white;
+}
+/*Formulario*/
+
+
+.C_claseGridTercerFormulario{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    align-items: center;
+    row-gap: 12px;
+}
+
+/*
+.col-sm-5.C_contenedorFormularioTres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+
+form{
+    max-height: 100%;
+    
+}
+
+#formulario-citas-tercerCampo{
+    display: grid;
+    row-gap: 12px;
+}
+
+
+#div-contenedor-formularioTres{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#formulario-citas-tercerCampo label{
+    color:#FFFFFF;
+}
+
+
+#formulario-citas-tercerCampo input, select{
+    background: #214569;
+    color:#FFFFFF;
+    border-radius: 25px 0px 0px 25px;
+}
+
+.C_spanSearchIcon {
+    border-radius: 0px 25px 25px 0px !important;
+}
+
+#formulario-citas-tercerCampo select{
+    background: #214569;
+    color:#FFFFFF;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.C_BorderBase{
+    border-color: #214569 !important;
+}
+
+/*MODIFICAR CSS GENERAL*/
+#btnBrush1, #btnBrush2, #btnBrush3  {
+    /*Definición de tamaño*/
+    height: 20px;
+}
+/*MODIFICAR CSS GENERAL*/
+
+.C_btnBrush3{
+    display: flex;
+    justify-content: end;
+    /*margin: 50px auto;*/
+}
+
+.C_inputNombreCliente{
+    display: flex;
+}
+
+.C_btnAgregar{
+    margin: 2% 1%;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 51px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+}
+
+.searchIcono {
+    position: relative;
+  }
+  
+.searchIcono input {
+    padding-right: 35px; /* Ajusta el espacio a la derecha para el icono de búsqueda */
+}
+
+#div-numero-clientes-sumaResta.C_ajusteTercerFormulario{
+    display: flex;
+    justify-content: end;
+}
+
+
+/*AJUSTES DE FORMULARIO 3  AJUSTES DE FORMULARIO 3  AJUSTES DE FORMULARIO 3  AJUSTES DE FORMULARIO 3*/
+
+.C_numeroDeClientes2-formulario3{
+    display: flex;
+    justify-content: center;
+}
+
+
+.C_inputsNumeroDePersonasFechaHora{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.C_totalAPagarTercerFormulario {
+    color: #538898;
+}
+
+.C_totalAPagarTercerFormulario{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.C_totalAPagarTercerFormulario span{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#btn-registro-cita-tercer-formulario{
+    background-color: #4F601E;
+}
+
+#btn-registro-cita-tercer-formulario:hover,
+#btn-registro-cita-tercer-formulario:focus {
+    background-color: #6e842b;
+}
+
+#btn-registro-cita-tercer-formulario{
+    height: 40px;
+    width: 160px;
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+}
+
+#tercer-formulario{
+    height: 100%;
+}
+
+#tercer-formulario-iconos{
+    height: 20%;
+}
+
+#row-2{
+    height: 55%;
+}
+
+#row-3{
+    height: 25%;
+}
+
+
+.C_iconoBarberTercerFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputs-NumeroDePersonas-fecha-hora{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.C_formulario-citas-tercerCampo .input-con-icono {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.C_formulario-citas-tercerCampo .input-con-icono i {
+    position: absolute;
+    left: 15rem;
+    color: #FFFFFF;
+}
+
+.contenedorInputImagen input {
+    flex-grow: 1;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    color: #fff;
+    padding-right: 30px;  /* Ajusta según el tamaño de tu icono */
+}
+
+
+#div-botonRegistrar-tercerFormulario{
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+}
+
+#div-icono-agregarCliente-tercerFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div-iconoBack-tercerFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#div-iconoBrush3-tercerFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+span.input-group-text {
+    background: #214569;
+    border: none;
+    color: #ffffff;
+}
+
+#contacto{
+    background-image: url(../../../static/icons/down-arrow2.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: 96% !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+}
+
+#barbero{
+    background-image: url(../../../static/icons/down-arrow2.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: 96% !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+}
+
+#servicio{
+    background-image: url(../../../static/icons/down-arrow2.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: 96% !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+}
+
+#canal-comunicacion{
+    background-image: url(../../../static/icons/down-arrow2.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: 96% !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+}
+
+
+
+
+/*CUARTO FORMULARIO*/
+/*Alturas*/
+#cuarto-formulario{
+    height: 100%;
+}
+
+#primer-row-cuarto-formulario{
+    height: 15%;
+}
+
+#segundo-row-cuarto-formulario{
+    height: 75%;
+}
+
+#tercer-row-cuarto-formulario{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 10%;
+}
+
+
+#img-back4{
+    /*Definición de tamaño*/
+    height: 30px;
+    width: 30px;   
+   }
+   
+.C_iconoBack4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#titulo4{
+    color: #FFFFFF;
+    font-size: 60px;
+}
+
+.C_subtituloCuartoFormulario p{
+    color: #FFFFFF;
+}
+
+.C_ContenedorResumenCitaCliente{
+    color: #FFFFFF;
+    border-radius: 25px;
+    background: #080D12;
+}
+
+
+.C_tituloCuartoFormulario{
+    padding-left: 5% !important;
+}
+
+.C_contenedorDeHorariosYTotales h2{
+    color: #FFFFFF;
+}
+
+.C_subtitulo4Form{
+    padding-left: 5.5% ;
+}
+
+.C_contenedorResumen{
+    background: green;
+    border-radius: 25px;
+}
+
+.C_ContenedorResumenCitaCliente{
+    display: flex;
+    flex-direction:column ;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#icono-Producto-Formulario4{
+    height: 80px;
+    width: 80px;
+}
+
+.C_estilos-form4{
+    background: #214569 !important;
+    border-radius: 30px !important;
+}
+
+
+.C_contenedorDeResumenes{
+    overflow-y: auto;
+    height: 95%;
+    overflow-x: hidden;
+}
+#datos-encapsulados-resumen{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.C_totalAPagar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.C_subtituloCuartoFormulario{
+    height: 5%;
+}
+
+
+
+
+#total-formulario4{
+    color:#538898 ;
+    font-weight: bold;
+}
+
+.C_totalAPagar{
+    color:#538898;
+    padding-right: 5%;
+}
+
+#contenedor-hecha-hora-Form4{
+    display: flex;
+}
+
+
+#btn-resumen-cita{
+  /*padding: 10px 60px;*/
+  height: 40px;
+  width: 160px;
+  border-radius: 25px;
+  color: #ffffff;
+  border: none;
+  background: #4F601E;
+}
+
+#btn-resumen-cita:hover,
+#btn-resumen-cita:focus {
+    background-color: #6e842b;
+}
+
+
+
+.C_iconoInfoBarbero .C_inputInfoServicio{
+    width: 20%;
+}
+
+#nombreBarbero, #nombre-servicio{
+    border-radius: 25px 0px 0px 25px !important;
+}
+
+
+

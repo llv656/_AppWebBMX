@@ -1,0 +1,727 @@
+{% extends "plantilla.html" %}
+
+{% block title %}  Registro de Citas {% endblock %}
+
+{% block estilos %}
+
+<!--
+	<link rel="stylesheet" href="/static/css/servicios/registro-servicios.css"/>-->
+<link rel="stylesheet" href="/static/css/citas/registro-citas.css"/>
+<link rel="stylesheet" href="/static/css/citas/botonesDeSeleccion.css">
+<link rel="stylesheet" href="/static/css/citas/modal_agregar_productos.css">
+<link rel="stylesheet" href="/static/css/citas/tooltips-registro-citas.css">
+<link rel="stylesheet" href="/static/css/citas/modal_eliminar_clientes-citas.css"
+
+{% endblock %}
+
+{% block scripts %} 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="/static/js/citas/registro/registro_citas.js"></script>
+<script src="/static/js/citas/registro/registro_citas_validaciones.js"></script>
+<script src="/static/js/citas/registro/registro_citas_botonesBarberos.js"></script>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row"> <!--contenedor_row-->
+
+	<div class="col-sm-1 C_headerbody"></div>
+
+	<div class="col-sm-10 cont" id="contenedor">
+
+		<!--INICIO PAGINA-->
+		<div class="row" id="div-titulo-iconos">
+			<div class="col-sm-7 C_tituloCampoIzquierdo"> <!--TITULO-->
+				<h1>Registro<br> Citas</h1>
+			</div>
+			
+			<!-- Inicio_Iconos-Header -->
+			<div class="col-sm-5">
+				<div class="C_paqueteIconosDos">
+					<!--Icono de Home-->
+					<div class="C_home">
+						<img id="home" src="../../../static/icons/home.svg" alt="home">
+					</div>
+			
+					<!--Icono de Menu-->
+					<div class="C_menu">
+						<img id="menu" src="../../../static/icons/menu2.svg" alt="menu">
+					</div>
+				</div> 
+
+
+				<div class="row">
+					<div class="col-sm-9 C_paqueteIconosUno">
+						<!--Iconos de aumentar y disminuir número de personas-->
+						<!--CONTADOR DE PERSONAS DE LA BARRA SUPERIOR -->
+						<div id="insertar-aqui" style="display: none;"></div>
+						<!--CONTADOR DE PERSONAS DE LA BARRA SUPERIOR -->
+
+						<!--Input de Fecha-->
+						<!--INPUT DE FECHA DE LA BARRA SUPERIOR-->
+						<div id="div-icono-fecha" class="col-sm-6 C_fecha">
+							<div id="insertar-aqui-fecha" style="display: none;"></div>
+							<!--<input type="date" id="fecha-barberos-horarios" class="form-control C_fecha" name="N_fecha">-->
+						</div>
+						<!--INPUT DE FECHA DE LA BARRA SUPERIOR-->
+						
+					</div>
+					<!--Icono de Back-->
+					<div id="div-icono-back" class="icn-back col-sm-3">
+						<img id="img-back" src="../../../static/icons/back.svg" alt="regresar">	
+					</div>
+				</div>
+				<!-- Final_Iconos_Header -->
+			</div>
+		</div>
+
+		<section class="C_seccionBusqueda">
+			<div class="row C_iconoBrocha1">
+				<div class="icn-brush1">
+					<img id="btnBrush1" src="../../../static/icons/brushWhite.svg" alt="limpiar campos">
+				</div>
+			</div>
+	
+			<!--Inicia_Cuerpo_de_Formulario-->
+			<!--Inicia_Campo_Derecho-->
+			<div class="row C_contenedorBusqueda">
+				<div class="C_container_componente_clientes">
+					<!--Números de clientes_APARTADO DE BUSQUEDA-->
+					<div id="div-numero-clientes-busqueda" class="col-sm-4">
+							<div id="div-numero-clientes-label" class="C_numeroDeClientes">
+								<label class="labelsBold">Número de clientes</label>
+							</div>
+							
+							<div id="div-numero-clientes-sumaResta" class="C_numeroDeClientes">
+								<label id="label-persona"><span id="numero-personas" name="N_numero-personas">1</span> Persona(s)</label>
+								<div id="div-iconos-suma-resta">
+									<img class="iconoResta" id="icono-resta-clientes" src="../../../static/icons/substract-circle-red.svg">
+									<img class="iconoSuma" id="icono-suma-clientes" src="../../../static/icons/plus-circle-green.svg">
+								</div>
+							</div>					
+					</div>
+					<!--Números de clientes_APARTADO DE BUSQUEDA-->
+
+					<!--Fecha y Hora-->
+					<div class="col-sm-4" id="div-contenedor-fecha-hora-busqueda-inputs">
+						<div id="div-fecha-hora-label" class="C_fechaYHoraDeSalida">
+							<label class="labelsBold">Fecha y hora de cita</label>
+						</div>
+
+						<div id="div-fecha-hora-inputs" class="C_fechaYHoraDeSalida">
+							<label id="insertar-aqui-fecha-formulario-3" style="display: none;"></label>
+							<input type="date" id="fecha-clientes" class="form-control C_estilosInputsClientes C_BorderBase" name="N_fecha">
+							<input type="time" id="hora-clientes" class="form-control C_estilosInputsClientes C_BorderBase" name="N_hora">
+						</div> 
+
+					</div>
+					<!--Fecha y Hora-->
+					
+					<!--Botón de búsqueda de cita-->
+					<div id="div-col-btn-busqueda" class="col-sm-4">
+						<div id="div-col-vacio-btn-busqueda" class="row"></div>
+						<div class="C_botonRegistrar">
+							<button type="submit" id="btnBusquedaCita" class="btn btn-success C_botonBusquedaDeCita">Buscar Cita</button>
+						</div>
+						
+					</div>
+				</div>	
+			</div>
+
+		</section>
+
+		<div id="titulo-barberos-horarios" class="row C_tituloBarberosYHorarios">
+			<p>Barberos y horarios</p>
+		</div>
+
+		<div class="row C_seccionBarberos">
+			<!--Div vacio-->
+			<div id="div-vacio-seccion-barberos" class="col-sm-barberosHorarios-laterales"></div>
+
+			<div id="divs-contenedor-de-barberos" class="C_contendorDeBarberos col-sm-barberosHorarios-centro">
+
+				<div class="C_EstilosSeccionesBarberos">
+					<div id="contenedor-encabezado-resumen-citas" class="C_contenido">
+						<div class="col-sm-3 C_nombreBarberoPosicion">
+							<h1>Carlos</h1>
+						</div>
+		
+						<div class="col-sm-3 C_imagen C_posicion">
+							<div class="C_imagenPerfil-circular">
+								<img id="imagen-perfil-barbero1" src="../../../static/img/servicios.jpg" alt="Fotografia Barbero">
+							</div>
+						</div>
+	
+						<div class="col-sm-6 C_divIconoMinimizar C_posicion">
+							<div class="C_iconoMinimizar">
+								<img id="icono-maximizar-1" class="iconoMaximizarMinimizar" src="../../../static/icons/down-arrow.svg" alt="Icono que oculta la información">
+								<img id="icono-minimizar-1" class="iconoMaximizarMinimizar" src="../../../static/icons/left-arrow.svg" alt="Icono que muestra la infomación">
+							</div>
+	
+						</div>
+					</div>
+					<!--Horarios barbero 1-->
+					<div id="div-horario-barbero1" class="C_divHorarios_barbero1">
+						<!--Se insertan Botones de horarios-->
+					</div>				
+				</div>
+
+				
+
+			</div>
+
+			<div id="divs-col-btn-brush" class="C_colDivBtnBrush col-sm-barberosHorarios-laterales">
+				<div class="C_divBtnBrush">
+					<img id="btnBrush2" src="../../../static/icons/brushWhite.svg">
+				</div>
+			</div>
+		</div>
+
+		<div class="row C_btnAceptarBarberosHoras" id="div-btn-aceptar-barberos-horas">		
+				<button id="btn-Aceptar-barberos-horas" class="btn btn-success ">Aceptar</button>
+		</div>
+
+		<!--TERCER FORMULARIO-->
+		<section id="tercer-formulario" class="C_tercerFormulario" style="display: none;">
+			<!--SECCION UNO(1) DE TERCER FORMULARIO-->
+			<div id="tercer-formulario-iconos" class="row C_tercerFormularioIconos" >
+
+				<!--COLUMNA VACIA-->
+				<div class="col-sm-5"></div>
+				<!--COLUMNA VACIA-->
+
+				<!--IMAGEN BARBER-->
+				<div id="icono-barber-tercer-formulario" class="col-sm-1 C_iconoBarberTercerFormulario">
+					<img id="icono-barber" class="icono-suma C_iconoBarber" src="../../../static/img/barber_icono.png"  
+					data-toggle="modal" data-target="#agregar-productos-tercerFormulario" data-bs-toggle="tooltip" 
+					data-bs-placement="top" title="Agregar productos"
+					>
+				</div>
+				<!--IMAGEN BARBER-->
+
+				<!--Icono izquierdo-->
+				<div id="inputs-NumeroDePersonas-fecha-hora" class="col-sm-5 C_inputsNumeroDePersonasFechaHora">
+					<!--div para tener referencia de lo que se moverá en este contenedor-->
+					<div id="insertar-numeroDePersonas-fecha-hora-tercerFormulario" style="display: none;"></div>
+					<!--Se insertan los campos de Número de personas, fecha y hora-->
+				</div>
+				
+				<!--Iconos de Home, Menu, Back-->
+				<div id="icono-C_divIconosTercerFormularioHomeMenuBack" class="C_divIconosTercerFormularioHomeMenuBack col-sm-1">
+					<!--Home-->
+					<div class="C_rowDivIconosHomeMenuF3">
+						<img id="homeF3" src="../../../static/icons/home.svg">
+						<img id="menuF3" src="../../../static/icons/menu2.svg">
+					</div>
+					<!--Menu-->
+					
+					<!--Back-->
+					<div class="C_rowDivIconobackF3">
+						<img id="backF3" src="../../../static/icons/back.svg">
+					</div>
+				</div>
+				
+				
+
+
+			</div>
+			<!--SECCION UNO(1) DE TERCER FORMULARIO-->
+
+			<!--SECCION DOS(2) DE TERCER FORMULARIO-->
+			<div id="row-2" class="row">
+				<!--Espacio en blanco-->
+				<div class="col-sm-1"></div>
+				<!--Titulo de Tercer formulario-->
+				<div class="col-sm-4 C_tituloFormularioTres">
+					<h1>Registro<br>citas</h1>
+				</div>
+
+
+				<!--Cuerpo de formulario-->
+				<div id="div-contenedor-formularioTres" class="col-sm-6 C_contenedorFormularioTres">
+
+					<form id="formulario-citas-tercerCampo" class="C_formulario-citas-tercerCampo"> 
+						<div id="div-primer-row-tercerF" class="row" >
+							<div id="div-nombre3Form" class="col-sm-11 C_claseGridTercerFormulario">
+								<div class="C_nombreCliente C_labelNombreCliente">
+									<label>Nombre cliente</label>
+								</div>
+
+								<div class="C_nombreCliente C_inputNombreCliente input-group">
+									<input type="text" id="nombre-cliente" name="N_nombreCliente" class="form-control 
+									C_estilosInputFormularioTres C_BorderBase"></input>
+									<div class="input-group-prepend">
+										<span class="input-group-text C_spanSearchIcon"><i class="fas fa-search filtroBusqueda"></i></span>
+									</div>
+								</div>
+							</div>
+							
+
+							<div id="div-icono-agregarCliente-tercerFormulario" class="col-sm-1">
+								<br>
+								<i class="fa-solid fa-circle-plus" style="color: #86a135;"></i>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-11 C_claseGridTercerFormulario ">
+								<div class="C_contacto C_labelContacto">
+									<label>Contacto</label>
+								</div>
+		
+								<div class="C_contacto C_selectContacto">
+									<select id="contacto" class="form-control C_BorderBase">
+										<option value="" disabled="" selected="" hidden="">Selecciona un contacto</option>
+										<option>2287761654</option>
+										<option>2281037148</option>
+									</select>
+								</div>
+		
+		
+								<div class="C_barbero C_labelBarbero">
+									<label>Barbero</label>
+								</div>
+								
+								<div class="C_barbero C_selectBarbero">
+									<select id="barbero" class="form-control C_BorderBase" name="N_barbero">
+										<option value="" disabled="" selected="" hidden="">Selecciona un barbero</option>
+										<option>Charles Ans</option>
+									</select>
+								</div>
+		
+		
+								<div class="C_servicio C_labelServicio">
+									<label>Servicio</label>
+								</div>
+		
+								<div class="C_servicio C_selectServicio">
+									<select id="servicio" class="form-control C_BorderBase" name="N_servicio">
+										<option value="" disabled="" selected="" hidden="">Selecciona una servicio</option>
+										<option>Corte Tradicional</option>
+									</select>
+								</div>
+		
+		
+								<div class="C_canalComunicacion C_labelCanalComunicacion">
+									<label>Canal de comunicación</label>
+								</div>
+		
+								<div class="C_canalComunicacion C_selectCanalComunicacion">
+									<select id="canal-comunicacion" class="form-control C_BorderBase" name="N_canalComunicacion">
+										<option value="" disabled="" selected="" hidden="">Selecciona una canal</option>
+										<option>WhatsApp</option>
+										<option>X</option>
+										<option>Instagram</option>
+									</select>
+								</div>
+	
+							</div>
+
+
+							<div class="col-sm-1"></div>
+							
+						</div>
+
+					</form>
+
+				</div>
+
+
+				<!--Icono de brocha-->
+				<div id="div-iconoBrush3-tercerFormulario" class="col-sm-1 C_btnBrush3">
+						<img id="btnBrush3" src="../../../static/icons/brushWhite.svg">
+				</div>
+
+
+			</div>
+			<!--SECCION DOS(2) DE TERCER FORMULARIO-->
+
+			<!--SECCION TRES(3) DE TERCER FORMULARIO-->
+			<div id="row-3" class="row">
+				<!--Label y span para cantidad-->
+				<div class="col-sm-8 C_totalAPagarTercerFormulario">
+					<label>Total a pagar: <span id="span-total-a-pagar-TercerFormulario">$280</span></label>
+				</div>
+
+
+				<!--Boton de Registrar-->
+				<div id="div-botonRegistrar-tercerFormulario" class="col-sm-2 C_botonRegistrarTercerFormulario">
+					<button id="btn-registro-cita-tercer-formulario" class="btn btn-success">Registrar</button>
+				</div>
+
+
+				<!--Espacio en blanco-->
+				<div class="col-sm-2"></div>
+
+			</div>
+			<!--SECCION TRES(3) DE TERCER FORMULARIO-->
+
+		</section>
+
+
+		<!--SECCION (4) DE CUARTO FORMULARIO-->
+		<section id="cuarto-formulario" class="C_cuartoFormulario">
+			<!--Titulos e iconos de cuarto formulario-->
+			<div id="primer-row-cuarto-formulario" class="row">
+				<div class="col-sm-11  C_tituloCuartoFormulario">
+					<h1 id="titulo4">Registro <br id="br-cuartoFormulario" style="display: none;">citas</h1>
+				</div>
+
+				<div class="col-sm-1 C_iconoBack4">
+					<div class="row iconos4FormHomeMenu">
+						<img id="icono-home-Form4" src="../../../static/icons/home.svg" alt="Icono de home" class="col-sm-6">
+						<img id="icono-menu-Form4" src="../../../static/icons/menu2.svg" alt="Icono de menu" class="col-sm-6">
+					</div>
+					
+					<div class="row iconos4FormBack">
+						<label class="col-sm-6" style="visibility: hidden;"></label>
+						<img class="col-sm-6" id="img-back4" src="../../../static/icons/back.svg" alt="Regresar a página anterior">
+					</div>
+					
+				</div>
+			</div>
+
+			<!--Resumen de cita-->
+			<div id="segundo-row-cuarto-formulario" class="row">
+				<!--Row de subtitulo-->
+				<div class="C_subtituloCuartoFormulario">
+					<p>Resumen de cita(s)</p>
+				</div>
+
+				<div class="C_contenedorDeResumenes">
+					
+					<div class="C_ContenedorResumenCitaCliente">
+						<div id="datos-encapsulados-resumen">
+							<div class="C_nombreCliente">
+								<label>Mario Almanza</label>
+							</div>
+	
+							<div class="C_imagenPerfil-circular">
+									<img id="imagen-perfil-cliente" src="../../../static/img/servicios.jpg" alt="Fotografia cliente">
+							</div>
+	
+							<div class="C_ContenedorfechaYHoraFormulario4">
+								<div id="contenedor-hecha-hora-Form4">
+									<span id="referencia-para-mover-FechaHora-Formulario4" style="display: none;" ></span>
+								</div>
+	
+								<label class="C_label_oculto">Fecha y hora</label>
+							</div>
+	
+							<div class="C_barberoFormualario4">
+								<div class="C_iconoInfoBarbero input-group">
+									<input id="nombreBarbero" type="text" class="form-control C_estilos-form4 C_BorderBase" readonly>
+									<!--Icono que contiene la función de Tooltip de Barbero-->
+									<div class="input-group-prepend C_tooltipComponente" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title='<div class="tooltip-barbero"> <div class="C_elementosFotoYDatosBarberosTooltip"> <span class="C_ElementoImagenTooltip"> <img id="imagen-perfil-cliente-tooltip" class="C_imagen-perfil-cliente-tooltip" src="../../../static/img/servicios.jpg" alt="Fotografia cliente"> </span> <div class="C_componenteDatosBarberosTooltip"> <span id="span_name_barber_tooltip">Antonio Marin Morales</span> <span id="span_rol_name_barber_tooltip">Barbero</span> </div> </div> <div class="C_contenedorEstrellas"> <img class="C_estrellasCalificacion" src="../../../static/icons/star-full.svg"> <img class="C_estrellasCalificacion" src="../../../static/icons/star-full.svg"> <img class="C_estrellasCalificacion" src="../../../static/icons/star-full.svg"> <img class="C_estrellasCalificacion" src="../../../static/icons/star-full.svg"> <img class="C_estrellasCalificacion" src="../../../static/icons/star-full.svg"> </div> </div>'>
+										<span id="icono-informacion-barbero" class="input-group-text C_tooltip_input">
+											<i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></i>
+										</span>
+									</div>
+								</div>
+								<label>Barbero</label>
+							</div>
+
+							<div class="C_servicioFormulario4">
+								<div class="C_inputInfoServicio input-group">
+									<input id="nombre-servicio" class="form-control C_estilos-form4 C_BorderBase" type="text" readonly>
+
+									<!--Icono que contiene la función de Tooltip de Servicio-->
+									<div class="input-group-prepend C_tooltipComponente2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<div class='tooltip-servicio'> <div class='C_elementoInformacionDeServicio'> <span id='informacion-servicio'>El corte tradicional se caracteriza por ser casi completamente simétrico y de una longitud corta o media, con un ligero desvanecido desde la altura de las sienes hasta la nuca.</span> <span id='precioServicio-tooltipServicio'>$180</span> </div> <span class='C_elementoImagenDeServicio'></span> </div>">
+										<span id="icono-informacion-servicios" class="input-group-text C_tooltip_input">
+											<i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></i>
+										</span>
+									</div>
+
+								</div>
+								
+								<label>Servicio</label>
+							</div>
+	
+							<div id="producto-Formulario" class="C_iconoProductoFormulario4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title='<div id="tooltip-productos"> <span id="products-title-component-tooltip"> Productos </span> <div id="products-carrusel-component-tooltip"> <div id="product-1-carrusel-component-tooltip"> <img id="img-product-1-carrusel-component-tooltip" src="../../../static/img/compraproducto.png"> <span>Cera gel</span> <span>$30</span> </div> <div id="product-1-carrusel-component-tooltip"> <img id="img-product-1-carrusel-component-tooltip" src="../../../static/img/compraproducto.png"> <span>Cera gel</span> <span>$30</span> </div> <div id="product-1-carrusel-component-tooltip"> <img id="img-product-1-carrusel-component-tooltip" src="../../../static/img/compraproducto.png"> <span>Cera gel</span> <span>$30</span> </div> </div> <div id="products-title-component-tooltip"> <span>Total de productos:</span> <span>$60</span> </div> </div>'>
+								<img id="icono-Producto-Formulario4" class="C_iconoProductoF4" src="../../../static/img/barber_icono.png">
+							</div>
+
+							<div id="div-icono-minimizarMovil4toF">
+								<img id="icono-ocultar-informacion-4F" src="../../../static/icons/down-arrow.svg">
+								<img id="icono-Mostrar-informacion-4F" src="../../../static/icons/left-arrow.svg" style="display: none;">
+							</div>
+	
+						</div>
+						
+						<div class="C_totalAPagar">
+							<label>Total a pagar: <span id="total-formulario4">$305</span></label>
+						</div>
+					</div>
+					
+	
+
+				</div>
+			</div>
+
+			<div id="tercer-row-cuarto-formulario" class="row">
+					<button id="btn-resumen-cita" class="btn btn-success">Aceptar</button>
+			</div>
+
+			<div class="C_divBrush4F" > 
+				<img id="brush-4f" src="../../../static/icons/brushWhite.svg" alt="icono limpieza de campos" >
+			</div>
+			
+			
+
+		</section>
+		<!--SECCION (4) DE CUARTO FORMULARIO-->
+		
+		<!--MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES-->		
+		<!--MODAL PRODUCTOS-TERCER-FORMULARIO (Modal 1)-->
+		<div class="modal fade" id="agregar-productos-tercerFormulario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			<div class="modal-content C_contenedorModal" >
+
+				<!--Titulos Modal-->
+				<div id="contenedor-header-modal" class="modal-header row">
+					
+						<div class="col-sm-6 C_modalTituloIzquierdo">
+							<h2 class="modal-title" id="tituloModal">Productos</h2>
+						</div>
+
+						<div class="col-sm-5 C_modalTituloCentro">
+							<label>Total de productos <span id="cantidad-total-productos-modal-titulo">$60</span></label>
+						</div>
+
+						<div class="col-sm-1 C_modalTituloDerecho">
+								<button id="btnTitulo-cerrar-modal-tercerFormulario" type="button" class="close C_modalBotonCerrar" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+						</div>				
+				</div>
+
+				<!--Contenido Modal-->
+				<div id="contenedor-modal-body" class="modal-body">
+					
+					<div class="C_imagenProducto"> 
+						<div id="div-input-checkbox-tercerFormulario">
+							<input id="inputCheckbox-imagen-seleccionada" class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+						</div>
+
+						<div id="div-contenedor-datos-productos">
+							<img id="imagenProducto-seleccion" src="../../../static/img/compraproducto.png">
+							<p>Cera gel</p>
+							<span>$30</span>
+						</div>
+					</div>
+
+					<div class="C_imagenProducto"> 
+						<div id="div-input-checkbox-tercerFormulario">
+							<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+						</div>
+
+						<div id="div-contenedor-datos-productos">
+							<img src="../../../static/img/compraproducto.png">
+							<p>Cera gel</p>
+							<span>$30</span>
+						</div>
+					</div>
+
+					<div class="C_imagenProducto"> 
+						<div id="div-input-checkbox-tercerFormulario">
+							<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+						</div>
+
+						<div id="div-contenedor-datos-productos">
+							<img src="../../../static/img/compraproducto.png">
+							<p>Cera gel</p>
+							<span>$30</span>
+						</div>
+					</div>
+
+					<div class="C_imagenProducto"> 
+						<div id="div-input-checkbox-tercerFormulario">
+							<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+						</div>
+
+						<div id="div-contenedor-datos-productos">
+							<img src="../../../static/img/compraproducto.png">
+							<p>Cera gel</p>
+							<span>$30</span>
+						</div>
+					</div>
+
+					<div class="C_imagenProducto"> 
+						<div id="div-input-checkbox-tercerFormulario">
+							<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+						</div>
+
+						<div id="div-contenedor-datos-productos">
+							<img src="../../../static/img/compraproducto.png">
+							<p>Cera gel</p>
+							<span>$30</span>
+						</div>
+					</div>
+
+		
+
+				</div>
+
+				<!--Footer Modal-->
+				<div id="contenedor-footer" class="modal-footer">
+				<button id="boton-cancelar-modal" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				<button id="boton-aceptar-modal" type="button" class="btn btn-primary">Aceptar</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+
+	<!--MODAL DE TERCER FORMULARIO AL REDUCIR NUMERO DE PERSONAS-->
+	<div class="modal fade" id="modalEliminarPersonasFormulario3" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content componenteContenidoClientes">
+			<div class="modal-header elementoHeaderClientes">
+			  <h1 class="">Citas</h1>
+			  <button type="button" class="btn-close btn-cerrar-clientes" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body componenteBodyClientes">
+			  <div class="titulosTablaEliminarClientes">
+				<label>Horario</label>
+				<label>Cliente</label>
+			  </div>
+			  
+			  <!-- Contenedor de citas a eliminar -->
+			  <div id="contenido-tabla-eliminar-clientes" class="contenidoTablaEliminarClientes">
+				<!-- Información de citas de clientes -->
+				<div class="informacionCliente">
+					<input id="checkbox-cita-a-eliminar1" type="checkbox" class="form-check form-check">
+					<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+					<div class="input-group"> 
+						<span class="input-group-text modalF31">
+							<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+						</span>
+						<input id="cliente-modal-F3" type="text" class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+						<span class="input-group-text modalF32">
+							<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+						</span>
+					</div>	
+				</div>
+
+				<div class="informacionCliente">
+					<input id="checkbox-cita-a-eliminar2" type="checkbox" class="form-check form-check">
+					<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+					<div class="input-group"> 
+						<span class="input-group-text modalF31">
+							<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+						</span>
+						<input id="cliente-modal-F3" type="text" class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+						<span class="input-group-text modalF32">
+							<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+						</span>
+					</div>	
+				</div>
+				
+				<div class="informacionCliente">
+					<input id="checkbox-cita-a-eliminar3" type="checkbox" class="form-check form-check">
+					<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+					<div class="input-group"> 
+						<span class="input-group-text modalF31">
+							<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+						</span>
+						<input id="cliente-modal-F3" type="text" class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+						<span class="input-group-text modalF32">
+							<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+						</span>
+					</div>	
+				</div>
+
+				<div class="informacionCliente">
+					<input id="checkbox-cita-a-eliminar4" type="checkbox" class="form-check form-check">
+					<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+					<div class="input-group"> 
+						<span class="input-group-text modalF31">
+							<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+						</span>
+						<input id="cliente-modal-F3" type="text" class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+						<span class="input-group-text modalF32">
+							<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+						</span>
+					</div>	
+				</div>
+				
+				<div class="informacionCliente">
+					<input id="checkbox-cita-a-eliminar5" type="checkbox" class="form-check form-check">
+					<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+					<div class="input-group"> 
+						<span class="input-group-text modalF31">
+							<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+						</span>
+						<input id="cliente-modal-F3" type="text" class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+						<span class="input-group-text modalF32">
+							<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+						</span>
+					</div>	
+				</div>
+
+				
+	
+			  </div>
+			  
+			</div>
+			<div class="modal-footer componenteFooterClientes">
+				<button id="boton-eliminarCliente-modal" type="button" class="btn">Eliminar</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!--FIN PAGINA-->
+	</div> <!-- Finaliza Cuerpo de formulario-->
+
+</div> <!--contenedor_row-->
+
+	<div class="col-sm-1 C_headerfooter"></div>
+
+{% endblock %}

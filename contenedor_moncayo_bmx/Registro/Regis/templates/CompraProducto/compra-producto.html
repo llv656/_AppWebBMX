@@ -1,0 +1,229 @@
+{% extends "plantilla.html" %}
+
+{% block title %}  Compra de Productos {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="/static/css/productos/compra-mensajesError.css"/>
+<link rel="stylesheet" href="/static/css/productos/compra-productos.css"/>
+<link rel="stylesheet" href="/static/css/productos/compra-productosModal.css"/>
+
+
+{% endblock %}
+
+{% block scripts %} 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+
+<script src="/static/js/productos/compra/compra_productos.js"></script> 
+<script src="/static/js/productos/compra/compra_productosValidaciones.js"></script> 
+<script src="/static/js/productos/compra/compra_busquedas.js"></script>
+<script src="/static/js/productos/compra/compra_responsable.js"></script>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+	<div class="col-sm-1 C_headerbody"></div>
+	<div class="col-sm-10 cont" id="contenedor">
+		<!--Header-->
+        <!--Inicio_Iconos_Header-->
+        <div class="row C_home">
+			<img id="home" src="../../../static/icons/home.svg" alt="home">
+		</div>
+			
+		<div class="row C_menu">
+			<img id="menu" src="../../../static/icons/menu2.svg" alt="menu">
+		</div>
+			
+		<div class="row icn-back">
+			<img id="img-back" src="../../../static/icons/back.svg" alt="regresar">	
+		</div><!--Finaliza_Iconos_Header-->
+
+		<!--Inicio_Cuerpo_de_formulario-->
+		<div class="row C_sectionformulario">
+            <!--Inicio_Campo_Izquierdo-->
+			<div class="col-sm-5 CampoIzquierdo CampoIzquierdo2">
+                <div class="C_tituloCampoIzquierdo">
+                    <h1>Compra<br>Productos</h1>
+                </div>
+			</div> <!--Finaliza_Campo_Izquierdo-->
+
+            <!--Inicia_Campo_Derecho-->
+			<div class="col-sm-6" id="campoDerecho">
+				<!--Inicia Formulario-->
+				<form class="formulario-productos" id="formulario-productos">
+
+                    <!--Primer formulario-->
+                    <div class="C_nombreProducto C_producto">
+                        <label>Productos</label>
+                    </div>
+                    
+                    <div class="C_nombreProducto C_producto searchIcono">
+                        <input id="nombreProducto" name="N_producto" class="C_estilosInput form-control C_colorBaseBorder" type="text" 
+                        placeholder="Producto" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                        <!-- Icono de información -->
+                        <span id="icono_informacion" class="info-icon" data-bs-toggle="modal" data-bs-target="#modalEmergente">
+                            <i class="fa-solid fa-circle-info white-icon"></i>
+                        </span>
+                        <!-- Icono de búsqueda -->
+                        <span id="icono_busqueda1" class="search-icon"><i class="fas fa-search"></i></span>
+                        <button type="button" id="boton_producto" class="C_botonProducto" data-bs-toggle="modal" data-bs-target="">+</button>
+                        <!--SUGERENCIAS INPUT-->
+                        <div id="suggestions-container"></div>
+                      </div>
+
+
+                    <!--SUGERENCIAS PARA PRODUCTOS-->
+                    <script>
+                        const sugerenciasProductos = [
+                        { tipo: "reciente", nombre: "Cesar Alberto Ruiz Garcia", imagen: "../../../static/img/citas_dos.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "Cesar", imagen: "../../../static/img/clienteBarberia_mobile.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "Ramon", imagen: "../../../static/img/servicios.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "zzz", imagen: "../../../static/img/servicios.jpg", tipo: "reciente"}
+                        ];
+                    </script> 
+                    <!--SUGERENCIAS PARA PRODUCTOS-->
+
+                    <!--MODAL EMERGENTE-->
+
+                    <div class="C_fechaCompra">
+                        <label>Fecha de compra</label>
+                    </div>
+
+                    <div class="C_fechaCompra">
+                        <input id="fecha_compra" name="N_fechaCompra" type="date" class="C_estilosInput form-control C_colorBaseBorder">
+                    </div>
+
+                    <div class="C_responsableCompra">
+                        <label>Responsable de compra</label>
+                    </div>
+
+                    <div class="C_responsableCompra searchIcono2">
+                        <input id="responsable_compra" name="N_responsableCompra" class="C_estilosInput form-control C_colorBaseBorder" 
+                        placeholder="Responsable de com.." data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                        <span id="icono_busqueda1" class="search-icon2"><i class="fas fa-search"></i></span>
+                        <div id="contenedor_responsable"></div>
+                    </div>
+
+                    <!--SUGERENCIAS PARA RESPONSABLE-->
+                    <script>
+                        const sugerenciasResponsable = [
+                        { tipo: "reciente", nombre: "Lenin Leines", imagen: "../../../static/img/citas_dos.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "Carlos Leines", imagen: "../../../static/img/clienteBarberia_mobile.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "Pedro picapiedra", imagen: "../../../static/img/servicios.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "Rene Vazques", imagen: "../../../static/img/servicios.jpg", tipo: "reciente"}
+                        ];
+                    </script> 
+                    <!--SUGERENCIAS PARA RESPONSABLE-->
+
+
+                    <div class="C_cantidadProductos">
+                        <label>Cantidad de Productos</label>
+                    </div>
+        
+                    <div class="C_cantidadProductos">
+                        <button id="btn-menos" type="button" class="btnForma C_disminuirCantidad" onclick="disminuirCantidadDeProductos()">-</button>
+                        <input type="number" class="C_campoCantidad C_colorBaseBorder" id="cantidadProductosMayoreo" name="N_cantidadProductosMayoreo" 
+                        min="0" max="100" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                        <button id="btn-mas" type="button" class="btnForma C_aumentoCantidad" onclick="aumentarCantidadDeProductos()">+</button>
+                     </div>
+
+
+                     <div class="C_totalCompra">
+                        <label>Total de compra</label>
+                     </div>
+                     
+                     <div class="C_totalCompra">
+                        <input id="total_compra" name="N_totalCompra" type="number" class="C_estilosInput form-control C_colorBaseBorder" readonly disabled>
+                     </div>
+
+
+                     <div class="C_motivoEdicionDeCosto">
+                        <label>Motivo de edición<br>de costo</label>
+                     </div>
+
+                     <div class="C_motivoEdicionDeCosto">
+                        <textarea id="motivo_edicion_costo" name="N_motivoEdicionDeCosto" class=" C_estilosInputTextTarea form-control C_colorBaseBorder"
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="En este campo puede justificar porque modifico el total de compra"></textarea>
+                     </div>
+                <!--Finaliza formulario-->
+				</form>
+
+			</div>
+
+
+			<div class="col-sm-1 C_divBrushColSm1">
+				<div class="row icn-brush">
+					<img id="btnBrush" src="../../../static/icons/brushWhite.svg" alt="limpiar campos">
+				</div>
+	
+			</div>
+
+
+		</div>
+
+	
+
+		<section class="C_Seccion_Footter"> 
+			<div class="row C_campodeboton">
+				<div class="C_btnregistrar">
+					<button type="submit" class="btn btn-success" id="boton_comprar">Comprar</button>
+				</div>
+			</div>
+			
+		</section>
+
+        
+
+	</div>
+
+
+    <div class="modal fade " id="modalEmergente" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modal-contenidoo">
+                <!--Encabezado de Formulario-->
+                <div class="modal-header C_titulosModal">
+                    <div class="row C_encabezados">
+                        <div class="col-sm-2 C_iconoModal">
+                            <img src="../../../static/icons/userCircle-.svg">
+                        </div>
+
+                        <div id="titulosMODAL" class="col-sm-10 C_titulosMODAL">
+                            <h4 id="tituloProducto" class="modal-title" id="modalLabel">Cera Moncayo</h4>
+                            <i class="C_titulo-dos">Perfumerica</i>
+                        </div>
+
+                        <div id="botoncerrarmodal" class="C_botonCerrarModal" style="display: none;" >
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+              
+                </div>
+                
+                <!--Cuerpo de Formulario-->
+                <div class="modal-body">
+                    <div class="C_imagen">
+                        <img id="imagenModal-producto" class="C_imagenModal-producto" src="../../../static/img/compraproducto.png">
+                    </div>
+
+                    <div class="C_descripcion">
+                        <ul>
+                            <li>$150 precio unidad</li>
+                            <li>$130 precio mayoreo (10)<br>producto o más</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+	<div class="col-sm-1 C_headerfooter"></div>
+
+</div>
+
+{% endblock %}

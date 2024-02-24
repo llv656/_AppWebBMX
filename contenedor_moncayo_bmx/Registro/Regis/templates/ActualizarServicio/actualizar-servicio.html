@@ -1,0 +1,189 @@
+{% extends "plantilla.html" %}
+
+{% block title %}  Actualizar Servicios {% endblock %}
+
+{% block estilos %}
+
+<link rel="stylesheet" href="/static/css/servicios/registro-servicios.css"/>
+<link rel="stylesheet" href="/static/css/servicios/registro-estilosMensajesError.css"/>
+<link rel="stylesheet" href="/static/css/servicios/registro-carrusel.css"/>
+
+{% endblock %}
+
+{% block scripts %} 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--<script src="/static/js/uscripts/registro_productos_validaciones.js"></script> -->
+
+<script src="/static/js/servicios/registro/registro_servicios.js"></script> 
+<script src="/static/js/servicios/registro/registro_servicios_validaciones.js"></script> 
+<script src="/static/js/servicios/registro/registro_validaciones_servicios_enter.js"></script>
+<script src="/static/js/servicios/registro/registro_carrusel.js"></script>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+
+	<div class="col-sm-1 C_headerbody"></div>
+
+	<div class="col-sm-10 cont" id="contenedor">
+		<!-- Inicio_Iconos-Header -->
+		<div class="row" ></div>
+
+		<div class="row C_home">
+			<img id="home" src="../../../static/icons/home.svg" alt="home">
+		</div>
+
+		<div class="row C_menu">
+			<img id="menu" src="../../../static/icons/menu2.svg" alt="menu">
+		</div>
+
+		<div class="row icn-back">
+			<img id="img-back" src="../../../static/icons/back.svg" alt="regresar">	
+		</div>
+		<!-- Final_Iconos_Header -->
+
+
+		<!--Inicia_Cuerpo_de_Formulario-->
+		<div class="row C_sectionformulario" >
+			<!-- Inicia_Campo_Izquierdo-->
+			<div class="col-sm-5 CampoIzquierdo">
+			<div class="C_tituloCampoIzquierdo"> <!--TITULO-->
+				<h1>Actualizar<br>Servicios</h1>
+			</div>
+		</div> <!--Finaliza_Campo_Izquierdo-->
+	
+
+		<!--Inicia_Campo_Derecho-->
+		<div class="col-sm-6" id="campoDerecho">
+			<!--Inicia Formulario-->
+			<form class="formulario-servicios" id="formulario-servicios"> <!--formServDerecho-->
+
+				<!--Formulario-->
+				<div class="C_nombreServicio">
+					<label>Nombre Servicio</label>
+				</div>
+
+				<div class="C_nombreServicio">
+					<input id="nombreServicio" name="N_nombreServicio" class="C_estilosInput form-control C_colorBaseBorder" type="text" 
+					placeholder="Nombre Servicio" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido" value="{{ nombre_servicio }}">
+					<span id="errorNombreServicio" class="C.errormensaje"></span>
+				</div>
+
+
+				<div class="C_descripcion">
+					<label>Descripción</label>
+				</div>
+				
+				<div class="C_descripcion">
+					<textarea id="descripcionServicio" name="N_descripcionServicio" class="C_estilosInputTextTarea form-control C_colorBaseBorder" 
+					placeholder="Descripción" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">{{ descripcion }}</textarea>
+					<span id="errorDescripcion" class="C.errormensaje"></span>
+				</div>
+
+
+				<div class="C_tiempoServicio">
+					<label>Tiempo de Servicio</label>
+				</div>
+
+				<div class="C_tiempoServicio">
+					<input id="tiempoServicio" name="N_tiempoServicio" class="C_estilosInput form-control C_colorBaseBorder" type="time" placeholder="Tiempo de Servicio" 
+					data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido" value="{{ tiempo_servicio }}">
+					<span id="errorTiempo" class="C.errormensaje"></span>
+				</div>
+				
+				
+				<div class="C_precioPublico">
+					<label>Precio Público</label>
+				</div>
+
+				<div class="C_precioPublico">
+					<input id="precioPublico" name="N_precioPublico" class="C_estilosInput form-control C_colorBaseBorder" type="number" placeholder="Precio Público" 
+					value="{{ precio_publico }}">
+				</div>
+
+
+				<div class="C_precioInterno">
+					<label>Precio Interno</label>
+				</div>
+
+				<div class="C_precioInterno">
+					<input id="precioInterno" name="N_precioInterno" class="C_estilosInput form-control C_colorBaseBorder" type="number" placeholder="Precio Interno"
+					value="{{ precio_interno }}">
+				</div>
+
+				
+				<!--Select para las imagenes importadas en el carrusel fuera del formulario-->
+				<div class="C_imagenesCarrusel" style="display: none;">
+					<select id="copiaimagenesCargadasEnCarrusel" name="N_copiaimagenesCargadasEnCarrusel" value="{{ imagenes_carrusel }}">
+					</select>
+				</div>
+
+			
+			</form> <!--Formulario-->
+		</div>
+
+
+		<!--Inicio_Carrusel-->
+		<section class="C_seccionCarrusel"> 
+			<div class="wrapper">
+				<i id="leftArrow" class="fa-solid fa-angle-left"></i><!--Flecha izquierda Carrusel-->
+				<!--Contenedor de imagenes de carrusel-->
+				<div class="carousel"> 
+					<!--Imagen para agregar nueva imagen a carrusel-->
+					<img id="imagenNuevaPng" src="../../../static/img/addImagen.png" alt="Agregar imagen carrusel" draggable="false" data-bs-toggle="tooltip" data-bs-placement="top" title="Agregar imagen"><!--Imagen de AGREGAR NUEVA IMAGEN-->
+					<input type="file" id="fileInput" style="display: none;" multiple>
+                    <!--Aquí se insertan las imagenes que se insertan a través del input-->
+				</div> <!--Contenedor de imagenes de carrusel-->
+				<i id="rightArrow" class="fa-solid fa-angle-right"></i><!--Flecha derecha Carrusel-->
+			</div>
+		</section>
+
+		<!--MODAL Carrusel-->
+		<div id="modal" class="modal">
+			<span class="close" onclick="closeModal()" data-bs-toggle="tooltip" data-bs-placement="top" title="Cerrar imagen">&times;</span> <!--Icono cerrar modal-->
+			<img id="modal-content" class="modal-content" alt=""><!--Modal con imagen-->
+			<span class="delete" onclick="deleteImg()"><i id="deleteImage" class="fa-solid fa-trash" style="color: #ffffff; text-shadow: 0 0 5px #ffffff;" 
+				data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar imagen"></i><!--Icono borrar imagen-->
+			</span>
+		</div>
+		<!--Modal Carrusel-->
+		<!--FINALIZA Carrusel-->
+
+		</div> <!-- Finaliza Cuerpo de formulario-->
+
+		
+		<!--Icono brocha-->
+		<div class="col-sm-1 C_divBrushColSm1">
+			<div class="row icn-brush" id="icn-Brush">
+				<img id="btnBrush" src="../../../static/icons/brushWhite.svg" alt="limpiar campos" data-bs-toggle="tooltip" data-bs-placement="top" title="Limpiar Campos">
+			</div>
+		</div>
+		<!--Icono brocha-->
+
+		<section class="C_Seccion_Footter"> 
+			<div class="row C_campoDeBoton">
+				<div class="C_btnregistrar">
+					<button type="submit" class="btn btn-success" id="btn-reg">Actualizar</button>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	
+	</div>
+
+
+	<div class="col-sm-1 C_headerfooter"></div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+.input-contra {
+ position: relative;
+
+}
+
+#togglePassword{
+
+    display:relative;
+}
+
+.input-icon {
+    position: absolute;
+    top: 57%;
+    left:90%;
+    font-size:120%;
+
+}
+
+form i {
+    position: absolute;
+    margin-left: 90%;
+    cursor: pointer;
+}

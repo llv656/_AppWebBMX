@@ -1,0 +1,1000 @@
+/*Cuerpo de la página web enfocado en el fondo.*/
+
+main {
+    /* background-image: url('../img/clienteBarberia.jpg'); */
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url(../img/clienteBarberia.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+#contenedorTabla {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url();
+    /* background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url(../img/clienteBarberia.jpg); */
+    border-radius: 25px;
+    /* display: inline-block; */
+    margin-left: 10px;
+    scrollbar-color: lightblue transparent;
+    flex: 1;
+    /* Ocupa el espacio restante */
+    height: 100%;
+
+}
+
+#contenedorConfig {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url();
+    /* background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url(../img/clienteBarberia.jpg); */
+    border-radius: 25px;
+    /* display: inline-block; */
+    margin-left: 25px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-height: 600px;
+    scrollbar-width: auto;
+    scrollbar-color: lightblue transparent;
+    width: 280px;
+
+}
+
+@media (max-width: 809px) {
+    #contenedorTabla {
+        width: 10%;
+        /* Hacer que contenedorConfig ocupe el 100% del ancho en pantallas pequeñas */
+        max-width: none;
+        /* Eliminar la restricción de ancho máximo si es necesario */
+    }
+}
+
+/* WebKit (Safari y Chrome) */
+#contenedorConfig::-webkit-scrollbar {
+    width: 10px;
+    /* Ajusta el ancho de la barra de desplazamiento */
+}
+
+#contenedorConfig::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    /* Color de la barra desplegable */
+}
+
+#contenedorConfig::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Fondo transparente */
+}
+
+.C_sectionformulario {
+    /* height: 100%; */
+}
+
+#contenedorTablaForm {
+    height: 80%;
+}
+
+/* LOGO  */
+.logo {
+    color: white;
+    /* text-align: left; */
+    /* margin-left: 21rem; */
+    font-size: 4rem;
+    /* margin-bottom: 1rem; */
+    padding: .2rem;
+    font-family: 'Open Sans Semibold', sans-serif;
+    /* font-weight: 200; */
+}
+
+/* Icono Home */
+.C_Home,
+.C_menu {
+    display: none;
+}
+
+/* Contenedor section row */
+.contenedor {
+    display: flex;
+    justify-content: start;
+}
+
+/* Mover el contenido del texto (span) */
+.menu p {
+    line-height: 3;
+    color: #fff;
+    font-size: 15px;
+    margin-left: -20px;
+}
+
+@media (min-width: 769px) {
+    .SubMenuIco {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0rem;
+    }
+
+    /* .SubMenuIco {
+        display: flex;
+    }  */
+    .clientesMostrarCE {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10;
+        /* Ajusta según sea necesario el espacio entre las columnas */
+    }
+
+    .filtrarCli {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 0rem;
+    }
+}
+
+/* Estilos para el ícono dentro de la cuadrícula */
+.clientesMostrarCE i {
+    /* Ajusta la posición a la derecha según sea necesario */
+    margin-left: 10px;
+    margin-right: -9px;
+    margin-top: 50px;
+}
+
+/* Estilos para el texto (span) dentro de la cuadrícula */
+/* .ajustarIco span.mostrarCE { */
+/*overflow: hidden; /* Oculta el contenido que excede el tamaño del contenedor */
+/*text-overflow: ellipsis; /* Agrega puntos suspensivos (...) para indicar texto truncado */
+/*white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+/*margin-top: 10px; /* Baja el span 10px hacia abajo */
+/* } */
+.filtrarCli {
+    padding: 20px;
+    /* margin-left: -20px; */
+}
+
+.filtrarCli h3 {
+    text-align: left;
+    color: #fff;
+    font-size: 25px;
+}
+
+.menu a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 25px;
+    /* 0px arriba y 10 izquierda a derecha;*/
+    transition: .4s;
+}
+
+/* MOSTRAR MENU  */
+.mostrar-menu,
+.esconder-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+
+.mostrar-menu {
+    order: 1;
+}
+
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover {
+    color: #6cc091;
+    /*color al seleccionar el link */
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width: 768px) {
+
+    /* HEADER */
+    .mostrar-menu,
+    .esconder-menu {
+        display: block;
+    }
+}
+
+/*? Inicia el divFiltrar MostrarCE */
+
+
+.view {
+    color: #fff;
+}
+
+.eliminarIco {
+    color: #ad0c0c;
+    margin-top: 1rem;
+    /* Ajusta el valor según la cantidad de espacio que deseas entre el icono y su contenedor */
+    margin-left: -3px;
+    /* Ajusta el valor según la cantidad de espacio que deseas a la izquierda del texto */
+}
+
+.mostrarCE {
+    color: #bbbbbb;
+    margin-left: 20px;
+    margin-top: 2rem;
+}
+
+/* .filtrarIco{ */
+/* position: absolute; */
+/* background: #59534f; */
+/* width: 2.2rem; */
+/* height: 2.3rem; */
+/* border-radius: 5rem; */
+/* padding-left: .5rem; */
+/* margin-left: 16.2rem; */
+/*top: 16rem; /* Ajusta el valor según la cantidad de espacio que deseas mover hacia arriba el ícono */
+
+/* } */
+.filtrarIcono {
+    color: #fff;
+    cursor: pointer;
+    padding: 6px;
+    font-size: 24px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+/*? Iniciar el Busqueda Avanzada  */
+/* .filtroBusqueda {
+    color: #fff;
+    margin-left: 2rem;
+} */
+.iconoFiltDesc {
+    color: #3275c4;
+    margin-right: 0rem;
+    cursor: pointer;
+    font-size: 20px;
+}
+.iconoFiltAsc {
+    color: #3275c4;
+    margin-left: 5rem;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.sortBS {
+    font-size: 25px;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.sortBSS {
+    font-size: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.fomularioSc {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.formulario {
+    background-color: transparent;
+    width: min(60rem, 80%);
+    /*Utilizar el valor más pequeño*/
+    margin: 0 auto;
+    padding: .5rem;
+    border-radius: 25px;
+    border-color: beige;
+    border-style: groove;
+
+}
+
+.formulario select {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    background-color: #726561;
+    color: #fff;
+}
+
+.basicSearch {
+    color: #fff;
+    font-family: 'Open Sans Semibold', sans-serif;
+    font-size: 15px;
+    margin-left: 0rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+}
+
+/* .contenedorFiltrarBS {} */
+
+.contenedorFiltrarBSC {
+
+    margin-bottom: 1rem;
+}
+
+.contenedorFiltrarBSC label {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.contenedorFiltrarBSC input {
+    flex-grow: 1;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    background-color: #726561;
+    color: #fff;
+}
+.contenedorFiltrarBSC input[type="text"] {
+    padding-right: 30px;  /* Ajusta según el tamaño de tu icono */
+    /* color: #ffff; */
+}
+.contenedorFiltrarBSC input::placeholder {
+    color: #ffffff; /* Puedes cambiar este valor al color que desees */
+    
+}
+/* Deshabilita las flechas de incremento y decremento en los input de tipo número */
+.contenedorFiltrarBSC input[type="number"]::-webkit-inner-spin-button,
+.contenedorFiltrarBSC input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.contenedorFiltrarBSC input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.contenedorFiltrarBSC .input-con-icono {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.contenedorFiltrarBSC .input-con-icono i {
+    position: absolute;
+    left: 11rem;
+    color: #b6b6b6;
+}
+
+
+.contenedor-con-scroll {
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.botones {
+    text-align: right;
+    margin-left: 200px;
+}
+
+.botones buttons {
+    margin-left: 100px;
+}
+
+.useradd {
+    background: #86a135;
+    justify-content: flex-start;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    /* margin-right: 1rem; */
+    margin-top: 10px;
+}
+
+.userrecargar {
+    background: #cdc11d;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    /* margin-right: 1rem; */
+    margin-top: 10px;
+
+}
+
+.usertrash {
+    background: #ad0c0c;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    /* margin-right: 1rem; */
+    margin-top: 10px;
+}
+
+.filtrarAsc {
+    background: #7d2d35;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+
+.filtrarDes {
+    background: #5953af;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+
+h1 {
+    color: white;
+    text-align: left;
+    font-family: 'Open Sans Semibold', sans-serif;
+}
+
+h3 {
+    color: #fff;
+    margin-left: 4rem;
+    /* Ajusta el valor según la posición horizontal deseada */
+    font-family: 'Open Sans Semibold', sans-serif;
+}
+
+th {
+    color: #538898;
+    border: none;
+}
+
+td {
+    color: white;
+    /* background-color: rgb(238, 8, 8); */
+    border: none;
+    /*Ajusta el valor según el radio de redondeo deseado */
+}
+
+tbody select {
+    /* Estilos personalizados para select dentro del tbody */
+    width: 80%;
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    background-color: #726561;
+    color: #fff;
+}
+
+tbody input[type="date"] {
+    /* Estilos personalizados para el input date dentro del tbody */
+    width: 80%;
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    background-color: #726561;
+    color: #fff;
+}
+
+select {
+    color: black;
+    border-radius: .7rem;
+    border: none;
+}
+
+input {
+    color: black;
+    border-radius: .7rem;
+    border: none;
+    cursor: pointer;
+}
+
+.additional-info {
+    padding: 10px;
+    /* Espacio alrededor de la descripción */
+    border-top: 1px solid #ccc;
+    /* Borde superior para separar de la fila anterior */
+}
+
+/** Estilo para los iconos de Font Awesome **/
+.show-details {
+    cursor: pointer;
+    /* color: #007bff; */
+}
+
+/* *Ocultar los iconos en dispositivos móviles y tabletas **/
+@media (max-width: 1024px) {
+    #ocultarIco {
+        display: none;
+    }
+}
+
+/* ?thead tr:last-child{
+    display: none;
+} **/
+/*Icono de Regresar (<-)*/
+
+
+/*Efecto de selección y selección de color */
+
+/* .hidden-info{
+    display: none;
+} */
+
+/* Boton para mostrar los registros totales */
+#totalRegistros {
+    height: 30%;
+    text-align: right;
+    color: #797070;
+    padding: 1rem;
+    margin: 0 -40px;
+}
+
+#RegistrosMos {
+    margin: 0 10px;
+}
+
+/* Paginacion para filtrar busqueda  */
+.pagination-box {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0;
+    border-radius: none;
+}
+
+.page-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: underline;
+}
+
+.page-btn.prev {
+    background-color: transparent;
+    color: #fff;
+    margin-left: 14px;
+}
+
+.page-btn.next {
+    background-color: transparent;
+    color: #fff;
+    margin-right: 19px;
+}
+
+.page-btn:hover {
+    background-color: #555;
+}
+
+.page-info {
+    font-size: 13px;
+    margin: 0 10px;
+    padding: 2px;
+    color: #fff;
+}
+
+#pageSelect {
+    border: 2px solid #555;
+    border-radius: 0;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    /* añade el espacio entre el borde y el texto*/
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*imagen de BACK*/
+
+/*Versión móvil*/
+@media screen and (max-width:768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .SubMenuIco {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .contenedor {
+        /* background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../img/prueba.jpeg); */
+        background-size: cover;
+        background-position: center;
+        display: block;
+        justify-content: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .clientesMostrarCE,
+    .filtrarCli,
+    .formulario {
+        display: none;
+    }
+
+    .logo {
+        /* display: flex; */
+        flex-direction: row;
+        color: white;
+        justify-content: center;
+        margin-left: 0;
+        height: 10vh;
+        background-size: cover;
+        background-position: center;
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url();
+        background: none;
+
+    }
+
+    .C_Home {
+        position: fixed;
+        top: 3%;
+        padding-left: 76%;
+        display: block;
+    }
+
+    .C_menu {
+        position: fixed;
+        top: 3.5%;
+        padding-left: 88%;
+        display: block;
+    }
+
+    #contenedorTabla {
+        /* position: fixed; */
+        /* z-index: 1; */
+        background: none;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0%;
+        height: 80vh;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    #contenedorConfig {
+        margin-left: 0;
+        height: 10vh;
+        width: 100%;
+        background: none;
+        background-size: cover;
+        background-position: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        border-radius: 0;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+
+    }
+
+    main {
+        height: 100%;
+    }
+
+    .C_headerbody {
+        display: none;
+    }
+
+    .C_headerfooter {
+        display: none;
+    }
+
+    .icn-back {
+        position: absolute;
+        z-index: 3;
+        padding-top: 18%;
+        padding-left: 90%;
+    }
+
+    .pagination-box {
+        height: 10%;
+        /* padding-bottom: 20vh; */
+        align-items: start;
+    }
+
+    #totalRegistros {
+        display: flex;
+        margin: 0;
+        justify-content: end;
+        padding-right: 10%;
+
+    }
+
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    /* Cambia 'absolute' a 'fixed' para que se quede estático */
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, .5));
+    z-index: 100;
+    padding: 10px;
+    width: 20%;
+    /* Cambia el ancho según tus necesidades para adaptarse a dispositivos móviles */
+    height: 65px;
+    /* Limita el ancho máximo para evitar que sea demasiado ancho en tabletas */
+    top: 20%;
+    /* Coloca el modal en el centro vertical */
+    left: 35%;
+    /* Coloca el modal en el centro horizontal */
+    transform: translate(-50%, -50%);
+    /* Centra el modal en la pantalla */
+    border-radius: 25px;
+    overflow: hidden;
+    /* Evita el scroll en el modal */
+    white-space: nowrap;
+    /* Evita el scroll en el contenido del modal */
+}
+
+/*? Estilos para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .modal {
+        width: 75%;
+        /* Ancho para dispositivos móviles y tabletas */
+        height: auto;
+        /* Altura automática */
+        top: 37%;
+        /* Posición en la parte superior para dispositivos móviles y tabletas */
+        left: 45%;
+        /* Posición a la izquierda para dispositivos móviles y tabletas */
+    }
+}
+
+.form-check-input {
+    opacity: 1;
+    /* Hacer el check del radio transparente (invisible) */
+    position: static;
+}
+
+/* Estilos para personalizar el fondo de la ventana modal */
+/* Cambia los valores de background según tus preferencias */
+.modal-content {
+    background: none;
+    border: none;
+    color: white;
+}
+
+/* Estilos para el botón de radio en el encabezado */
+#mostrarModal {
+    cursor: pointer;
+}
+
+/**Modal para hacerlo responsivo*/
+/* Estilos para pantallas más pequeñas (por ejemplo, dispositivos móviles) */
+/* Media query para pantallas más pequeñas, ajusta los estilos según tus necesidades */
+@media (max-width: 767px) {
+    .form-check.EliminarClienteRadio .adaptarText {
+        font-size: 10px;
+        /* Tamaño de fuente para dispositivos móviles y tabletas */
+
+    }
+}
+
+/** Modal para Eliminar */
+#motivoEliminar .modal-content {
+    background-color: rgba(2, 12, 24, 0.7);
+    /* Cambia "#ff0000" al color que desees utilizar */
+    color: #ffffff;
+    font-size: 15px;
+}
+
+#motivoEliminar textarea {
+    color: black;
+    font-size: 18px;
+    align-items: center;
+    background: transparent;
+    border-radius: 20px;
+    resize: none;
+}
+
+#motivoEliminar .modal-body>div {
+    margin-bottom: 15px;
+    /* Cambia el valor según el espacio de separación deseado */
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+/* Estilos para la ventana modal */
+.modal1 {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+
+}
+
+.modal-dialog {
+    /* max-width: 47.5%; */
+}
+
+/*Ajustar el borde del modal*/
+.contenedoRadio {
+    background: none;
+    border-radius: 25px;
+    color: white;
+}
+
+/*Encabezado Header*/
+.modal1 .modal-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* background-color: blue; */
+    /* Cambia el color de fondo del header */
+    color: #fff;
+    /* Cambia el color del texto en el header */
+    padding: 15px;
+    /* Ajusta el relleno interno del header */
+}
+
+.modal-header .btn-close {
+    background-color: #538898;
+}
+
+.modal1 .modal-body {
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    /* Ajusta el relleno interno del body */
+}
+
+.modal1 .modal-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+
+    /* Cambia el color de fondo del footer */
+    padding: 15px;
+    /* Ajusta el relleno interno del footer */
+}
+
+#infoUsuarioEliminar {
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 500px;
+    font-size: 17px;
+    font-weight: bold;
+    /* Puedes ajustar la altura máxima según tus necesidades */
+}
+
+#motivoEliminar textarea {
+    height: 100px;
+    color: #fff;
+    background: transparent;
+    font-size: 17px;
+    border: none;
+    /*Poner transparente el border del modal*/
+    width: 100%;
+}
+
+#motivoEliminar textarea::placeholder {
+    color: #fff;
+    /** Cambiar color del texto para textTarea*/
+}
+
+.modal-body label {
+    font-size: 18px;
+}
+
+/* Estilos generales para pantallas más grandes */
+.adaptarText {
+    font-size: 15px;
+    /* Tamaño de fuente para pantallas más grandes */
+    margin-bottom: 20px;
+    /* Espaciado entre elementos */
+}
+
+/* Estilos para los botones ModalELiminar */
+.btnsCliente {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.8s;
+    text-align: center;
+}
+
+/* Estilos para el primer botón ModalEliminar*/
+#btnCancelarDatos {
+    position: relative;
+    top: -10px;
+    /* Mueve el botón hacia arriba 20px */
+    margin-right: 50px;
+    /* Separa el primer botón del segundo botón */
+}
+
+/* Estilos para el segundo botón */
+#btnGuardarDatos {
+    position: relative;
+    top: -10px;
+    /* Mueve el botón hacia abajo 20px */
+    margin-right: 55px;
+    /* Separa el primer botón del segundo botón */
+}
+
+.modal-backdrop {
+    z-index: -1;
+    /* Fondo semitransparente */
+}
+
+/*? Estilos para dispositivos móviles y tabletas */
+/* Estilos para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .modal1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+
+    .modal-dialog {
+        /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 10px;
+    }
+
+    .btnsCliente {
+        display: inline-block;
+        padding: 20px 20px;
+        background-color: transparent;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: background-color 0.8s;
+        text-align: center;
+    }
+
+    #motivoEliminar textarea {
+        height: 30vh;
+        /* Ajusta la altura para dispositivos más pequeños */
+        font-size: 17px;
+        /* Ajusta el tamaño de la fuente para dispositivos más pequeños */
+    }
+
+}

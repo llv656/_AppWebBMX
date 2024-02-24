@@ -1,0 +1,272 @@
+/*Tamaños de altura de componentes*/
+#segunda-pantalla{
+    height: 100%;
+}
+
+/*tamaño componente1*/
+#componente-titulo-e-iconos-pantalla-2{
+    display: flex;
+    width: 100%;
+}
+
+/*tamaño componente1*/
+#componente-barberos-y-horarios{
+    height: 75%;
+    width: 100%;
+}
+
+#subcomponente1-subtitulo > p{
+    color: #fff;
+    margin: auto 3%;
+}
+
+/*COMPONENTE - CONTENIDO*/
+#subcomponente2-contenido-de-horarios-y-barberos{
+    display: flex;
+    margin-top: 1%;
+}
+
+#elemento1-informacion-barbero{
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+/* Diseño de barra scroll */
+#elemento1-informacion-barbero::-webkit-scrollbar {
+    width: 5px;
+}
+
+#elemento1-informacion-barbero::-webkit-scrollbar-thumb {
+    background-color: #86A135;
+    border-radius: 5px;
+}
+
+/* Para Firefox */
+#elemento1-informacion-barbero {
+    scrollbar-width: thin;
+    scrollbar-color: #86A135 transparent;
+}
+
+#elemento1-informacion-barbero::-moz-scrollbar-thumb {
+    background-color: #86A135;
+    border-radius: 5px;
+}
+
+.claseBarberos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #080D12;
+    border-radius: 25px;
+    margin: 5px auto;
+    width: -webkit-fill-available;
+    flex-wrap: nowrap;
+}
+
+.claseHorariosBarberos{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+.C_estiloBotonesHorarios {
+    display: inline-block;
+    border-radius: 25px !important;
+    background-color: #214569 !important;
+    border-color: #214569 !important;
+    color: #ffffff;
+    margin-right: 1%;
+}
+
+
+
+#informacion-barbero-nombre-foto{
+    display: flex;
+}
+
+#contenedor-encabezado-resumen-citas{
+    display: flex;
+}
+
+#elemento-nombre-barbero{
+    display: flex;
+}
+
+#subelemento1-nombre-fotoPerfil-iconos{
+    display: flex;
+    flex-direction: column;
+    background: #080D12;
+    border-radius: 25px;
+}
+
+#elemento-nombre-barbero h1{
+    margin: auto 60px;
+    color: #fff;
+}
+
+.C_imagenPerfil-circular {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.C_imagenPerfil-circular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.claseElemento-maximizar-minimizar{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+
+.iconos-max-min-pantalla-2{
+    display: flex;
+    padding-right: 3%;
+}
+
+.maximizar{ 
+    display: none;
+}
+
+.col-sm-barberosHorarios-laterales {
+    flex: 4%;
+}
+
+.col-sm-barberosHorarios-centro {
+    flex: 92%;
+}
+
+.oculto{
+    display: none;
+
+}
+
+#horarios-barberos::-webkit-scrollbar {
+    width: 5px;
+}
+
+#horarios-barberos::-webkit-scrollbar-thumb {
+    background-color: #214569;
+    border-radius: 5px;
+}
+
+/* Para Firefox */
+#horarios-barberos {
+    scrollbar-width: thin;
+    scrollbar-color: #214569 transparent;
+}
+
+#horarios-barberos::-moz-scrollbar-thumb {
+    background-color: #214569;
+    border-radius: 5px;
+}
+
+#subcomponente3-brocha{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+
+/*Icono brocha*/
+#icono-brocha-pantalla-2 {
+    /*Definición de tamaño*/
+    height: 20px;
+}
+
+/*Efecto de selección y selección de color */
+#icono-brocha-pantalla-2:hover{
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+
+
+
+
+
+/*COMPONENTE 3 FOOTER*/
+#componenente-boton-aceptar-pantalla-2{
+    display: flex;
+    top: 5px;
+    flex-wrap: wrap;
+    height: auto;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+}
+
+#boton-de-aceptar-barberos-y-citas{
+    padding: 1% 5% 1% 5%;
+    background: #86A135;
+    border-radius: 25px;
+    border: none;   
+}
+
+#boton-de-aceptar-barberos-y-citas:hover,
+#boton-de-aceptar-barberos-y-citas:focus {
+    background-color: #6e842b;
+}
+
+
+
+@media screen and (max-width:700px){
+
+    #componente-titulo-e-iconos-pantalla-2{
+        display: contents;
+    }
+    
+    #segunda-pantalla{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "headerTitulo headerTitulo iconos"
+                             "bodyNumeroP bodyNumeroP bodyFecha"
+                             "bodyContenido bodyContenido bodyContenido"
+                             "footerBoton footerBoton footerBoton"
+    };
+
+    #elemento1-titulo-pantalla2{
+        grid-area: headerTitulo;
+    }
+    
+    #elemento4-iconos-home-menu-back{
+        grid-area: iconos;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-end;
+        width: fit-content;
+        align-self: center;
+        justify-self: end;
+    }
+
+    #elemento2-numero-de-personas-y-fecha-pantalla-2{
+        grid-area: bodyNumeroP;
+    }
+
+    #elemento3-fecha-clientes{
+        grid-area: bodyFecha;
+    }
+
+    #componente-barberos-y-horarios{
+        grid-area: bodyContenido;
+        height: 65vh;
+    }
+    
+    #componenente-boton-aceptar-pantalla-2{
+        grid-area: footerBoton;
+    }
+    
+    
+}

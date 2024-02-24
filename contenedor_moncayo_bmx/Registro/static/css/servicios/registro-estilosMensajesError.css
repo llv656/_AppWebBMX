@@ -1,0 +1,26 @@
+#errorNombreServicio {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+#errorDescripcion {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+#errorTiempo {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+
+.C.errormensaje {
+    color: #ab3737;
+    display: none;
+}

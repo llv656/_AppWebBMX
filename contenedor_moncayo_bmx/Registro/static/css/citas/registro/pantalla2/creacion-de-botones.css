@@ -1,0 +1,50 @@
+.C_divHorarios_barbero1{
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.C_horariosBarbero1{
+    display: flex;
+    width: 90%;
+    height: 90px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    overflow: auto;
+}
+
+
+/*Botones de horarios*/
+.C_estiloBotonesHorarios {
+    border-radius: 25px !important;
+    background-color: #214569 !important;
+    border-color: #214569 !important;
+    color: #ffffff;
+    flex: none;
+    margin-right: 1%;
+}
+
+/*Boton seleccionado*/
+.C_estiloBotonesHorarios.selected{
+    background-color: #538898 !important; 
+    border-color: #FFFFFF !important;
+}
+
+
+
+/*Cambio de color de botones al pasar por encima*/
+
+.C_estiloBotonesHorarios:not(.selected):hover,
+.C_estiloBotonesHorarios:not(.selected):focus {
+    background-color: #3275C4 !important;
+    border-color: #3275C4 !important;
+}
+
+
+.C_estiloBotonesHorarios:disabled{
+    background-color: #1B1A3B !important;
+    border-color: #1B1A3B !important;
+    color: #726561 !important;
+}

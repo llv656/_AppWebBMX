@@ -1,0 +1,1330 @@
+/*Cuerpo de la página web enfocado en el fondo.*/
+:root {
+    --colorTitulo: #fff;
+    --colorPrincipal: #538898;
+    --colorRenderTicket: #C3DDDA;
+    --colorRenderTicket1: #49AA9F;
+    --colorCostoFinal: #696535;
+    --colorDescuento: #662424;
+    --colorOriginal: #47403C;
+    --colorLetrasRender: #92A5AB;
+    --colorContenedorFondoBack: #464646;;
+    --colorPrincipal2: #055084;
+    --colorSecundario: #bbbbbb;
+    --colorFondoTicket: #07403E;
+    --tipo-letra: 'Open Sans Semibold', sans-serif;
+    --tipo-letra-vista: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+main {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url(../../img/clienteBarberia.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+
+}
+
+#section_header_id {
+    height: 15%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*? Contenedor Principal Header */
+.header-principal {
+    display: flex;
+    /* justify-content: space-between;
+   align-items: center; */
+    padding: 1em 18em;
+    border: 2px solid red;
+}
+
+/*? Title Encabezado */
+.header-titulo {
+    margin-top: 3%;
+    margin-left: 10%;
+    font-size: 4rem;
+    color: var(--colorTitulo);
+    font-family: var(--tipo-letra);
+}
+
+/*? Opciones de vista */
+.header-viewsRG {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.resumen-views,
+.gastos-views {
+    width: 50%;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px / 10px;
+    padding: 1%;
+    margin: 1%;
+    display: inline-block;
+    color: var(--colorPrincipal);
+    text-align: center;
+    transition: border-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.resumen-views:hover,
+.gastos-views:hover {
+    border-color: #538898;
+    /* Cambia el color del borde al pasar el mouse sobre la etiqueta */
+}
+
+/*? Fin-Opc de vista */
+
+.fecha-select {
+    display: flex;
+    margin-top: 3%;
+    color: var(--colorTitulo);
+    justify-content: space-evenly;
+}
+
+.fecha-select-actual {
+    font-family: initial;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    ;
+    border: 1px solid var(--colorPrincipal2);
+    /* Color del borde personalizable */
+    padding: 2% 10%;
+    border-radius: 50px / 50px;
+    margin: 0;
+    transition: 1s;
+    box-shadow: none;
+}
+
+.fecha-select:hover .fecha-select-actual {
+    color: var(--colorTitulo);
+    border-color: var(--colorPrincipal);
+    box-shadow: 0 0 10px rgba(47, 152, 219, 0.8);
+    /* Aplicar sombra al hacer hover */
+}
+
+.izquierda,
+.derecha {
+    color: var(--colorSecundario);
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    border: none;
+    background: none;
+}
+
+.izquierda:hover {
+    color: var(--colorPrincipal);
+}
+
+.derecha:hover {
+    color: var(--colorPrincipal);
+}
+
+/* Iconos  */
+.vista-semanal {
+    display: flex;
+    margin-top: 2%;
+    color: var(--colorTitulo);
+    /* justify-content: flex-end; */
+    margin-left: 39%;
+    margin-right: 10%;
+}
+
+.vista-user,
+.navegacion-semana {
+    margin-top: 2%;
+    transition: .8s;
+    padding: 0 2%;
+}
+
+.navegacion-semana:hover {
+    color: var(--colorPrincipal);
+}
+
+#opcionesVista {
+    background-color: transparent;
+    color: var(--colorTitulo);
+    font-family: var(--tipo-letra);
+    font-weight: bold;
+}
+
+#opcionesVista:hover {
+    background-color: transparent;
+    color: var(--colorPrincipal);
+
+}
+
+
+/*? Calendar Style Contenedor-Config*/
+
+#calendarioContainer {
+    position: relative;
+    height: 36%;
+    font-size: smaller;
+}
+
+#calendario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: auto;
+}
+
+.dia {
+    width: calc(100% / 7);
+    text-align: center;
+    color: #fff;
+}
+
+.filaSemana {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 14%;
+}
+
+.diaOtroMesSiguiente,
+.diaOtroMesAnterior {
+    color: #999;
+    /* Color gris para los días del mes siguiente */
+}
+
+.diaActual {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+#navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#prevMes,
+#nextMes {
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #fff;
+    padding: 0 5%;
+}
+
+#mesAnio {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Ocultar Calendario en pantallas Pequeñas  */
+@media screen and (max-width: 1024px) {
+    #calendarioContainer {
+        display: none;
+    }
+}
+
+/*? Fin-Calendar*/
+
+#section_content_id {
+    display: flex;
+    height: 83%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+#section_footer_id {
+    height: 2%;
+}
+
+#contenedorConfig {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url();
+    border-radius: 25px;
+    width: 18%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    /* Personalizar la barra de desplazamiento para WebKit (Chrome, Safari) */
+    scrollbar-color: #add8e6 transparent;
+    /* Color del track #ff0000 y color de la manija (thumb) #00ff00 */
+
+    /* Personalizar la barra de desplazamiento para Firefox */
+    scrollbar-face-color: #add8e6;
+    /* Color del track */
+    scrollbar-track-color: #726561;
+    /* Color de la manija (thumb) */
+
+}
+
+#contenedorConfig::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    /* Color de la barra desplegable */
+}
+
+#contenedorConfig::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Fondo transparente */
+}
+
+.SubMenuIco {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10%;
+}
+
+.clientesMostrarCE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12%;
+}
+
+/* Estilos para el ícono dentro de la cuadrícula */
+#span_icon_delete_id {
+    display: flex;
+    align-items: center;
+}
+
+.filtrarCli {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+}
+
+.fomularioSc {
+    height: 30%;
+    overflow-y: auto;
+}
+
+.elementVacioPorcent {
+    height: 2%;
+}
+
+#contenedorTabla {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url();
+    border-radius: 25px;
+    width: 80%;
+    height: 100%;
+    /* Personalizar la barra de desplazamiento para WebKit (Chrome, Safari) */
+    scrollbar-color: #add8e6 transparent;
+    /* Color del track #ff0000 y color de la manija (thumb) #00ff00 */
+
+    /* Personalizar la barra de desplazamiento para Firefox */
+    scrollbar-face-color: #add8e6;
+    /* Color del track */
+    scrollbar-track-color: #726561;
+    /* Color de la manija (thumb) */
+}
+
+/* clases y id del js  */
+.renderizado-promocion {
+    display: grid; /* Muestra los elementos como una fila flexible */
+    grid-template-columns: 18% 82%;
+}
+
+.contenedor-flex {
+    display: flex; /* Muestra los elementos como una fila flexible */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    /* Otros estilos según sea necesario */
+    flex-direction: column;
+}
+.costo-original {
+    display: inline-block; /* Mantiene el elemento en línea */
+    margin-left: 10px;
+    color: var(--colorLetrasRender);
+}
+.costo{
+    color: var(--colorSecundario);
+    margin-left: 10px;
+}
+.costo_puntos{
+    margin-left: 25px;
+}
+.renderizado-promocion .contenedor-flex .costo input[type="text"] {
+    /* Estilos específicos para los inputs dentro de los elementos renderizados */
+    width: 100%; /* Por ejemplo, ajustar el ancho */
+    /* margin: 5px 0;
+    box-sizing: border-box;  Ajustar altura del render C.Original, Desc, C.Final, etc*/
+}
+#costoOriginal {
+    background: var(--colorOriginal);
+    border: none;
+    color: var(--colorTitulo);
+    font-weight: bold;
+    border-radius: 20px;
+}
+#costoDescuento {
+    background: var(--colorDescuento);
+    border: none;
+    color: var(--colorTitulo);
+    font-weight: bold;
+    border-radius: 20px;
+}
+#costoFinal {
+    background: var(--colorCostoFinal);
+    border: none;
+    color: var(--colorTitulo);
+    font-weight: bold;
+    border-radius: 20px;
+}
+#puntosAcumulados {
+    background: transparent;
+    border: none;
+    color: var(--colorTitulo);
+}
+.icon-receipt-container{
+    width: 50px; /* Ajusta el ancho según tus necesidades */
+    height: 50px; /* Ajusta el alto según tus necesidades */
+    border-radius: 50%; /* Redondea los bordes */
+    background: var(--colorRenderTicket1);
+    color: var(--colorTitulo);
+}
+.icono-ticket{
+    font-size: 33px;
+    text-align: center;
+    margin-left: 25%;
+    /* margin-top: 15%; */
+    cursor: pointer;
+}
+#costoOriginal input{
+    width: 20%;
+}
+.spacing {
+    padding-right: 10px; /* Change this value according to your needs */
+}
+.contenedorFondoBack{
+    display: flex;
+    background: var(--colorContenedorFondoBack);
+    border-radius: 20px;
+    width: 95%;
+}
+
+
+/* Estilos para mostrar los detalles en una fila horizontal */
+@media screen and (max-width: 720px) {
+    .costo-original {
+        display: none; /* Mantiene el elemento en línea */
+        /* Agrega otros estilos según sea necesario para la versión móvil */
+    }
+    #costoOriginal{
+        display: none;
+    }
+    #costoDescuento{
+        display: none;
+    }
+    #costoFinal{
+        display: none;
+    }
+} /*fin de las clases del js**/
+
+/** Contenedor semanal fullCalendar */
+#contenedorTblVS {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1));
+    border-radius: 25px;
+    width: 80%;
+    height: 100%;
+    /* Personalizar la barra de desplazamiento para WebKit (Chrome, Safari) */
+    scrollbar-color: #add8e6 transparent;
+    /* Color del track #ff0000 y color de la manija (thumb) #00ff00 */
+
+    /* Personalizar la barra de desplazamiento para Firefox */
+    scrollbar-face-color: #add8e6;
+    /* Color del track */
+    scrollbar-track-color: #726561;
+    /* Color de la manija (thumb) */
+    overflow-y: scroll;
+}
+
+/** Contenedor mensual fullCalendar */
+#contenedorTblVM {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url();
+    border-radius: 25px;
+    width: 80%;
+    height: 100%;
+    /* Personalizar la barra de desplazamiento para WebKit (Chrome, Safari) */
+    scrollbar-color: #add8e6 transparent;
+    /* Color del track #ff0000 y color de la manija (thumb) #00ff00 */
+
+    /* Personalizar la barra de desplazamiento para Firefox */
+    scrollbar-face-color: #add8e6;
+    /* Color del track */
+    scrollbar-track-color: #726561;
+    /* Color de la manija (thumb) */
+    overflow-y: scroll;
+}
+/** Contenedor mensual fullCalendar */
+#contenedorTblVA {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url();
+    border-radius: 25px;
+    width: 80%;
+    height: 100%;
+    /* Personalizar la barra de desplazamiento para WebKit (Chrome, Safari) */
+    scrollbar-color: #add8e6 transparent;
+    /* Color del track #ff0000 y color de la manija (thumb) #00ff00 */
+
+    /* Personalizar la barra de desplazamiento para Firefox */
+    scrollbar-face-color: #add8e6;
+    /* Color del track */
+    scrollbar-track-color: #726561;
+    /* Color de la manija (thumb) */
+    overflow-y: scroll;
+}
+
+
+/**#contenedorTblVS */
+#tblConsulta_wrapper {
+    height: 85%;
+    margin: 0;
+}
+
+
+/* Boton para mostrar los registros totales */
+#totalRegistros {
+    height: 5%;
+    text-align: right;
+    margin-right: 1%;
+    color: #797070;
+}
+
+/* LOGO  */
+.logo {
+    color: white;
+    /* text-align: left; */
+    /* margin-left: 21rem; */
+    font-size: 4rem;
+    /* margin-bottom: 1rem; */
+    padding: .2rem;
+    font-family: 'Open Sans Semibold', sans-serif;
+    /* font-weight: 200; */
+}
+
+/* Icono Home */
+.C_Home,
+.C_menu {
+    display: none;
+}
+
+/* MOSTRAR MENU  */
+.mostrar-menu,
+.esconder-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+
+.mostrar-menu {
+    order: 1;
+}
+
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover {
+    color: #8ec06c;
+    /*color al seleccionar el link */
+}
+
+/*? Inicia el divFiltrar MostrarCE */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5rem;
+    color: white;
+    text-decoration: none;
+}
+
+#action_useradd_id {
+    background: #86a135;
+}
+
+#action_userupdate_id {
+    background: #cdc11d;
+}
+
+#action_userdelete_id {
+    background: #ad0c0c;
+    border-radius: 50%;
+    display: inline-block;
+    height: 42px;
+}
+
+.menu span {
+    color: #fff;
+    font-size: 15px;
+}
+
+#span_icon_filter_id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtrarAsc {
+    background: #7d2d35;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+
+.filtrarDes {
+    background: #5953af;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+
+
+.view {
+    color: #fff;
+}
+
+.eliminarIco {
+    color: #ad0c0c;
+    margin-top: 1rem;
+    /* Ajusta el valor según la cantidad de espacio que deseas entre el icono y su contenedor */
+    margin-left: -3px;
+    /* Ajusta el valor según la cantidad de espacio que deseas a la izquierda del texto */
+}
+
+.eliminarIcoFil {
+    color: #797070;
+    margin-top: 1rem;
+    /* Ajusta el valor según la cantidad de espacio que deseas entre el icono y su contenedor */
+    margin-left: -3px;
+    /* Ajusta el valor según la cantidad de espacio que deseas a la izquierda del texto */
+}
+
+.mostrarCE {
+    color: #bbbbbb;
+    font-size: 15px;
+}
+
+.filtrarIcono {
+    color: #fff;
+}
+
+#label_name_form_filter_basic_id {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.iconoFiltAsc {
+    color: #3275c4;
+    font-size: 20px;
+}
+
+
+/*? Iniciar el Busqueda Avanzada  */
+
+.formulario {
+    background-color: transparent;
+    /*Utilizar el valor más pequeño*/
+    margin: 5%;
+    padding: .5rem;
+    border-radius: 25px;
+    border-color: beige;
+    border-style: groove;
+
+}
+
+
+.formulario select {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    background-color: #726561;
+    color: #fff;
+}
+
+.basicSearch {
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .contenedorFiltrarBS {} */
+
+.contenedorFiltrarBSC {
+
+    margin-bottom: 1rem;
+}
+
+.contenedorFiltrarBSC label {
+    color: #fff;
+    font-weight: bold;
+}
+
+.contenedorFiltrarBSC input[type="number"]::-webkit-inner-spin-button,
+.contenedorFiltrarBSC input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.contenedorFiltrarBSC input[type="number"] {
+    -moz-appearance: textfield;
+    background-color: #726561;
+    /* Color de fondo deseado */
+    color: #fff;
+    /* Color de texto deseado */
+    padding: 5px;
+    border-radius: .5rem;
+    border: 1px solid #726561;
+    /* Color de borde deseado */
+    margin-right: 5px;
+}
+
+.contenedorFiltrarBSC input[type="number"]::placeholder {
+    color: #ffff;
+    /* Color del placeholder deseado */
+}
+
+.contenedorFiltrarBSC input[type="number"]:focus {
+    background-color: #726561;
+    /* Color de fondo cuando está enfocado */
+    color: #ffffff;
+    /* Color de texto cuando está enfocado */
+    border: 1px solid #6cc091;
+    /* Color de borde cuando está enfocado */
+}
+
+
+#busqueda_nombre_cliente {
+    background-color: #726561;
+    color: #fff;
+    border: none;
+}
+
+#input_date_filter_basic_id {
+    display: flex;
+    justify-content: space-between;
+}
+
+#busqueda_contacto {
+    background-color: #726561;
+    color: #fff;
+    border: none;
+}
+
+#busqueda_direccion_cliente {
+    background-color: #726561;
+    color: #fff;
+    border: none;
+}
+
+#busqueda_barbero_favorito {
+    background-color: #726561;
+    color: #fff;
+    border: none;
+}
+
+.input-group-text {
+    background-color: #726561;
+    border: none;
+}
+
+.input-group-text i {
+
+    color: white;
+    /* Color del ícono blanco */
+}
+
+
+
+h1 {
+    color: white;
+    text-align: left;
+    font-family: 'Open Sans Semibold', sans-serif;
+}
+
+h3 {
+    color: #fff;
+    font-family: 'Open Sans Semibold', sans-serif;
+}
+
+th {
+    color: #538898;
+    border: none;
+}
+
+td {
+    color: white;
+    /* background-color: rgb(238, 8, 8); */
+    border: none;
+    /*Ajusta el valor según el radio de redondeo deseado */
+}
+
+tbody select {
+    /* Estilos personalizados para select dentro del tbody */
+    width: 80%;
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    background-color: #726561;
+    color: #fff;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+}
+
+select {
+    color: black;
+    border-radius: .7rem;
+    border: none;
+}
+
+.dataTables_scroll {
+    height: 100%;
+}
+
+.dataTables_scrollHead {
+    height: 10%;
+}
+
+#tblConsulta_wrapper div.dt-row {
+    height: 100%;
+}
+
+#tblConsulta_wrapper .row.dt-row>.col-sm-12 {
+    height: 100%;
+    position: absolute;
+}
+
+/* Paginacion para filtrar busqueda  */
+.pagination-box {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 10%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.page-btn {
+    color: #fff;
+    border: none;
+    text-decoration: underline;
+    background: none;
+    height: 100%;
+}
+
+.page-btn:hover {
+    background-color: #555;
+}
+
+.page-info {
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    display: flex;
+    align-items: baseline;
+    width: fit-content;
+}
+
+#pageSelect {
+    border: 2px solid #555;
+    color: white;
+    font-size: 16px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    background: none;
+}
+
+#span_total_pages_component_pager {
+    margin-left: 5%;
+}
+
+.additional-info {
+    padding: 10px;
+    /* Espacio alrededor de la descripción */
+    border-top: 1px solid #ccc;
+    /* Borde superior para separar de la fila anterior */
+}
+
+/** Estilo para los iconos de Font Awesome **/
+.show-details {
+    cursor: pointer;
+    /* color: #007bff; */
+}
+
+/** Modal Ticket  */
+#encabezado-ticket{
+    border-bottom: 1px solid var(--colorTitulo);
+    border-style: dashed;
+}
+#contenido-principal{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+.detalles-impresion{
+    font-weight: 700;
+}
+.entrada__contenido{
+    font-weight: 700;
+}
+.entrada__contenido-status{
+    text-align: center;
+    text-transform: uppercase;
+}
+.entrada__contenido-pago{
+    text-align: left;
+}
+.widget-status__info{
+    list-style: none;
+}
+.widget-status__info-montoFinal{
+    border-top: 1px dashed var(--colorTitulo);
+}
+.widget-status__info-montoFinal-pago{
+    border: none;
+}
+
+/*imagen de BACK*/
+
+/* Estilos para tabletas */
+@media screen and (max-width: 1200px) {
+    #section_content_id {
+        align-content: stretch;
+    }
+
+    #contenedorConfig {
+        width: 90%;
+        height: 25%;
+        display: grid;
+        grid-template-areas:
+            'actions filterTitle filterTitle filterTitle'
+            'actions filter filter filter'
+            'viewDelete filter filter filter'
+            'viewDelete filter filter filter';
+
+    }
+
+    .SubMenuIco {
+        grid-area: actions;
+        height: auto;
+    }
+
+    .clientesMostrarCE {
+        grid-area: viewDelete;
+        height: auto;
+    }
+
+    .filtrarCli {
+        grid-area: filterTitle;
+        height: auto;
+    }
+
+    .fomularioSc {
+        grid-area: filter;
+        height: auto;
+        padding: 1%;
+    }
+
+    .formulario {
+        margin: 1%;
+    }
+
+    .contenedorFiltrarBSC {
+        margin: 1%;
+        width: 45%
+    }
+
+    .contenedorFiltrarBS,
+    .contenedorFiltrarBSAV {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #contenedorTabla {
+        width: 90%;
+        height: 70%;
+    }
+
+}
+
+/*Versión móvil*/
+@media screen and (max-width:768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .clientesMostrarCE,
+    .filtrarCli,
+    .formulario {
+        display: none;
+    }
+
+    .C_Home {
+        position: fixed;
+        top: 3%;
+        padding-left: 75%;
+        display: block;
+    }
+
+    .C_menu {
+        position: fixed;
+        top: 3%;
+        padding-left: 85%;
+        display: block;
+    }
+
+    .SubMenuIco {
+        height: 100%;
+    }
+
+    #contenedorTabla {
+        background: none;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0%;
+        height: 90%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    #section_content_id {
+        height: 75%;
+    }
+
+    #section_footer_id {
+        height: 13%;
+    }
+
+    #contenedorConfig {
+        width: 100%;
+        background: none;
+        height: 10%;
+        display: flex;
+    }
+
+    #tblConsulta_wrapper div.dt-row {
+        height: 90%;
+    }
+
+    #tblConsulta_wrapper .row {
+        height: 10%;
+    }
+
+    .C_headerbody {
+        display: none;
+    }
+
+    .C_headerfooter {
+        display: none;
+    }
+
+    .icn-back {
+        position: absolute;
+        z-index: 3;
+        padding-top: 18%;
+        padding-left: 90%;
+    }
+
+    #totalRegistros {
+        display: flex;
+        margin: 0;
+        justify-content: end;
+        padding-right: 10%;
+
+    }
+
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    /* Cambia 'absolute' a 'fixed' para que se quede estático */
+    padding: 10px;
+    width: 22%;
+    /* Cambia el ancho según tus necesidades para adaptarse a dispositivos móviles */
+    height: 65px;
+    /* Limita el ancho máximo para evitar que sea demasiado ancho en tabletas */
+    top: 19%;
+    /* Coloca el modal en el centro vertical */
+    left: 32%;
+    /* Coloca el modal en el centro horizontal */
+    transform: translate(-50%, -50%);
+    /* Centra el modal en la pantalla */
+    border-radius: 25px;
+    overflow: hidden;
+    /* Evita el scroll en el modal */
+    white-space: nowrap;
+    /* Evita el scroll en el contenido del modal */
+}
+#modalSel{
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, .5));
+    border-radius: 10px;
+}
+
+/*? Estilos para dispositivos móviles y tabletas */
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 75%;
+        /* Ancho para dispositivos móviles y tabletas */
+        height: auto;
+        /* Altura automática */
+    }
+}
+
+.form-check-input {
+    opacity: 1;
+    /* Hacer el check del radio transparente (invisible) */
+    position: static;
+}
+
+/* Estilos para personalizar el fondo de la ventana modal */
+/* Cambia los valores de background según tus preferencias */
+.modal-content {
+    background: none;
+    border: none;
+    color: white;
+}
+
+/* Estilos para el botón de radio en el encabezado */
+#mostrarModal {
+    cursor: pointer;
+}
+
+
+/** Modal para Eliminar */
+#motivoEliminar .modal-content {
+    background-color: rgba(2, 12, 24, 0.7);
+    /* Cambia "#ff0000" al color que desees utilizar */
+    color: #ffffff;
+    font-size: 15px;
+}
+
+#motivoEliminar textarea {
+    color: black;
+    font-size: 18px;
+    align-items: center;
+    background: transparent;
+    border-radius: 20px;
+    resize: none;
+}
+
+#motivoEliminar .modal-body>div {
+    margin-bottom: 15px;
+    /* Cambia el valor según el espacio de separación deseado */
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+/* Estilos para la ventana modal */
+.modal1 {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+/*Ajustar el borde del modal*/
+.contenedoRadio {
+    background: none;
+    border-radius: 25px;
+    color: white;
+}
+
+/*Encabezado Header*/
+.modal1 .modal-header {
+    /* Cambia el color de fondo del header */
+    color: #fff;
+    /* Cambia el color del texto en el header */
+    padding: 15px;
+    /* Ajusta el relleno interno del header */
+}
+
+.modal-header .btn-close {
+    background-color: #538898;
+}
+
+.modal1 .modal-footer {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#motivoEliminar {
+    z-index: 1000;
+    /* Ajusta según tus necesidades */
+}
+
+.modal-backdrop{
+    z-index: 999;
+    /* Un valor ligeramente más bajo que el modal para que quede detrás */
+}
+
+#infoUsuarioEliminar {
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 500px;
+    font-size: 17px;
+    font-weight: bold;
+    /* Puedes ajustar la altura máxima según tus necesidades */
+}
+
+#motivoEliminar textarea {
+    height: 100px;
+    color: #fff;
+    background: transparent;
+    font-size: 17px;
+    border: none;
+    /*Poner transparente el border del modal*/
+    width: 100%;
+}
+
+#motivoEliminar textarea::placeholder {
+    color: #fff;
+    /** Cambiar color del texto para textTarea*/
+}
+
+.modal-body label {
+    font-size: 18px;
+}
+
+/* Estilos generales para pantallas más grandes */
+.adaptarText {
+    font-size: 15px;
+    /* Tamaño de fuente para pantallas más grandes */
+    margin-bottom: 20px;
+    /* Espaciado entre elementos */
+}
+
+/* Estilos para los botones ModalELiminar */
+.btnsCliente {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.8s;
+    text-align: center;
+}
+/*? Estilos para dispositivos móviles y tabletas */
+/** Estilos para la ventana modal del ticket*/
+.modal-ticket {
+    display: none;
+    position: fixed;
+    left: 32%;
+    top: 50%;
+    width: 25%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    white-space: nowrap;
+    background-color: transparent;
+}
+#modalTic{
+    background: var(--colorFondoTicket);
+    opacity: .8;
+    border-radius: 25px;
+}/**.modal-ticket**/
+
+/*? Estilos para dispositivos móviles y tabletas */
+@media screen and (max-width: 768px) {
+    .modal1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    .modal-dialog {
+        /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 10px;
+    }
+
+    .btnsCliente {
+        display: inline-block;
+        padding: 20px 20px;
+        background-color: transparent;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: background-color 0.8s;
+        text-align: center;
+    }
+
+    #motivoEliminar textarea {
+        height: 30vh;
+        /* Ajusta la altura para dispositivos más pequeños */
+        font-size: 17px;
+        /* Ajusta el tamaño de la fuente para dispositivos más pequeños */
+    }
+}

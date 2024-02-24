@@ -1,0 +1,208 @@
+{% extends "plantilla.html" %}
+
+{% block title %}  Registro  de Clientes {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="/static/css/clientes/registro-clientes.css"/>
+{% endblock %}
+
+{% block scripts %} 
+<script src="/static/js/clientes/registro/registro_clientes.js"></script> 
+<script src="/static/js/clientes/registro/registro_clientes.js"></script> 
+<script src="/static/js/clientes/registro/registro_clientes_validaciones.js"></script> 
+<script src="/static/js/clientes/registro/registro_validaciones_clientes_enter.js"></script>
+<script src="/static/js/clientes/registro/registro_validacionAjax.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+
+	<div class="col-sm-1 C_headerbody">
+		{% if ERRORES %}
+			<div class="alert alert-danger">{{ ERRORES }}</div>
+		{% endif %}
+	</div>
+
+	<div class="col-sm-10 cont" id="contenedor">
+		<!--Header-->
+		<div class="row"></div>
+
+		<div class="row C_home">
+			<img id="home" src="../../../static/icons/home.svg" alt="home">
+		</div>
+			
+		<div class="row C_menu">
+			<img id="menu" src="../../../static/icons/menu2.svg" alt="menu">
+		</div>
+			
+		<div class="row icn-back">
+			<img id="img-back" src="../../../static/icons/back.svg" alt="regresar">	
+		</div>
+
+
+
+	
+
+		<!--Cuerpo de formulario-->
+		<div class="row C_sectionformulario">
+		
+			<div class="col-sm-5 CampoIzquierdo">
+				<h1>Registro<br> Clientes</h1>
+				<h5>Visita, Cliente, Miembro </h5>
+			</div>
+
+			<div class="col-sm-6" id="campoDerecho" >
+				<form class="formulario-clientes" id="formulario-clientes" action="/registro-clientes/" method="POST">
+					{% csrf_token %}
+					<div class="C_menutipoususuario">
+						<label for="menuTipoUsuario">Tipo de Cliente</label>
+					</div>
+					
+					<div class="C_menutipoususuario">
+						<select class="form-control d-flex C_colorBaseBorder"   name="menu-tipo-usuario" id="menuTipoUsuario"
+						data-bs-toggle="tooltip" data-bs-placement="top" title="Este Campo es requerido">
+							<option value="" disabled selected hidden>Selecciona una opción</option>
+							<option value="select_visitas">Visitas</option>
+							<option value="select_clientes">Clientes</option>
+							<option value="select_miembros">Miembros</option>
+						</select>
+					</div>
+
+					<div class="C_fecha_registro">
+						<label>Fecha de Registro</label>
+					</div>
+					<div class="C_fecha_registro">
+						<input type="date" class="form-control C_colorBaseBorder" id="fecha_registro" min="2020-09-15">
+					</div>
+	
+					<div class="C_nombrecliente">
+						<label for="input-nomCliente">Nombre de Cliente</label>
+					</div>
+	
+					<div class="C_nombrecliente">
+						<input type="text" class="form-control C_colorBaseBorder" id="nomCliente" name="nomCliente" placeholder="Nombre Cliente"
+						data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorN" class="C.errormensaje"></span>
+					</div>
+					
+					<div class="C_apellidopaterno">
+						<label for="apellido_paterno">Apellido Paterno</label>
+					</div>
+					
+					<div class="C_apellidopaterno">
+						<input  type="text" class="form-control C_colorBaseBorder" id="apellido_paterno" name="apellido_paterno" placeholder="Apellido Paterno"
+						data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorAP" class="C.errormensaje"></span>
+					</div>
+	
+	
+					<div class="C_apellidomaterno">
+						<label for="apellido_materno">Apellido Materno</label>
+					</div>
+	
+					<div class="C_apellidomaterno">
+						<input type="text" class="form-control C_colorBaseBorder" id="apellido_materno" name="apellido_materno" placeholder="Apellido Materno">
+						<span id="errorAM" class="C.errormensaje"></span>
+					</div>	
+	
+					<div class="C_fechanacimiento">
+						<label for="fecha_nac">Fecha de Nacimiento</label>
+					</div>
+	
+					<div class="C_fechanacimiento">
+						<input type="date" class="form-control C_colorBaseBorder" id="fecha_nac"  name="fecha_nac" min="1920-01-01"
+						data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorFech" class="C.errormensaje"></span>
+					</div>
+	
+					<div class="C_direccion">
+						<label for="dir_client">Dirección</label>
+					</div>
+	
+					<div class="C_direccion">
+						<input type="text" class="form-control C_colorBaseBorder" id="dir_client" name="dir_client" placeholder="Dirección">
+					</div>
+	
+					<div class="C_telefono">
+						<label for="numero_telefonico" class="C_titulosGenerales">Teléfono</label>
+					</div>
+	
+					<div class="C_telefono">
+						<input type="text" class="form-control C_estilosInputFormulario C_colorBaseBorder" maxlength="10" id="numero_telefonico" placeholder="Número Telefónico">
+						<span id="errorTel" class="C.errormensaje"></span>
+					</div>
+	
+					<div class="C_correoelectronico">
+						<label for="correo_electr">Correo electrónico</label>
+					</div>
+					
+					<div class="C_correoelectronico">
+						<input type="mail" class="form-control C_colorBaseBorder" id="correo_electr" name="correo_electronico" placeholder="Correo electrónico">
+						<span id="errorCorreo" class="C.errormensaje"></span>
+					</div>
+	
+					<div class="C_facebook">
+						<label id="fb_lbl" for="facebook">Facebook</label>
+					</div>
+					<div class="C_facebook">
+						<input type="text" class="form-control C_colorBaseBorder" id="facebook" name="facebook" placeholder="Usuario de Facebook">
+						<span id="errorFacebook" class="C.errormensaje"></span>
+						<a id="ComosaberUserFb">¿Cómo se encuentra el usuario?</a>
+						<p id="ayudauserFB" class="ayudausuario">1.- Entrar a la App mobile de Facebook<br>2.- Entrar a tu perfil<br>
+							3.-Desplazate al menú de 3 puntos (se encuentra a un lado de la opción de "Editar perfil")<br>
+							4.- Copia el enlace de perfil a la casilla de Facebook  
+						</p>
+					</div>
+	
+					<div class="C_instagram">
+						<label for="instagram">Instagram</label>
+					</div>
+					<div class="C_instagram">
+						<input type="text" class="form-control C_colorBaseBorder" id="instagram" name="instagram" placeholder="Usuario de instagram">
+						<span id="errorInstagram" class="C.errormensaje"></span>
+					</div>				
+				</form>
+	
+			</div>
+
+			<div class="col-sm-1 C_divBrushColSm1">
+				<div class="row icn-brush" id="icn-Brush">
+					<img id="btnBrush" src="../../../static/icons/brushWhite.svg" alt="limpiar campos">
+				</div>
+			</div>
+			
+		</div>
+		
+		<!--Footer-->
+		<section class="C_Seccion_Footter">
+			<div class="row C.campodeboton">
+				<div class="C_leyendas">
+					<p id="leyenda"><span>*</span>Se debe asociar algún contacto, ya sea: Teléfono, Correo Electrónico o Red Social</p>
+				</div>
+			
+				<div class="C_btnregistrar">
+				<button type="submit" class="btn btn-success"  id="btn-reg">Registrar</button>
+				</div> 
+			</div>
+		</section>
+		<!--Fin Footer-->
+
+	</div>
+
+
+	<div class="col-sm-1 C_headerfooter"></div>
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

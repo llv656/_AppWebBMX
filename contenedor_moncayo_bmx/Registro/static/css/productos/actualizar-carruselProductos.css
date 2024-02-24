@@ -1,0 +1,150 @@
+/*CARRUSEL  CARRUSEL  CARRUSEL  CARRUSEL  CARRUSEL*/
+
+.C_seccionCarrusel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15vh;
+}
+
+.wrapper{
+    display: flex;
+    max-width: 330px;
+    position: relative;
+}
+
+/*Iconos de Flechas*/
+.wrapper i{
+    top: 50%;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transform: translateY(-50%);
+    /*transition: transform 0.1s linear;*/
+}
+
+/*Flecha izquierda*/
+.wrapper i:first-child{
+    left: -23px;
+    display: none;
+}
+
+/*Flecha derecha*/
+.wrapper i:last-child{
+    right: -23px;
+}
+
+.wrapper .carousel{
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+/*.carrusel{
+    margin-top: 200px;
+}*/
+
+#imagenNuevaPng{
+    width: 90px;
+}
+
+.C_claseImagen{
+    height: 30px;
+    width: 100px;
+}
+
+.C_espaciadoImagen{
+    margin: auto 10px;
+}
+
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging img{
+    pointer-events: none;
+}
+
+.carousel img{
+    object-fit: cover;
+    user-select: none;
+    margin-left: 20px;
+    width: calc(100% / 3);
+}
+
+.carousel img:first-child{
+    margin-left: 0px;
+}
+
+.fa-solid.fa-angle-left, .fa-solid.fa-angle-right{
+    color: #ffffff;
+}
+
+/*MODAL DE CARUSEL*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    border-radius: 2%;
+    left: 336px !important;
+    top: 145px !important;
+    width: 50% !important;
+    height: 67% !important;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content{
+    display: block;
+    max-width: 80%;
+    margin: 0 auto;
+    cursor:pointer;
+}
+
+.close{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    color: #ffffff !important;
+    border-color: #538898 !important;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.delete{
+    position: absolute;
+    top: 55px;
+    right: 35px;
+    border-color: #538898 !important;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*DISEÑO MOVIL*/
+@media screen and (max-width:1000px){
+    /*Carrusel C_seccionCarrusel*/
+    .C_seccionCarrusel{
+        padding: 0;
+        height: 15%;        
+    }
+
+    .wrapper{
+        right: 0%;
+    }
+    .modal{
+        left: 0px !important;
+        top: 15vh !important;
+        width: 100% !important;
+        height: 50vh !important;
+    }
+
+}

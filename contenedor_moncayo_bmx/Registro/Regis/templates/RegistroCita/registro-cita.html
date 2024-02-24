@@ -1,0 +1,251 @@
+{% extends "plantilla.html" %}
+
+{% block title %} Registro de Citas {% endblock %}
+
+{% block estilos %}
+	<!-- CSS Principal -->
+	<link rel="stylesheet" href="/static/css/citas/registro/registro-citas.css" />
+	<!-- CSS Pantalla 1 -->
+	<link rel="stylesheet" href="/static/css/citas/registro/pantalla1/titulo-pagina-1.css"/>
+	<link rel="stylesheet" href="/static/css/citas/registro/pantalla1/registro-cita-pantalla-1.css"/>
+	<!-- CSS Pantalla 2 -->
+	<link rel="stylesheet" href="/static/css/citas/registro/pantalla2/titulo-pagina-2.css">
+	<link rel="stylesheet" href="/static/css/citas/registro/pantalla2/registro-cita-pantalla-2.css"/>
+	<link rel="stylesheet" href="/static/css/citas/registro/pantalla2/creacion-de-botones.css"/>
+	<!--<link rel="stylesheet" href="/static/css/citas/registro/otro-registro.js">-->
+	
+
+{% endblock %} 
+
+{% block scripts %}
+	<!-- JS PRINCIPAL 
+	<script src="/static/js/citas/registro/registro-citas-principal.js"></script> -->
+
+	<!-- JS Pantalla 1-->
+	<script src="/static/js/citas/registro/pantalla1/registro-cita-pantalla-1.js"></script>
+
+	<!--JS Pantalla 2-->
+	<script src="/static/js/citas/registro/pantalla2/registro-cita-pantalla-2.js"></script>
+	
+	<!--<script src="/static/js/citas/registro/componentes/componente-titulo-pagina.css"></script>-->
+{% endblock %}
+
+{% block content %}
+
+
+<div id="contenedor">
+	{% include './registro-cita-pantalla-1.html'%}
+</div>
+
+
+<!--MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES MODALES-->
+<!--MODAL PRODUCTOS-TERCER-FORMULARIO-->
+<div class="modal fade" id="agregar-productos-tercerFormulario" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content C_contenedorModal">
+
+			<!--Titulos Modal-->
+			<div id="contenedor-header-modal" class="modal-header row">
+
+				<div class="col-sm-6 C_modalTituloIzquierdo">
+					<h2 class="modal-title" id="tituloModal">Productos</h2>
+				</div>
+
+				<div class="col-sm-5 C_modalTituloCentro">
+					<label>Total de productos <span id="cantidad-total-productos-modal-titulo">$60</span></label>
+				</div>
+
+				<div class="col-sm-1 C_modalTituloDerecho">
+					<button id="btnTitulo-cerrar-modal-tercerFormulario" type="button" class="close C_modalBotonCerrar"
+						data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+
+			<!--Contenido Modal-->
+			<div id="contenedor-modal-body" class="modal-body">
+
+				<div class="C_imagenProducto">
+					<div id="div-input-checkbox-tercerFormulario">
+						<input id="inputCheckbox-imagen-seleccionada" class="C_checkboxSeleccionProductoTercerForm"
+							type="checkbox">
+					</div>
+
+					<div id="div-contenedor-datos-productos">
+						<img id="imagenProducto-seleccion" src="../../../static/img/compraproducto.png">
+						<p>Cera gel</p>
+						<span>$30</span>
+					</div>
+				</div>
+
+				<div class="C_imagenProducto">
+					<div id="div-input-checkbox-tercerFormulario">
+						<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+					</div>
+
+					<div id="div-contenedor-datos-productos">
+						<img src="../../../static/img/compraproducto.png">
+						<p>Cera gel</p>
+						<span>$30</span>
+					</div>
+				</div>
+
+				<div class="C_imagenProducto">
+					<div id="div-input-checkbox-tercerFormulario">
+						<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+					</div>
+
+					<div id="div-contenedor-datos-productos">
+						<img src="../../../static/img/compraproducto.png">
+						<p>Cera gel</p>
+						<span>$30</span>
+					</div>
+				</div>
+
+				<div class="C_imagenProducto">
+					<div id="div-input-checkbox-tercerFormulario">
+						<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+					</div>
+
+					<div id="div-contenedor-datos-productos">
+						<img src="../../../static/img/compraproducto.png">
+						<p>Cera gel</p>
+						<span>$30</span>
+					</div>
+				</div>
+
+				<div class="C_imagenProducto">
+					<div id="div-input-checkbox-tercerFormulario">
+						<input class="C_checkboxSeleccionProductoTercerForm" type="checkbox">
+					</div>
+
+					<div id="div-contenedor-datos-productos">
+						<img src="../../../static/img/compraproducto.png">
+						<p>Cera gel</p>
+						<span>$30</span>
+					</div>
+				</div>
+
+
+
+			</div>
+
+			<!--Footer Modal-->
+			<div id="contenedor-footer" class="modal-footer">
+				<button id="boton-cancelar-modal" type="button" class="btn btn-secondary"
+					data-dismiss="modal">Cerrar</button>
+				<button id="boton-aceptar-modal" type="button" class="btn btn-primary">Aceptar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--MODAL REDUCIR NUMERO DE PERSONAS - TERCER FORMULARIO-->
+<div class="modal fade" id="modalEliminarPersonasFormulario3" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content componenteContenidoClientes">
+			<div class="modal-header elementoHeaderClientes">
+				<h1 class="">Citas</h1>
+				<button type="button" class="btn-close btn-cerrar-clientes" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body componenteBodyClientes">
+				<div class="titulosTablaEliminarClientes">
+					<label>Horario</label>
+					<label>Cliente</label>
+				</div>
+
+				<!-- Contenedor de citas a eliminar -->
+				<div id="contenido-tabla-eliminar-clientes" class="contenidoTablaEliminarClientes">
+					<!-- Información de citas de clientes -->
+					<div class="informacionCliente">
+						<input id="checkbox-cita-a-eliminar1" type="checkbox" class="form-check form-check">
+						<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+						<div class="input-group">
+							<span class="input-group-text modalF31">
+								<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+							</span>
+							<input id="cliente-modal-F3" type="text"
+								class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+							<span class="input-group-text modalF32">
+								<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="informacionCliente">
+						<input id="checkbox-cita-a-eliminar2" type="checkbox" class="form-check form-check">
+						<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+						<div class="input-group">
+							<span class="input-group-text modalF31">
+								<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+							</span>
+							<input id="cliente-modal-F3" type="text"
+								class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+							<span class="input-group-text modalF32">
+								<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="informacionCliente">
+						<input id="checkbox-cita-a-eliminar3" type="checkbox" class="form-check form-check">
+						<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+						<div class="input-group">
+							<span class="input-group-text modalF31">
+								<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+							</span>
+							<input id="cliente-modal-F3" type="text"
+								class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+							<span class="input-group-text modalF32">
+								<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="informacionCliente">
+						<input id="checkbox-cita-a-eliminar4" type="checkbox" class="form-check form-check">
+						<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+						<div class="input-group">
+							<span class="input-group-text modalF31">
+								<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+							</span>
+							<input id="cliente-modal-F3" type="text"
+								class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+							<span class="input-group-text modalF32">
+								<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="informacionCliente">
+						<input id="checkbox-cita-a-eliminar5" type="checkbox" class="form-check form-check">
+						<input type="time" class="form-control inputModalEliminarClientes borderBaseEliminarCliente">
+						<div class="input-group">
+							<span class="input-group-text modalF31">
+								<i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+							</span>
+							<input id="cliente-modal-F3" type="text"
+								class="form-control borderBaseEliminarCliente clienteModalEliminarF3">
+							<span class="input-group-text modalF32">
+								<i class="fa-solid fa-circle-info" style="color: #ffffff;" aria-hidden="true"></i>
+							</span>
+						</div>
+					</div>
+
+
+
+				</div>
+
+			</div>
+			<div class="modal-footer componenteFooterClientes">
+				<button id="boton-eliminarCliente-modal" type="button" class="btn">Eliminar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

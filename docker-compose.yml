@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  webapp:
+    tty: true
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      API_GATEWAY_URL: ${API_GATEWAY_URL}
+      WEB_APP_ID: ${WEB_APP_ID}
+      WEB_APP_KEY: ${WEB_APP_KEY}
+    build: ./contenedor_moncayo_bmx
+    restart: always
+    container_name: webapp_moncayo_bmx
+    volumes: 
+     - ./contenedor_moncayo_bmx/Registro:/code
+
+  nginx:
+    image: nginx
+    restart: always
+    environment: 
+      - NGINX_HOST=moncayo_webapp
+    volumes:
+      - ./contenedor_moncayo_bmx/Registro/static:/static
+      - ./contenedor_moncayo_bmx/nginx:/etc/nginx/conf.d
+    depends_on:
+      - webapp
+    ports:
+      - 8000:80

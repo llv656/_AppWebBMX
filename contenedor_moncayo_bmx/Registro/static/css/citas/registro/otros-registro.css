@@ -1,0 +1,1107 @@
+#btnBrush1,
+#btnBrush2,
+#brush-4f {
+    /*Definición de tamaño*/
+    height: 20px;
+}
+
+/*Efecto de selección y selección de color */
+#btnBrush1:hover,
+#btnBrush2:hover,
+#brush-4f:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+.iconoMaximizarMinimizar:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+/*ICONOS DE SUMA Y RESTA*/
+.iconoResta {
+    height: 23px;
+    width: 20px;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.icn-brush2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.iconoSuma {
+    height: 22px;
+    width: 22px;
+}
+
+
+#div-col-btn-busqueda {
+    display: table-cell;
+}
+
+#div-col-vacio-btn-busqueda {
+    display: initial;
+}
+
+.C_iconosDeSumaYResta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+/*ICONOS DE SUMA Y RESTA*/
+
+
+/*CAMPO DERECHO*/
+
+.C_NumeroDePersonas {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.C_NumeroDePersonas label {
+    color: #ffffff;
+}
+
+.C_fecha {
+    display: flex;
+    bottom: 4px;
+    justify-content: start;
+    align-items: center;
+    color: #ffffff;
+}
+
+
+
+.C_fecha[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.C_contenedorBusqueda {
+    display: flex;
+    align-items: center;
+    background: rgba(8, 13, 18, 1);
+    height: 35vh;
+    border-radius: 20px;
+}
+
+
+.C_contenedorCampoDerecho {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+
+.C_contenedorBusqueda {
+    color: #ffffff;
+}
+
+.labelsBold {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.C_numeroDeClientes label {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.C_ajusteTercerFormulario label {
+    color: #FFFFFF;
+}
+
+.C_numeroDeClientes input {
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+}
+
+.C_claseGridTercerFormulario {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    align-items: center;
+    row-gap: 12px;
+}
+
+.C_ajusteTercerFormulario input {
+    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+}
+
+/*Desactivar flechas en el boton de tipo number*/
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#fecha-clientes {
+    border-radius: 25px 0px 0px 25px;
+    color: #ffffff;
+    background: #214569;
+}
+
+.C_estilosInputsClientes {
+    background-color: #726561;
+    color: #ffffff;
+}
+
+.C_estilosInputsClientes[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.9;
+    filter: invert(0.9);
+}
+
+.C_numeroDeClientes {
+    display: flex;
+    justify-content: center;
+}
+
+.C_colDivBtnBrush {
+    display: flex;
+    top: 5px;
+}
+
+.C_fechaYHoraDeSalida {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.C_botonRegistrar {
+    display: flex;
+    justify-content: center;
+}
+
+#hora-clientes {
+    border-radius: 0px 25px 25px 0px;
+    color: #ffffff;
+    background: #214569;
+    margin-left: 1%;
+}
+
+
+#fecha-clientes.C_disenoMovil2 {
+    background-color: inherit;
+    color: #ffffff;
+    border: none;
+    text-align: end;
+}
+
+
+.C_divIconosTercerFormularioHomeMenuBack {
+    top: 30%;
+}
+
+
+#contenedor-encabezado-resumen-citas {
+    display: flex;
+
+}
+
+#btnBusquedaCita {
+    padding: 10px 60px;
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+}
+
+#btnBusquedaCita:hover,
+#btnBusquedaCita:focus {
+    background-color: #6e842b;
+}
+
+#btnBusquedaCita {
+    background-color: #86A135;
+}
+
+/*Icono de Limpiar(Brocha)*/
+.C_iconoBrocha1 {
+    margin: 10px auto;
+}
+
+.icn-brush1 {
+    display: flex;
+    justify-content: end;
+    right: 1%
+}
+
+.C_seccionBusqueda {
+    margin-top: 10vh;
+    width: 100%;
+    height: 100%;
+
+}
+
+.C_seccionBarberosYHorarios {
+    margin-top: 10vh;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedorFormulario {
+    display: flex;
+}
+
+/*Desactiva salgo de linea en versión de escritorio*/
+.C_tituloCampoIzquierdo br {
+    display: none;
+}
+
+/*SEGUNDO FORMULARIO*/
+.C_contendorDeBarberos {
+    overflow-y: auto;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.C_tituloBarberosYHorarios P {
+    color: #ffffff;
+    margin: auto 65px;
+}
+
+.C_EstilosSeccionesBarberos {
+    display: flex;
+    flex-direction: column;
+    background: #080D12;
+    border-radius: 25px;
+}
+
+.C_nombreBarberoPosicion h1 {
+    margin: auto 60px;
+    color: #ffffff;
+}
+
+.C_DatosBarberoUno,
+.C_DatosBarberoDos {
+    margin-top: 5px;
+}
+
+.C_nombreBarbero {
+    display: flex;
+    align-items: center;
+}
+
+/*Imagen de perfil de barbero circular*/
+.C_imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.C_nombreBarbero {
+    margin: 5px;
+}
+
+.C_imagenPerfil-circular {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.C_imagenPerfil-circular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.C_iconoMinimizar {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.iconoMaximizarMinimizar {
+    display: flex;
+    padding-right: 8px;
+}
+
+
+.C_horariosBarbero1,.C_horariosBarbero2{
+    margin: 5px auto;
+    height: 90px;
+    width: 90%;
+    overflow-y: auto;
+    display: -webkit-inline-box;
+}
+
+/*Botones de horarios*/
+.C_botonHorario {
+    background: #214569 !important;
+    color: #ffffff !important;
+    border-radius: 25px !important;
+}
+
+.C_boton_horario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1% !important;
+}
+
+.C_tooltip_input {
+    border-radius: 0px 25px 25px 0px !important;
+}
+
+
+/* Diseño de barra scroll */
+.C_divHorarios_barbero1::-webkit-scrollbar {
+    width: 5px;
+}
+
+.C_divHorarios_barbero1::-webkit-scrollbar-thumb {
+    background-color: #214569;
+    border-radius: 5px;
+}
+
+/* Para Firefox */
+.C_divHorarios_barbero1 {
+    scrollbar-width: thin;
+    scrollbar-color: #214569 transparent;
+}
+
+.C_divHorarios_barbero1::-moz-scrollbar-thumb {
+    background-color: #214569;
+    border-radius: 5px;
+}
+
+.C_ContenedorResumenCitaCliente {
+    overflow: auto;
+}
+
+.C_contenedorDeResumenes {
+    overflow: auto;
+}
+
+
+/* Diseño de barra scroll */
+.C_horariosBarbero2::-webkit-scrollbar {
+    width: 5px;
+}
+
+.C_horariosBarbero2::-webkit-scrollbar-thumb {
+    background-color: #214569;
+    border-radius: 5px;
+}
+
+/* Para Firefox */
+.C_horariosBarbero2 {
+    scrollbar-width: thin;
+    scrollbar-color: #214569 transparent;
+}
+
+.C_horariosBarbero2::-moz-scrollbar-thumb {
+    background-color: #214569;
+    border-radius: 5px;
+}
+
+/* Diseño de barra scroll */
+.C_contendorDeBarberos::-webkit-scrollbar {
+    width: 5px;
+}
+
+.C_contendorDeBarberos::-webkit-scrollbar-thumb {
+    background-color: #86A135;
+    border-radius: 5px;
+}
+
+/* Para Firefox */
+.C_contendorDeBarberos {
+    scrollbar-width: thin;
+    scrollbar-color: #86A135 transparent;
+}
+
+.C_contendorDeBarberos::-moz-scrollbar-thumb {
+    background-color: #86A135;
+    border-radius: 5px;
+}
+
+.C_btnAceptarBarberosHoras {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#btn-Aceptar-barberos-horas {
+    /*padding: 10px 60px;*/
+    height: 40px;
+    width: 160px;
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+}
+
+#btn-Aceptar-barberos-horas:hover,
+#btn-Aceptar-barberos-horas:focus {
+    background-color: #6e842b;
+}
+
+#btn-Aceptar-barberos-horas {
+    background-color: #86A135;
+}
+
+#btn-registro-cita-tercerForm:hover,
+#btn-registro-cita-tercerForm:focus {
+    background-color: #6e842b;
+}
+
+#div-numero-clientes-busqueda {
+    display: grid;
+    justify-content: end;
+}
+
+#div-fecha-hora-label {
+    display: grid;
+    justify-content: start;
+}
+
+.C_container_componente_clientes {
+    display: contents;
+}
+
+#div-icono-back {
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*HEIGHT Pare segundo formulario-pagina2*/
+div#div-titulo-iconos {
+    height: 15%;
+}
+
+div#titulo-barberos-horarios {
+    height: 5%;
+}
+
+.row.C_seccionBarberos {
+    height: 65%;
+}
+
+div#div-btn-aceptar-barberos-horas {
+    height: 15%;
+}
+
+.col-sm-barberosHorarios-laterales {
+    width: 4%;
+    flex: 4%;
+}
+
+.col-sm-barberosHorarios-centro {
+    width: 92%;
+    flex: 92%;
+}
+
+
+
+
+#brush-4f {
+    display: none;
+}
+
+
+
+
+/*HEIGHT Pare segundo formulario-pagina2*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1500px) {
+    .C_container_componente_clientes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    /*Ajuste de Inputs del primero formulario*/
+    .C_contenedorCampoDerecho label {
+        font-size: 20px;
+    }
+
+    #div-numero-clientes-busqueda {
+        display: block;
+    }
+
+    #div-contenedor-fecha-hora-busqueda-inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*Tercer formulario*/
+
+
+
+}
+
+@media screen and (max-width:1330px) {
+
+
+
+    .C_paqueteIconosUno {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #div-numero-clientes-busqueda {
+        max-width: 100%;
+    }
+
+    #div-icono-fecha {
+        max-width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width:962px) {
+    .C_tituloFormularioTres h1 {
+        font-size: 35px !important;
+    }
+}
+
+
+
+
+/*DISEÑO MÓVIL DISEÑO MÓVIL DISEÑO MÓVIL DISEÑO MÓVIL DISEÑO MÓVIL*/
+@media screen and (max-width:850px) {
+    [class*="col-"] {
+        max-width: 100% !important;
+        flex: 100% !important;
+    }
+
+
+
+
+    #tercer-formulario {
+        display: grid;
+        grid-template-areas:
+            "headerTittle headerTittle headerIconos"
+            "bodyIconoBarber bodyNoPersonas headerIconos"
+            "bodyIconoBarber bodyFechaYHora bodyFechaYHora"
+            "bodyFormulario bodyFormulario bodyFormulario"
+            "footerTotal footerTotal footerTotal"
+            "footerBoton footerBoton footerBoton"
+            "footerBrocha ... ...";
+        grid-template-rows: 12% 5% 10% 50% 5% 5%;
+        row-gap: 3px;
+    }
+
+    .C_tituloFormularioTres {
+        grid-area: headerTittle;
+    }
+
+    .C_divIconosTercerFormularioHomeMenuBack {
+        grid-area: headerIconos;
+    }
+
+    #div-numero-clientes-sumaResta {
+        grid-area: bodyNoPersonas;
+    }
+
+    #icono-barber-tercer-formulario {
+        grid-area: bodyIconoBarber;
+    }
+
+    #div-fecha-hora-inputs {
+        grid-area: bodyFechaYHora;
+    }
+
+    #div-contenedor-formularioTres {
+        grid-area: bodyFormulario;
+    }
+
+    .C_totalAPagarTercerFormulario {
+        grid-area: footerTotal;
+    }
+
+    #div-botonRegistrar-tercerFormulario {
+        grid-area: footerBoton;
+    }
+
+    #div-iconoBrush3-tercerFormulario {
+        grid-area: footerBrocha;
+    }
+
+
+    #tercer-formulario-iconos {
+        display: contents;
+    }
+
+    #row-2 {
+        display: contents;
+    }
+
+    #row-3 {
+        display: contents;
+    }
+
+
+    .C_claseGridTercerFormulario {
+        display: grid !important;
+        grid-template-columns: 100% !important;
+        overflow: auto;
+        overflow-y: auto;
+    }
+
+    #div-nombre3Form {
+        width: 90%;
+        max-width: 90% !important;
+    }
+
+    #div-icono-agregarCliente-tercerFormulario {
+        width: 10%;
+        max-width: 10% !important;
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start !important;
+        height: 50%;
+        align-items: flex-start !important;
+        max-height: 50%;
+    }
+
+    #formulario-citas-tercerCampo {
+        row-gap: 0px !important;
+    }
+
+    #div-primer-row-tercerF {
+        flex-direction: column-reverse;
+    }
+
+
+    #inputs-NumeroDePersonas-fecha-hora {
+        display: contents !important;
+    }
+
+    #div-fecha-hora-inputs {
+        display: flex;
+        align-items: flex-start !important;
+
+    }
+
+    .C_nombreBarberoPosicion h1 {
+        margin: 3px 10px;
+        color: #FFFFFF;
+    }
+
+    .iconoMaximizarMinimizar {
+        padding-right: 10px;
+        ;
+        padding-top: 7px;
+    }
+
+    #formulario-citas-tercerCampo {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    img#icono-barber {
+        height: 60px !important;
+        width: 60px !important;
+    }
+
+    .C_rowDivIconosHomeMenuF3 {
+        display: flex;
+        justify-content: end;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .C_rowDivIconobackF3 {
+        display: flex;
+        justify-content: end;
+        position: relative;
+    }
+
+    .C_rowDivIconosHomeMenuF3 {
+        position: relative;
+        top: 6%;
+    }
+
+
+    .C_rowDivIconobackF3 {
+        position: relative;
+        top: 6%;
+        right: 2%;
+    }
+
+    .C_numeroDeClientes2-formulario3 {
+        align-items: flex-end !important;
+    }
+
+
+
+
+    #contenedor {
+        position: fixed;
+        border-radius: 0%;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+    }
+
+    .C_contendorDeBarberos {
+        height: 50vh;
+        position: relative;
+        top: 3%;
+    }
+
+    .C_tituloCampoIzquierdo h1 {
+        font-size: 35px;
+    }
+
+    .C_tituloCampoIzquierdo br {
+        display: block;
+    }
+
+    /*Ajuste de icono de home*/
+    .C_home {
+        display: flex;
+        justify-content: end;
+    }
+
+    #home {
+        position: absolute;
+        margin: -110px 55px;
+    }
+
+    /*Ajuste de icono de home*/
+
+    #home2 {
+        position: absolute;
+        margin: -110px 55px;
+    }
+
+    /*Ajuste de icono de home*/
+
+
+
+    /*Ajuste de icono de Menu*/
+    .C_menu {
+        display: flex;
+        justify-content: end;
+    }
+
+
+    #menu {
+        position: absolute;
+        margin: -92px 18px;
+    }
+
+    /*Ajuste de icono de Menu*/
+
+    #menu2 {
+        position: absolute;
+        margin: -92px 18px;
+    }
+
+    /*Ajuste de icono de Menu*/
+
+
+    /*Ajuste de icono de Back*/
+    #img-back {
+        position: absolute;
+        margin: -80px 21px;
+    }
+
+    /*Ajuste de icono de Back*/
+
+
+
+    /*Ajuste de icono de Brush*/
+    .icn-brush1 {
+        display: block;
+        position: absolute;
+        margin: 400px -25px;
+    }
+
+    /*Ajuste de icono de Brush*/
+
+    /*Ajuste de Inputs del primero formulario*/
+
+    .C_contenedorCampoDerecho label {
+        font-size: 20px;
+    }
+
+    /*FORMULARIO DOS*/
+    .C_paqueteIconosUno {
+        display: flex;
+        margin-top: 2%;
+    }
+
+
+    /*Se asignan orden a los iconos*/
+    /*Icono Back*/
+    #div-icono-back {
+        order: 1;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+
+    /*Número de personas*/
+    #div-numero-clientes-busqueda.C_disenoMovil {
+        order: 2;
+        position: relative;
+        right: 20%;
+    }
+
+    #div-fecha-hora-inputs {
+        width: -webkit-fill-available;
+    }
+
+
+    /*Input de Fecha*/
+    #div-icono-fecha {
+        order: 3;
+        position: absolute;
+        left: 50%;
+        bottom: 0%;
+        max-width: 50% !important;
+    }
+
+    /*Input de Fecha*/
+    #fecha-clientes.C_disenoMovil2 {
+        color: #ffffff !important;
+    }
+
+    .C_fechaYHoraDeSalida {
+        justify-content: center;
+    }
+
+
+
+    .C_nombreBarbero h1 {
+        margin: 0;
+    }
+
+    /*.C_horariosBarbero1, .C_horariosBarbero2 {
+        column-gap: 2%;
+    }*/
+
+    .C_divIconosTercerFormularioHomeMenuBack {
+        top: 0;
+    }
+
+
+    .C_tituloBarberosYHorarios {
+        display: none !important;
+    }
+
+    .C_botonYbrush {
+        display: grid;
+        grid-template-columns: 10% 90% !important;
+    }
+
+    .C_colDivBtnBrush {
+        position: absolute;
+        left: 10%;
+        top: 85%;
+    }
+
+    #datos-encapsulados-resumen {
+        display: grid !important;
+        grid-template-areas:
+            "headNombre headImagenPerfil headMaxMin"
+            "bodyFechayHora bodyFechayHora ......"
+            "BodyInfoBarbero BodyInfoBarbero BodyInfoBarbero"
+            "BodyInfoServicio BodyInfoServicio BodyInfoServicio"
+            "footerIcono footerTotal footerTotal";
+    }
+
+
+
+    .C_imagenPerfil-circular {
+        grid-area: headImagenPerfil;
+    }
+
+    #div-icono-minimizarMovil4toF {
+        display: none;
+        grid-area: headMaxMin;
+    }
+
+    .C_ContenedorfechaYHoraFormulario14 {
+        grid-area: bodyFechayHora;
+    }
+
+    .C_barberoFormualario4 {
+        grid-area: BodyInfoBarbero;
+    }
+
+    .C_servicioFormulario4 {
+        grid-area: BodyInfoServicio;
+    }
+
+    #producto-Formulario {
+        grid-area: footerIcono;
+    }
+
+    .C_totalAPagar {
+        grid-area: footerTotal;
+    }
+
+    .C_barberoFormualario4 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .C_servicioFormulario4 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #datos-encapsulados-resumen {
+        row-gap: 2%;
+    }
+
+    /*TERCER-FORMULARIO*/
+
+
+
+    /*Contendor cuarto formulario para áreas*/
+    .C_cuartoFormulario {
+        display: grid;
+        grid-template-areas:
+            "headTittle headTittle  headIcons"
+            "bodySubtittle bodySubtittle ....."
+            "bodyContent bodyContent bodyContent"
+            "footerBottom footerBottom footerBottom"
+            "footerBrush ..... .....";
+    }
+
+    #titulo4 {
+        grid-area: headTittle;
+    }
+
+    #img-back4 {
+        grid-area: headIcons;
+    }
+
+    .C_subtituloCuartoFormulario {
+        grid-area: bodySubtittle;
+    }
+
+    .C_contenedorDeResumenes {
+        grid-area: bodyContent;
+        overflow: auto;
+    }
+
+    .C_ContenedorResumenCitaCliente {
+        row-gap: 5%;
+        width: 100%;
+    }
+
+    #tercer-row-cuarto-formulario {
+        grid-area: footerBottom;
+    }
+
+    #brush-4f {
+        grid-area: footerBrush;
+    }
+
+
+    #primer-row-cuarto-formulario {
+        display: contents;
+    }
+
+    .C_tituloCuartoFormulario {
+        display: contents;
+    }
+
+    .C_subtituloCuartoFormulario {
+        display: contents;
+    }
+
+    .C_subtituloCuartoFormulario {
+        display: inline-table;
+    }
+
+    #segundo-row-cuarto-formulario {
+        display: contents;
+    }
+
+    .C_divBrush4F {
+        display: contents;
+    }
+
+    .C_T3F {
+        display: contents !important;
+    }
+
+    #titulo4 {
+        font-size: 35px !important;
+    }
+
+
+
+
+}

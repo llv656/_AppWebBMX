@@ -1,0 +1,50 @@
+{% for elemento in elementos_id_modal %}
+    {% with div_id=elemento %}
+              <!-- Formulario Emergente -->
+    <!-- Modal -->
+	<div  id="{{ div_id }}" class="modal fade" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<!--Encabezado de Formulario-->
+			<div class="modal-header">
+			  <h5 class="modal-title" id="modalLabel">Copiar Horario</h5>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+	
+			<!--Cuerpo de Formulario-->
+			<div class="modal-body">
+				<!--Lunes-->
+				<input type="checkbox" id="{{ div_id }}_lunes" name="diaLunes" class="checkboxHorario diasHorarioModal">
+				<label class="diasHorarioModal">Lunes</label>
+				<!--Martes-->
+				<input type="checkbox" id="{{ div_id }}_martes" name="diaMartes" class="checkboxHorario diasHorarioModal">
+				<label class="diasHorarioModal">Martes</label>
+				<!--Miercoles-->
+				<input type="checkbox" id="{{ div_id }}_miercoles" name="diaMiercoles" class="checkboxHorario diasHorarioModal">
+				<label class="diasHorarioModal">Miercoles</label>
+				<!--Jueves-->
+				<input type="checkbox" id="{{ div_id }}_jueves" name="diaJueves" class="checkboxHorario diasHorarioModal">
+				<label class="diasHorarioModal">Jueves</label>
+				<!--Viernes-->
+				<input type="checkbox" id="{{ div_id }}_viernes" name="diaViernes" class="checkboxHorario diasHorarioModal">
+				<label class="diasHorarioModal">Viernes</label>
+				<!--Sabado-->
+				<input type="checkbox" id="{{ div_id }}_sabado" name="diaSabado" class="checkboxHorario diasHorarioModal">
+				<label class="diasHorarioModal">Sabado</label>
+				<input type="checkbox" id="{{ div_id }}_domingo" name="diaDomingo" class="checkboxHorario diasHorarioModal">
+				<label class="diasHorarioModal">Domingo</label>
+
+			</div>
+		  </div>
+		</div>
+	  </div>
+      <!--Fin-->
+    {% endwith %}
+{% endfor %}
+
+
+
+
+
+
+

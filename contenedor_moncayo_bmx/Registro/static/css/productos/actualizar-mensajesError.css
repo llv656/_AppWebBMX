@@ -1,0 +1,130 @@
+/*Mensaje de Error*/
+.C.errormensaje {
+    color: #ab3737;
+    display: none;
+}
+
+/*Mensaje de error fecha de Registro*/
+#errorFR {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Fecha de Rol de Personal*/
+#errorRP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Nombre*/
+#errorN {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+/*Mensaje de error de Apellido Paterno*/
+#errorAP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Fecha de Nacimiento*/
+#errorFN {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Fecha de Dirección*/
+#errorDir {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Fecha de Teléfono*/
+#errorTel {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Fecha de Contraseña*/
+#errorPass {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Tipode Pago*/
+#errorTP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Tipode Pago*/
+#errorTP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Periodo*/
+#errorP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Pago fijo*/
+#errorPFijo{
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Comision por Productos*/
+#errorCP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Comisión por Servicios*/
+#errorCS {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+#errorCantidad {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+#errorNombre {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}

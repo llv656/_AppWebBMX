@@ -1,0 +1,81 @@
+.componenteContenidoClientes{
+    background: #080D12 !important;
+    border-radius: 30px;
+}
+
+.elementoHeaderClientes{
+    border: none !important;
+    color: #ffffff;
+}
+
+.contenidoTablaEliminarClientes{
+    overflow-y: auto;
+}
+
+.titulosTablaEliminarClientes {
+    color: #538898;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.informacionCliente{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 1%;
+    width: 100%;
+}
+
+.informacionCliente input {
+    background: #726561;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.btn-cerrar-clientes  {
+    background-color: #538898; /* Cambia el color de la X a blanco */
+    border-radius: 50%;
+  }
+
+  .inputModalEliminarClientes{
+    border-radius: 25px;
+  }
+
+  .componenteBodyClientes{
+    border: none !important;
+  }
+
+  .componenteFooterClientes{
+    display: flex !important;
+    justify-content: center !important;
+    border: none !important;
+  }
+
+  #boton-eliminarCliente-modal{
+    border-radius: 25px;
+    width: 160px;
+    background: #590C0C;
+    color: #ffffff;
+  }
+
+  .borderBaseEliminarCliente {
+    border-color: #726561 !important;
+}
+
+span.input-group-text.modalF31 {
+    background: #726561;
+    border: none;
+    color: #ffffff;
+    border-radius: 25px 0px 0px 25px;
+}
+
+span.input-group-text.modalF32 {
+    background: #726561;
+    border: none;
+    color: #ffffff;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.ocultarCheck{
+  visibility: hidden;
+}

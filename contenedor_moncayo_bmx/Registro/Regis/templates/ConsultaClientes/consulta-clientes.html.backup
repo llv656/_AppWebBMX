@@ -1,0 +1,275 @@
+{% extends "plantilla.html" %}
+
+{% block title %} Consulta Clientes {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="/static/css/consulta-clientes.css" />
+<link rel="stylesheet" href="/static/DataTables/datatables.min.css">
+{% endblock %}
+
+
+{% block scripts %}
+<script src="/static/js/uscripts/consulta_clientes.js"></script>
+<script src="https://kit.fontawesome.com/30c693948f.js" crossorigin="anonymous"></script>
+<script src="/static/DataTables/datatables.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+	<div class="col-sm-1 C_headerbody">
+		{% if ERRORES %}
+		<div class="alert alert-danger">{{ ERRORES }}</div>
+		{% endif %}
+	</div>
+
+
+	<div class="col-sm-10 cont" id="contenedor">
+		<!--Header-->
+		<header>
+			<h2 class="logo">Clientes</h2>
+			<input type="checkbox" id="check">
+			<label for="check" class="mostrar-menu">
+				&#8801
+			</label>
+			<nav class="menu">
+				<a href=""><button class="btn useradd"><i class="fas fa-user-plus text-white"></i></button></a>
+				<a href=""><button class="btn userrecargar"><i class="fas fa-rotate"></i></button></a>
+				<a href="#"><button id="btnTrash" class="btn usertrash" data-bs-toggle="modal"
+						data-bs-target="#motivoEliminar"><i class="fas fa-trash text-white"></i></button></a>
+				<a href=""><button class="btn filtrarAsc"><i
+							class=" fas fa-arrow-up-wide-short text-white"></i></button></a>
+				<a href=""><button class="btn filtrarDes"><i
+							class="fas fa-arrow-down-wide-short text-white"></i></button></a>
+				<label for="check" class="esconder-menu">
+					&#215
+				</label>
+			</nav>
+		</header>
+
+		<!--Cuerpo -->
+		<div class="row C_sectionformulario">
+			<div class="col-sm-1"></div>
+			<!-- INICIA TABLE PARA MOSTRAR LAS CONSULTAS  -->
+			<div id="contenedorTabla"> <!--Inicia el contenedor de la Tabla-->
+				<table class="table table-bordered table-striped table-hover align-middle nowrap" id="tblConsulta"
+					style="width: 100%;">
+					<thead>
+						<tr>
+							<th>
+								<input type="radio" id="mostrarModal" name="opcionSeleccion" value="mostrarModal"
+									class="thead-radio">
+								<!-- <label for="seleccionTodaTabla">Seleccionar</label> -->
+							</th>
+							<th>Nº</th>
+							<th>Nombre</th>
+							<th>Contacto</th>
+							<th>Fecha de Nacimiento</th>
+							<th>Tipo CLiente</th>
+							<th class="none">Descripcion</th>
+							<th class="none">Barbero Favorito</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Datos a ingresar -->
+						<tr>
+							<td class="SeleccionFilaTd"><input type="radio" class="seleccionFila"
+									name="opcionSeleccion1"></td>
+							<td>001</td>
+							<td>Maria Mercedes Trujillo Perez</td>
+							<td>
+								<select>
+									<option value="email">Email</option>
+									<option value="instagram">instagram</option>
+									<option value="facebook">Facebook</option>
+								</select>
+							</td>
+							<td>
+								<input type="date" name="fecha">
+							</td>
+							<td>
+								<select id="tipoClienteSelect">
+									<option value="visita">Visita</option>
+									<option value="miembro">Miembro</option>
+									<option value="vip">VIP</option>
+								</select>
+							</td>
+							<td class="additional-info">Excelente Servicio</td>
+							<td class="additional-info">Vicente Palafox</td>
+						</tr>
+						<!-- Datos a ingresar -->
+						<tr>
+							<td class="SeleccionFilaTd"><input type="radio" class="seleccionFila"
+									name="opcionSeleccion2"></td>
+							<td>002</td>
+							<td>Leonel Andres Messi</td>
+							<td>
+								<select>
+									<option value="email">Email</option>
+									<option value="instagram">instagram</option>
+									<option value="facebook">Facebook</option>
+								</select>
+							</td>
+							<td>
+								<input type="date" name="fecha">
+							</td>
+							<td>
+								<select id="tipoClienteSelect">
+									<option value="visita">Visita</option>
+									<option value="miembro">Miembro</option>
+									<option value="vip">VIP</option>
+								</select>
+							</td>
+							<td class="additional-info">Excelente Servicio</td>
+							<td class="additional-info">Vicente Palafox</td>
+						</tr>
+						<!-- Datos a ingresar -->
+						<tr>
+							<td class="SeleccionFilaTd"><input type="radio" class="seleccionFila"
+									name="opcionSeleccion3"></td>
+							<td>003</td>
+							<td>Cesar Abdon Mejía</td>
+							<td>
+								<select>
+									<option value="email">Email</option>
+									<option value="instagram">instagram</option>
+									<option value="facebook">Facebook</option>
+								</select>
+							</td>
+							<td>
+								<input type="date" name="fecha">
+							</td>
+							<td>
+								<select id="tipoClienteSelect">
+									<option value="visita">Visita</option>
+									<option value="miembro">Miembro</option>
+									<option value="vip">VIP</option>
+								</select>
+							</td>
+							<td class="additional-info">Excelente Servicio</td>
+							<td class="additional-info">Vicente Palafox</td>
+						</tr>
+						<!-- Datos a ingresar -->
+						<tr>
+							<td class="SeleccionFilaTd"><input type="radio" class="seleccionFila"
+									name="opcionSeleccion4"></td>
+							<td>004</td>
+							<td>María Dolores </td>
+							<td>
+								<select>
+									<option value="email">Email</option>
+									<option value="instagram">instagram</option>
+									<option value="facebook">Facebook</option>
+								</select>
+							</td>
+							<td>
+								<input type="date" name="fecha">
+							</td>
+							<td>
+								<select class="tipoClienteSelect">
+									<option value="visita">Visita</option>
+									<option value="miembro">Miembro</option>
+									<option value="vip">VIP</option>
+								</select>
+							</td>
+							<td class="additional-info">Excelente Servicio</td>
+							<td class="additional-info">Vicente Palafox por falta de motivos adicionales que se van a desplazar hacia la derecha por motivos personales de la facultad de contaduria</td>
+						</tr>
+
+					</tbody>
+				</table> <!--FIN DEL TABLE-->
+			</div><!--Contenedor de la tabla-->
+			<div id="totalRegistros"> <!--Mostrar el total de los registros-->
+				<span id="RegistrosMos">Registros Mostrados:</span>
+				<span>1</span>
+				<span>/</span>
+				<span id="contadorRegistros">0</span>
+			</div> <!--Fin del total de registros-->
+			<!-- CREAR BOTONES DE PAGINACION - CONTENEDOR -->
+			<div class="pagination-box">
+				<button class="page-btn prev">Anterior </button>
+				<div class="page-info">Página:
+					<select id="pageSelect">
+
+					</select> de 13
+				</div>
+				<!-- Aquí generamos las opciones de página dinámicamente con JavaScript -->
+				<button class="page-btn next">Siguiente</button>
+			</div> <!--.pagination-container-->
+		</div> <!--FIN DEL ROW_SECTION-->
+
+		<!-- VENTANA MODAL PARA SELECCIONAR TODA LA TABLA  -->
+		<div id="modalSeleccion" class="modal">
+			<div class="modal-content">
+				<div class="form-check">
+					<input type="radio" class="form-check-input" name="modalOption" id="selectAllRadio"
+						value="selectAll">Seleccionar toda la columna
+				</div>
+				<div class="form-check">
+					<input type="radio" class="form-check-input" name="modalOption" id="deselectAllRadio"
+						value="deselectAll">Seleccionar todos los elementos
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- VENTANA MODAL PARA ELIMINAR CLIENTES  -->
+		<div class="modal1 fade " id="motivoEliminar" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content contenedoRadio">
+					<!--Encabezado de Formulario-->
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalLabel">Eliminar Clientes</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<!--Cuerpo de Formulario-->
+					<div class="modal-body">
+						<!-- Informacion del usuario a eliminar -->
+						<div id="infoUsuarioEliminar">
+
+						</div>
+
+						<div>
+							<label>Motivo</label>
+						</div>
+						<!-- Descripcion  -->
+						<div>
+							<textarea type="text" id="motivoEliminarCl"
+								class=" form-control entradaTexto C_colorBaseBorder"
+								placeholder="Agrega el motivo por el cual se va a eliminar el Cliente"></textarea>
+						</div>
+
+						<div class="form-check EliminarClienteRadio">
+							<input type="checkbox" class="form-check-input" name="modalOptionEli"
+								id="selectAllRadioCliente" value="selectAll">
+							<span class="adaptarText">Borrar cliente/s, sin conservar información generada.</span>
+						</div>
+
+					</div>
+
+					<!--Pie de Formulario-->
+					<div class="modal-footer">
+						<button id="btnCancelarDatos" type="button" class="btn btn-danger btnsCliente"
+							data-bs-dismiss="modal">Cancelar</button>
+						<button id="btnGuardarDatos" type="button" class="btn btn-success btnsCliente">Aceptar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-sm-1"></div>
+	</div>
+
+
+</div>
+
+
+<div class="col-sm-1 C_headerfooter"></div>
+
+</div>
+
+{% endblock %}

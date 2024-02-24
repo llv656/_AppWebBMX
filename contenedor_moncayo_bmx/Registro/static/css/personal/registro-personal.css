@@ -1,0 +1,1124 @@
+/*Cuerpo de la página web enfocado en el fondo.*/
+
+body {
+    background-image: url('../../img/barbers.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y:hidden;
+}
+
+#contenedor {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url('../../img/barbers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 5%;
+    border-radius: 25px;
+    height: 80vh;
+    display: grid;
+}
+
+.C_Seccion_Footter{
+    padding-bottom: 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.CampoIzquierdo h1{
+    color: #ffffff;
+}
+
+/*Campo de contraseña*/
+#pass{
+    background-color: #59534f;
+}
+
+
+/*Icono de Regresar (<-)*/
+
+#img-back {
+    /*Definición de tamaño*/
+    height: 60px;
+    width: 55px;
+}
+
+/*imagen de BACK*/
+.icn-back {
+    /*Separación,modo de visualización y ajuste a la derecha*/
+    padding: 12px;
+    display: flex;
+    padding-left: 95%;
+}
+
+
+/*Efecto de selección y selección de color */
+
+#img-back:hover{
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+/*Icono de Limpiar(Brocha)*/
+.icn-brush {
+    top: 100px;
+    left: 100px;
+    display: flex;
+    justify-content: end;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+#btnBrush {
+    /*Definición de tamaño*/
+    height: 20px;
+
+}
+
+/*Efecto de selección y selección de color */
+
+#btnBrush:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+/*Efecto de selección y selección de color */
+
+#home:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+#menu:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+.C_textoNavegacion{
+    display: absolute;
+    color: #71B6CB;
+    font-size: 15px;
+}
+.C_textoNavegacion2{
+    display: absolute;
+    color: #71B6CB;
+    font-size: 15px;
+}
+
+.C_nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10%;
+}
+
+.C_nav >*{
+    width: auto;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkbox-container input[type="checkbox"] + label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Hace que la casilla de verificación sea circular */
+    border: 1px solid #71B6CB;
+    margin-right: 30px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .checkbox-container input[type="checkbox"]:checked + label:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Hace que el punto central sea circular */
+    background-color:#71B6CB ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  
+.reloadIcono {
+    position: relative;
+  }
+  
+  .reloadIcono input {
+    padding-right: 35px; /* Ajusta el espacio a la derecha para el icono de búsqueda */
+  }
+  
+  .reload-icon {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+  }
+
+  .eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 55px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+  }
+  
+
+
+.C_menu{
+    display: none;
+}
+
+.C_home{
+    display: none;
+}
+
+
+/*I N I C I O     C A M P O       I Z Q U I E R D O */
+
+
+/*Alineación del campo izquierdo*/
+
+.CampoIzquierdo {
+    /*Alineación a derecha*/
+    padding-left: 5%;
+}
+
+
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+
+.CampoIzquierdo h1 {
+    font-family: 'Open Sans Semibold', sans-serif;
+    font-size: 70px;
+    color: white;
+    margin-top: auto;
+}
+
+
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+
+.CampoIzquierdo h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    color: white;
+}
+
+
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+
+.CampoIzquierdo span {
+    font-size: 20px;
+    font: bold;
+    color: white;
+}
+
+
+/*F I N      C A M P O       I Z Q U I E R D O */
+
+
+/*I N I C I O     C A M P O       D E R E C H O */
+
+#btn-reg:hover,
+#btn-reg:focus {
+    background-color: #6e842b;
+}
+
+C_tipoPago{
+    padding-top: 1%;
+    padding-bottom: 1;
+}
+
+.C_campoDerecho {
+    display: flex;
+    align-items: center;
+    height: 45vh;
+}
+
+.C_campoDerecho2 {
+    display: block;
+    align-items: center;
+    height: 45vh;
+}
+
+
+#fechaPa{
+    color:#538898
+}
+
+form:hover::-webkit-scrollbar {
+    display: initial;
+}
+
+form::-webkit-scrollbar-thumb {
+    background-color: #09C;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+}
+
+.formulario-personal input::placeholder{/*Cambia de color los PLACEHOLDER de los INPUT de entrada*/
+    color: #c6c6c6;
+}
+
+/*VALIDACIÓN DE COLORES*/
+.C_validacionCorrecta{
+    border-color: #86A135
+}
+
+.C_validacionIncorrecta{
+    border-color:red;
+}
+
+.C_colorBaseBorder{
+    border-color:#726561;
+}
+
+.formulario-personal {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: auto 0;
+    width: 95%;
+    /* Ocupa todo el ancho disponible*/
+    row-gap: 1.8rem;
+}
+
+form {
+    max-height: 100%;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+  /* Clase para max-height 100% */
+.form-max-height-100 {
+    max-height: 100%;
+  }
+
+  /* Clase para max-height 100% */
+.form-max-height-100-2 {
+    max-height: 100%;
+  }
+
+  /* Clase para max-height 90% */
+  .form-max-height-90 {
+    max-height: 87%;
+  }
+  
+
+#ayudauserFB{
+    color: #ffffff;
+    display: none;
+}
+
+#ayudauserFP{
+    color: #ffffff;
+    display: none;
+}
+
+.C_menuredsocial option {
+    background-repeat: no-repeat;
+    background-position: 10px 8px;
+    padding-left: 30px;
+}
+
+
+.C_estilosInputFormulario{
+    background: #726561;
+}
+
+.C_horarioInput{
+    background: #538898;
+}
+
+.iconoCopyHorario{
+    width: 20px;
+    height: 25px;
+}
+
+.C_titulosHoras{
+    color: #538898;
+    margin-bottom: .2rem;
+}
+
+
+
+.C_titulosLabel{
+    color: #ffffff;
+}
+
+.C_titulosGenerales{
+    color: #ffffff;
+}
+
+#entradaTitulo{
+    padding-left: 49%;
+}
+
+#salidaTitulo{
+    padding-left: 11%;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.9;
+    filter: invert(0.9);
+}
+
+hr{
+    background: #ffffff;
+}
+
+#lineaDividora{
+    size: 2px;
+    width: 92%;
+}
+
+
+
+.formulario-personal input {
+    border-radius: 20px;
+    color: white;
+    width: 95%;
+}
+
+.C_titulosLabel label {
+    color: white;
+}
+
+
+
+
+/*Se agrega una imagen para reemplazar el icono de select*/
+
+#menuRedSocial {
+    background-image: url('../../../static/icons/downArrow.svg');
+    /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
+    background-repeat: no-repeat;
+    background-position: 95%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+    /*Evita que se muestre la flecha por defecto en versiones de IE*/
+}
+
+
+
+.C_leyendasUnoyDos span{
+    color: red;
+}
+
+.C_leyendasUnoyDos{
+    justify-content: end;
+    display: grid;
+    padding-right: 12%;
+}
+
+  
+.C_checkPrueba{
+    margin-top: -1%;
+}
+
+
+.formulario-personal select {
+    margin: auto 0;
+    border-radius: 13px;
+    background: #726561;
+    color: #c6c6c6;
+    width: 95%;
+}
+
+.ayudausuario span {
+    color: red;
+}
+
+.C_leyendas p {
+    font-size: 15px;
+    color: #a6a6a6;
+    
+}
+
+.C_leyendas2 p {
+    font-size: 15px;
+    color: #a6a6a6;
+    font-style: italic;
+
+}
+
+.C_leyendas {
+    font-size: 15px;
+    color: #a6a6a6;
+    padding-top: 1%;
+}
+
+.C_leyendas2 {
+    padding-top: 1%;
+}
+
+#fecha_nac {
+    background: #726561;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.C_btnregistrar {
+    display: flex;
+    margin-top: 0%;
+}
+
+
+#btn_form_configuracion_sueldo, #btn_form_registar, #btn_form_datos_personales  {
+    padding: 10px 24px;
+    background-color: #86A135;
+    border-radius: 25px;
+}
+
+
+.inputValido{
+    border: 2px #86A135; 
+}
+
+.inputInvalido{
+    border: 2px #ab3737;
+}
+
+.C_btnregistrar input {
+    color: white;
+}
+
+/*Mensaje de Error*/
+.C.errormensaje {
+    color: #ab3737;
+    display: none;
+}
+/*Error Facebook*/
+
+/*Error Instagram*/
+/*Mensaje de error fecha de Registro*/
+#errorFR {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Fecha de Rol de Personal*/
+#errorRP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Nombre*/
+#errorN {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+/*Mensaje de error de Apellido Paterno*/
+#errorAP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+/*Mensaje de error de Fecha de Nacimiento*/
+#errorFN {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Fecha de Dirección*/
+#errorDir {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+/*Mensaje de error de Fecha de Contraseña*/
+#errorPass {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Tipode Pago*/
+#errorTP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Tipode Pago*/
+#errorTP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+
+/*Mensaje de error de Periodo*/
+#errorP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Pago fijo*/
+#errorPFijo{
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/*Mensaje de error de Comision por Productos*/
+#errorCP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+/*Mensaje de error de Comisión por Servicios*/
+#errorCS {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+
+#errorInstagram{
+    color: #ffffff;
+}
+
+.C_form_horario {
+    display: flex;
+}
+
+.C_horaComida{
+    background-color: #ab3737;
+
+}
+
+.diasHorarioModal {
+    margin-bottom: 35%;
+}
+
+.form-control:disabled {
+    opacity: 0.5;
+    background: #538898;
+}
+
+/*Menu con checklist*/
+.chosen-container .chosen-results li {
+    position: relative;
+    padding-left: 25px;
+  }
+  .chosen-container .chosen-results li:before {
+    display: inline-block;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    background-color: #fff;
+  }
+  .chosen-container-multi .chosen-choices  {
+    background: #726561 !important;
+    border-radius: 20px;
+    }
+
+.chosen-color-base {
+  border-color: #726561 !important;
+}
+
+.chosen-validacion-correcta {
+  border-color: #86A135 !important;
+}
+
+.chosen-validacion-incorrecta {
+  border-color: red !important;
+}
+
+.chosen-container-active .chosen-choices li.search-field input[type=text] {
+    color: white !important; 
+    padding-left: 10px;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice  {
+    margin: 5px 0;
+    background: #c6c6c6 !important;
+    background-color: #c6c6c6 !important;
+        background-image: #c6c6c6 !important;
+    }
+
+
+    #ComosaberUserFb{
+        color: #09C;
+    }
+  
+  
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+
+/*Desactivar flechas en el boton de tipo number*/
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    /*Desactivar flechas en el boton de tipo number*/
+    --moz-appearance: textfield;
+}
+
+
+
+
+/*CSS MODAL*/
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /*background-color: rgba(0, 0, 0, 0.5);*/ /*Le da el color negro de fondo al abrirse el MODAL*/
+  }
+
+    .modal-dialog{
+    max-width: 50%;
+ 
+}
+
+
+  
+  .modal-content {/*Configuración del Modal POSICIÓN*/
+    margin: 26% auto;
+    margin-left: 114%;
+    border-radius: 20px;
+    width: 22%;
+    height: 50%;
+  }
+
+  .modal-title{/*Titulo del modal Emergente*/
+    font-size: 1rem;
+  }
+  
+  .close {
+    color: #59534F;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-header .btn-close {
+    background-color: #538898;
+  }
+  
+
+
+  .modal-backdrop{
+    z-index: -1;
+  }
+
+  .modal-body{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 80%;
+  }
+
+  #formularioEmergente .modal-content  {
+    background-color:rgba(83, 8, 8, 0.7);/* Cambia "#ff0000" al color que desees utilizar */
+    color:#ffffff;
+    font-size: 14px;
+  }
+
+
+
+  #formularioEmergente input {
+    color:#ffffff;
+    font-size: 12px;
+    align-items: center;
+    background: #726561;
+    border-radius: 20px;
+  }
+
+  
+  #formularioEmergente .modal-body > div {
+    margin-bottom: 15px; /* Cambia el valor según el espacio de separación deseado */
+  }
+
+  #formularioEmergente placeholder{
+    color: #ffffff;
+  }
+
+  .modal-header,
+  .modal-footer {
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+.modal-body{
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 0;
+    padding-right: 48%;
+}
+
+
+#btnCancelarDistribuidor{ 
+ background:#ab3737;
+ color: #ffffff;
+ font-size: 14px;
+ align-items: center;
+ font-weight: bold;
+}
+
+.btnsFormulario{
+    border-radius: 25px;
+    padding: 10px 24px;
+    border-radius: 25px;
+}
+
+
+#btnGuardarDistribuidor{ 
+    background: #6e842b;
+    color: #ffffff;
+    font-size: 14px;
+    align-items: center;
+    font-weight: bold;
+   }
+
+   #formularioEmergente ::placeholder {
+    color: #ffffff; /* Cambia "#ff0000" al color que desees utilizar */
+    align-items: center;
+    font-size: 14px;
+  }
+
+  
+
+  /*#formularioEmergente input{
+    border: none;
+    height:40px;
+    color:#ffffff;
+    font-size: 14px;
+    width: 89%;
+  }*/
+  
+  #formularioEmergente textarea{
+    border: none; /*Quitar lineas de contorno de los TEXTAREA*/
+    height: 90px;
+    color: #ffffff;
+    font-size: 14px;
+    width: 89%;
+  }
+
+#formularioEmergente button{
+    text-align: center;
+    align-items: center;
+}
+#opcion1{
+    border-radius: 50%;
+}
+
+.C_botonesRegistro{
+    padding-top: 1%;
+}
+
+
+/*DECLARACION DE MEDIAS*/
+
+@media screen and (max-width: 1920px) {
+    .C_btnregistrar {
+        padding-left: 80%;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+    .C_btnregistrar {
+        padding-left: 78%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .C_btnregistrar {
+        padding-left: 75%;
+    }
+}
+
+
+/*VERSIÓN MÓVIL - VERSIÓN MÓVIL - VERSIÓN - MÓVIL - VERSIÓN MÓVIL - VERSIÓN MÓVIL - VERSIÓN MÓVIL - VERSIÓN MÓVIL - VERSIÓN MÓVIL*/
+@media screen and (max-width:1000px){
+
+    /*CONFIGURACIÓN INICIAL DE PÁGINA*/
+    [class*="col-"] {
+        width: 100%;
+       }
+
+    /*BODY*/
+    body {
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    /*ICONOS DE PAGINA*/
+    /*Icono de MENU*/
+    .C_menu{
+        position: fixed;
+        padding-top: 6.6%;
+        padding-left: 82%;
+        display: none;
+    }
+
+    /*Icono de HOME*/
+    .C_home{
+        position: fixed;
+        padding-top: 5%;
+        padding-left: 70.5%;
+        display: block;
+    }
+
+    /*Icono de BACK*/
+    .icn-back{
+        position: absolute;
+        padding-top: 13%;
+        padding-left: 82%;
+    }
+    
+    /*Icono de  BROCHA*/
+    .icn-brush {
+        position: fixed;
+    }
+
+    .C_leyendasUnoyDos{
+        justify-content: center;
+        display: grid;
+        padding-right: 0%;
+    }
+
+    .C_Seccion_Footter{
+        align-items: center;
+    }
+
+    .C_botonesRegistro{
+        padding-top: 5%;
+    }
+
+    .C_nav{
+        padding-right: 0%;
+    }
+
+    /*Contenido de FORMULARIO-PERSONAL*/
+    .formulario-personal {
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 2%;
+        overflow-x: hidden;
+    }
+
+    /*CONFIGURACIÓN CAMPO DERECHO*/
+    #campoDerecho {
+        padding-left: 10%;
+        height: 50vh;
+        display: block;
+        align-items: center;
+        padding-top: 5%;
+    }
+
+    /*CONFIGURACIÓN DE DISTRIBUCIÓN DE FORMULARIO DE CHECKBOX3*/
+    .formulario-personal .C_formHorarioDos{
+        display: grid;
+        grid-template-columns: repeat(3, 45%);
+    }
+  
+
+    .C_tit{
+        display:none;
+    }
+
+    .CampoIzquierdo {
+        /*Alineación a derecha*/
+        padding-left: 10%;
+        /*Alineación hacia abajo*/
+        padding-top: 4%;
+        height: 15vh;
+    }
+
+ 
+/*Tamaño de letra H1*/
+    .CampoIzquierdo h1 {
+        font-size: 25px;
+    }
+    
+    .CampoIzquierdo h5 {
+        font-size: 15px;
+    }
+    
+    .CampoIzquierdo span {
+        font-size: 18px;
+    }
+
+    .C_headerbody{
+        display: none;
+    }
+    .C_headerfooter{
+        display: none;
+    }
+
+    .C_sectionformulario{
+        height: 70vh;
+    }
+    
+    .C_btnregistrar a {
+        justify-content: start;
+    }
+    
+    .C_navegacionAntSig{
+        display: flex;
+		justify-content: end;
+		padding-right: 50%;
+    }
+
+    .C_leyendas p {
+        font-size: 15px;
+    }
+
+    .C_leyendas2 p {
+        font-size: 15px;
+    }
+
+    #facebook {
+        border: none;
+        padding: 0;
+        outline: initial;
+        transition: none;
+    }
+
+   /* #facebook:focus {
+        border-color: initial;
+        box-shadow: none;
+        transform: none;
+    }*/
+
+    #instagram {
+        border: none;
+        padding: 0;
+        outline: initial;
+        transition: none;
+    }
+
+   /* #instagram:focus {
+        border-color: initial;
+        box-shadow: none;
+        transform: none;
+    }*/
+
+    
+    .C.campodeboton{
+        position: absolute;
+    }
+
+    .C_btnregistrar{
+        padding-left: 0%;
+    }
+
+    .modal-content{
+        margin-left: 60%;
+        width: 100%;
+    }  
+
+  
+    .C_tipoPago{
+        padding-top: 1.2%;
+        padding-bottom: 1.2%;
+    }
+
+
+    /*Contenido de FONDO*/
+    #contenedor {
+        position: fixed;
+        z-index: 1;
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 0%;
+        height:100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+    }
+}

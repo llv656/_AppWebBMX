@@ -1,0 +1,523 @@
+/*Cuerpo de la página web enfocado en el fondo.*/
+
+body {
+    background-image: url('../../img/clienteBarberia.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#contenedor {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url(../../img/clienteBarberia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 5%;
+    border-radius: 25px;
+    height: 80vh;
+    display: inline-block;
+}
+
+.C_Seccion_Footter{
+    padding-bottom: 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+/*Icono de Regresar (<-)*/
+#img-back {
+    /*Definición de tamaño*/
+    height: 60px;
+    width: 55px;
+}
+
+/*imagen de BACK*/
+.icn-back {
+    /*Separación,modo de visualización y ajuste a la derecha*/
+    padding: 12px;
+    display: flex;
+    padding-left: 95%;
+}
+
+/*Efecto de selección y selección de color */
+#img-back:hover{
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+/*Icono de Limpiar(Brocha)*/
+.icn-brush {
+    top: 100px;
+    left: 100px;
+    display: flex;
+    justify-content: end;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+#btnBrush {
+    /*Definición de tamaño*/
+    height: 20px;
+}
+
+/*Efecto de selección y selección de color */
+#btnBrush:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+/*Efecto de selección y selección de color */
+#home:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+#menu:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+/* Ajuste Tooltip*/
+.tooltip{
+    color: #a6a6a6;
+}
+
+.C_menu{
+    display: none;
+}
+
+
+/*I N I C I O     C A M P O       I Z Q U I E R D O */
+
+
+/*Alineación del campo izquierdo*/
+.CampoIzquierdo {
+    /*Alineación a derecha*/
+    padding-left: 5%;
+}
+
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+.CampoIzquierdo h1 {
+    font-family: 'Open Sans Semibold', sans-serif;
+    font-size: 70px;
+    color: white;
+    margin-top: auto;
+}
+
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+.CampoIzquierdo h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    color: white;
+}
+
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+.CampoIzquierdo span {
+    font-size: 20px;
+    font: bold;
+    color: white;
+}
+
+
+/*I N I C I O     C A M P O       D E R E C H O */
+#btn-reg:hover,
+#btn-reg:focus {
+    background-color: #6e842b;
+}
+
+#campoDerecho {
+    display: flex;
+    align-items: center;
+    height: 45vh;
+}
+
+form {
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+form:hover::-webkit-scrollbar {
+    display: initial;
+}
+
+form::-webkit-scrollbar-thumb {
+    background-color: #09C;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+}
+
+/*VALIDACIÓN DE COLORES*/
+.C_validacionCorrecta{
+    border-color: #86A135
+}
+
+.C_validacionIncorrecta{
+    border-color:red;
+}
+
+.C_colorBaseBorder{
+    border-color:#726561;
+}
+
+.formulario-clientes {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 100%;
+    row-gap: 2.5rem;
+    padding: 2rem 1rem;
+    margin: auto 0;
+    row-gap: 10%; /* Ocupa todo el ancho disponible*/
+}
+
+#ayudauserFB{
+    color: #ffffff;
+    display: none;
+}
+
+.C_menuredsocial option {
+    background-repeat: no-repeat;
+    background-position: 10px 8px;
+    padding-left: 30px;
+}
+
+.formulario-clientes::placeholder {
+    color: #ffffff
+}
+
+.C_leyendas span{
+    color: red;
+}
+
+.formulario-clientes input {
+    border-radius: 20px;
+    background: #726561;
+    color: white;
+    width: 95%;
+}
+
+.formulario-clientes label {
+    color: white;
+}
+
+#formulario-clientes ::placeholder{
+    color: #ffffff;
+}
+
+#menuTipoUsuario {
+    /*Flechas de despliegue de menú*/
+    background-image: url('../../../static/icons/downArrow.svg');
+    /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
+    background-repeat: no-repeat;
+    background-position: 95%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+/*Se agrega una imagen para reemplazar el icono de select*/
+#menuRedSocial {
+    background-image: url('../../../static/icons/downArrow.svg');
+    /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
+    background-repeat: no-repeat;
+    background-position: 95%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+    /*Evita que se muestre la flecha por defecto en versiones de IE*/
+}
+
+.formulario-clientes select {
+    margin: auto 0;
+    border-radius: 13px;
+    background: #726561;
+    color: white;
+    width: 95%;
+}
+
+#ComosaberUserFb{
+    color: #0099ff
+}
+
+.ayudausuario span {
+    color: red;
+}
+
+.C_leyendas p {
+    font-size: 15px;
+    color: #a6a6a6;
+    font-style: italic;
+    padding-left: 42.5%;/*valor original 44%*/
+    padding-top: 2%;
+}
+
+#fecha_nac {
+    background: #726561;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.C_btnregistrar {
+    display: flex;
+    margin-bottom: 1%;
+    /*margin-top: 2rem;*/
+}
+
+#btn-reg {
+    padding: 10px 24px;
+    background-color: #86A135;
+    border-radius: 25px;
+}
+
+.C_btnregistrar input {
+    color: white;
+}
+
+#errorN {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+#errorAP {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+#errorAM {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+#errorFech {
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+.C.errormensaje {
+    color: #ab3737;
+    display: none;
+}
+
+#errorTel{
+    color: #a6a6a6;
+    font-size: 12px;
+    text-align: center;
+    z-index: auto;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+
+/*Desactivar flechas en el boton de tipo number*/
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    /*Desactivar flechas en el boton de tipo number*/
+    -moz-appearance: textfield;
+}
+
+
+/*DECLARACION DE MEDIAS*/
+@media screen and (max-width: 1920px) {
+    .C_btnregistrar {
+        padding-left: 79%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .C_btnregistrar {
+        padding-left: 78%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .C_btnregistrar {
+        padding-left: 75%;
+    }
+}
+
+/*Versión móvil*/
+@media screen and (max-width:1000px){
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .formulario-clientes {
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 2%;
+        padding: 0;
+    }
+
+    .CampoIzquierdo {
+        /*Alineación a derecha*/
+        padding-left: 10%;
+    }
+
+    .CampoIzquierdo h1 {
+        font-size: 35px;
+    }
+    
+    .CampoIzquierdo h5 {
+        font-size: 15px;
+    }
+    
+    .CampoIzquierdo span {
+        font-size: 18px;
+    }
+
+    #contenedor {
+        position: fixed;
+        z-index: 1;
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 0%;
+        height:100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+    }
+
+    body {
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .C_headerbody{
+        display: none;
+    }
+
+    .C_headerfooter{
+        display: none;
+    }
+
+    .C_menu{
+        position: fixed;
+        padding-top: 6%;
+        padding-left: 82%;
+        display: none;
+    }
+
+
+    .C_home{
+        position: fixed;
+        padding-top: 5%;
+        padding-left: 70%;
+        display: block;
+    }
+
+    .icn-back{
+        position: absolute;
+        padding-top: 13%;
+        padding-left: 82%;
+    }
+
+    .icn-brush {
+        display: contents;
+        padding-top: 0%;
+        padding-right: 0%;
+    }
+
+    .C_divBrushColSm1 {
+        width: 15vh;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-right: 0%;
+        height: 35vh;
+        padding-bottom: 13vh;
+    }
+
+    .C_sectionformulario{
+        height: 75vh;
+    }
+
+    .C_btnregistrar {
+        padding-left: 0%;
+        padding-bottom: 0%;
+        justify-content: center;
+    }
+
+    .C_leyendas p {
+        font-size: 15px;
+        padding-left: 6%;/*valor original 44%*/
+        padding-top:5%;
+    }
+
+    #campoDerecho {
+        padding-left: 10%;
+        padding-top: 10%;
+    }
+
+    #facebook {
+        padding: 0;
+        outline: initial;
+        transition: none;
+    }
+
+    #instagram {
+        padding: 0;
+        outline: initial;
+        transition: none;
+    }
+    
+
+    form {
+        max-height: 48vh;
+    }
+
+    .C.campodeboton{
+        position: absolute;
+    }
+
+    .C_Seccion_Footter{
+        padding-bottom: 10vh;
+        height: 20vh;
+    }
+
+}

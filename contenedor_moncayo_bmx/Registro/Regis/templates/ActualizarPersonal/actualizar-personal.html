@@ -1,0 +1,641 @@
+
+{% extends "plantilla.html" %}
+
+{% block title %}  Actualizar Personal {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="/static/css/personal/actualizar-personal.css"/>
+{% endblock %}
+
+{% block scripts %} 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+
+<script src="/static/js/personal/actualizar/validaciones.js"></script> 
+<script src="/static/js/personal/actualizar/inicializador_elementos_dom.js"></script> 
+<script src="/static/js/personal/actualizar/mensajes.js"></script>
+<script src="/static/js/personal/actualizar/modales_horario.js"></script>
+<script src="/static/js/personal/actualizar/validaciones_horario.js"></script>
+<script src="/static/js/personal/actualizar/formulario_personal.js"></script>
+<script src="/static/js/personal/actualizar/colores_validaciones.js"></script>
+<script src="/static/js/personal/actualizar/colores_validaciones_horarios.js"></script>
+<script src="/static/js/personal/actualizar/validacionesAjax.js"></script>
+
+
+
+
+
+<!--<script src="/static/js/uscripts/registro_personal.js"></script> 
+<script src="/static/js/uscripts/bootstrap-multiselect.min.js"></script> -->
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+
+	<div class="col-sm-1 C_headerbody"></div>
+
+	<div class="col-sm-10 cont" id="contenedor" >
+
+		<!--Header-->
+		
+		<div class="row C_home">
+			<img id="home" src="../../../static/icons/home.svg" alt="home">
+		</div>
+			
+		<div class="row C_menu">
+			<img id="menu" src="../../../static/icons/menu2.svg" alt="menu">
+		</div>
+	
+		<div class="row icn-back">
+			<img id="img-back" src="../../../static/icons/back.svg" alt="regresar">						
+		</div>
+
+
+		<!--Cuerpo de formulario-->
+		<div class="row C_sectionformulario" >
+
+			<div class="col-sm-5 CampoIzquierdo">
+				<h1 class="C_tituloRegPers">Actualizar<br>Personal</h1>
+				<h5>Administrador, Recepcionista, <br>Barber Root, Barber</h5>
+			</div>
+
+
+			<div class="col-sm-6 C_campoDerecho C_prueba12" id="campoDerecho" ">
+				<section class="C_tit">
+					<div class="row C_titulosHorarioOf" id="titulosHorarioOf">
+						<div class="C_form_horario C_titulosHr">
+							<label id="diaTitulo" class="C_titulosHoras">Día</label>
+							<label id="entradaTitulo" class="C_titulosHoras">Hora Inicio</label>
+							<label id="salidaTitulo" class="C_titulosHoras">Hora Fin</label>
+						</div>
+						<hr id="lineaDividora">
+				</section>
+				
+				<!--Inicia Formulario-->
+				<form class="formulario-personal" id="formulario-personal">
+				
+					<!--Inicia PRIMER formuario-->
+					<div class="C_fechaRegistro">
+						<label class="C_titulosGenerales">Fecha de Registro</label>
+					</div>
+
+					<div class="C_fechaRegistro">
+						<input type="date" class="form-control fechas C_estilosInputFormulario C_colorBaseBorder" id="fecha_registro" 
+						name="N_fechaRegistro" min="1920-01-01">
+						<span id="errorFR" class="C.errormensaje"></span>
+					</div>
+
+					<div class="C_rolPersonal">
+						<label for="rolPersonal" class="C_titulosGenerales">Rol</label>
+					</div>
+					
+					<div class="C_rolPersonal">
+						<select id="rolPersonal" name="N_rolPersonal" class="chosen-select form-control C_estilosInputFormulario chosen-color-base" multiple 
+						data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+							<option value="Administrador">Administrador</option>
+							<option value="Recepcionista">Recepcionista</option>
+							<option value="BarberRoot">Barber Root</option>
+							<option value="Barber">Barber</option>
+						</select>
+						<span id="errorRP" class="C.errormensaje"></span>
+					</div>	
+
+
+					<div class="C_nombre">
+						<label class="C_titulosGenerales">Nombre</label>
+					</div>
+	
+					<div class="C_nombre">
+						<input type="text" class="form-control nombres C_estilosInputFormulario C_colorBaseBorder" id="nombre" name="N_nombre" placeholder="Nombre"
+						data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorN" class="C.errormensaje"></span>
+					</div>
+
+					
+					<div class="C_ApPa">
+						<label class="C_titulosGenerales">Apellido Paterno</label>
+					</div>
+					
+					<div class="C_ApPa">
+						<input  type="text" class="form-control nombres C_estilosInputFormulario C_colorBaseBorder" id="apellido_paterno" name="N_apellidoPaterno" 
+						placeholder="Apellido Paterno" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorAP" class="C.errormensaje"></span>
+					</div>
+	
+	
+					<div class="C_apMa">
+						<label class="C_titulosGenerales">Apellido Materno</label>
+					</div>
+	
+					<div class="C_apMa">
+						<input type="text" class="form-control nombres C_estilosInputFormulario C_colorBaseBorder" id="apellido_materno" name="N_apellidoMaterno"
+						placeholder="Apellido Materno">
+					</div>
+					
+
+					<div class="C_fechNac">
+						<label class="C_titulosGenerales">Fecha de Nacimiento</label>
+					</div>
+	
+					<div class="C_fechNac">
+						<input type="date" class="form-control fechas C_estilosInputFormulario C_colorBaseBorder" id="fecha_nacimiento" name="N_fechaNacimiento"
+						min="1920-01-01" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorFN" class="C.errormensaje"></span>
+					</div>
+
+					<div class="C_direccion">
+						<label class="C_titulosGenerales">Dirección</label>
+					</div>
+	
+					<div class="C_direccion">
+						<input type="text" class="form-control C_estilosInputFormulario C_colorBaseBorder" id="dir_personal" name="N_dirPersonal"
+						placeholder="Dirección" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorDir" class="C.errormensaje"></span>
+					</div>
+	
+					<div class="C_telefono">
+						<label for="numero_telefonico" class="C_titulosGenerales">Teléfono</label>
+					</div>
+	
+					<div class="C_telefono">
+						<input type="text" class="form-control C_estilosInputFormulario C_colorBaseBorder" maxlength="10" id="numero_telefonico" name="N_numeroTelefonico"
+						placeholder="Número Telefónico" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorTel" class="C.errormensaje"></span>
+					</div>
+	
+					<div class="C_correoElectronico">
+						<label for="correo_electr" class="C_titulosGenerales">Correo electrónico</label>
+					</div>
+					
+					<div class="C_correoElectronico">
+						<input type="mail" class="form-control C_estilosInputFormulario C_colorBaseBorder" id="correo_electr" name="N_correoElectronico"
+						placeholder="Correo electrónico">
+						<span id="errorCorreo" class="C.errormensaje"></span>
+					</div>
+
+					
+					<div class="C_facebook">
+						<label id="fb_lbl" for="facebook" class="C_titulosGenerales">Facebook</label>
+					</div>
+					<div class="C_facebook">
+						<input type="text" class="form-control C_estilosInputFormulario C_colorBaseBorder" id="facebook" name="N_facebook"
+						placeholder="Usuario de Facebook">
+						<span id="errorFacebook" class="C.errormensaje"></span>
+						<a id="ComosaberUserFb">¿Cómo se encuentra el usuario?</a>
+						<p id="ayudauserFB">1.- Entrar a la App mobile de Facebook<br>2.- Entrar a tu perfil<br>
+							3.-Desplazate al menú de 3 puntos (se encuentra a un lado de la opción de "Editar perfil")<br>
+							4.- Copia el enlace de perfil a la casilla de Facebook  
+						</p>
+					</div>
+
+
+					<div class="C_instagram">
+						<label for="instagram" class="C_titulosGenerales">Instagram</label>
+					</div>
+					<div class="C_instagram">
+						<input type="text" class="form-control C_estilosInputFormulario C_colorBaseBorder" id="instagram" name="N_instagram"
+						placeholder="Usuario de instagram">
+						<span id="errorInstagram" class="C.errormensaje"></span>
+					</div>
+
+				
+					<div class="C_contrasena">
+						<label class="C_titulosGenerales">Contraseña</label>
+					</div>
+
+					<div class="C_contrasena reloadIcono">
+						<input type="password" class="form-control C_inputContrasena C_estilosInputFormulario C_colorBaseBorder" id="pass" name="N_password"
+						placeholder="Contraseña" readonly>
+						<span id="newPass" class="reload-icon"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></span>
+						<span id="togglePass" class="eye-icon"><i class="fas fa-eye" style="color: #ffffff;"></i></span>
+					</div>
+				<!--Termina el SEGUNDO formulario-->
+
+					
+				<!--Inicia el SEGUNDO formulario-->
+						<div class="C_tipoPago">
+							<label class="C_titulosGenerales">Tipo Pago</label>
+						</div>
+
+						<div class="C_tipoPago">
+							<select id="tipoPago" name="N_tipoPago" class="chosen-select form-control C_estilosInputFormulario C_colorBaseBorder" name="N_menuTipoPago" multiple>
+								<option value="Fijo">Fijo</option>
+								<option value="ComisionProd">Comisión Productos</option>
+								<option value="ComisionServ">Comisión Servicios</option>
+							</select>
+							<span id="errorTP" class="C.errormensaje"></span>
+					  </div>
+					  
+
+					  <div class="C_periodoPago">
+						<label class="C_titulosGenerales">Periodo Pago</label>
+					</div>
+
+					  <div class="C_periodoPago">
+						<select id="periodoPago" name="N_periodoPago" class="form-control C_periodoPago C_estilosInputFormulario C_colorBaseBorder">
+							<option value="" disabled selected>Periodo Pago</option>
+							<option value="Diario">Diario</option>
+							<option value="Semanal">Semanal</option>
+							<option value="Quincenal">Quincenal</option>
+							<option value="Mensual">Mensual</option>
+						</select>
+						<span id="errorP" class="C.errormensaje"></span>
+					</div>
+
+
+					<div class="C_diaPago">
+						<label class="C_titulosGenerales">Día Pago</label>
+					</div>
+					
+					<div class="C_diaPago">
+						<select id="dia_pago" name="N_diaPago" class="form-control C_estilosInputFormulario">
+							<option value="" disabled selected>Día pago</option>
+							<option value="Lunes">Lunes</option>
+							<option value="Martes">Martes</option>
+							<option value="Miercoles">Miércoles</option>
+							<option value="Jueves">Jueves</option>
+							<option value="Viernes">Viernes</option>
+							<option value="Sabado">Sábado</option>
+							<option value="Domingo">Domingo</option>
+						</select>
+						<span id="errorAP" class="C.errormensaje"></span>
+					</div>
+
+					<div class="C_fechaPago">
+						<label class="C_titulosGenerales">Fecha Pago</label>
+					</div>
+
+					<div class="C_fechaPago">
+						<input class="form-control C_estilosInputFormulario" type="number" id="fecha_pago" name="N_fechaPago" placeholder="Fecha Pago">
+						<a id="fechaPa">¿Qué debo agregar?</a>
+						<p id="ayudauserFP">Se agrega únicamente el día que se realiza la fecha de pago <br>
+							ejemplo: <b>6</b>
+						</p>
+					</div>			
+
+
+
+					<div class="C_pagoFijo">
+						<label class="C_titulosGenerales">Sueldo (Pago Fijo)</label>
+					</div>
+
+					<div class="C_pagoFijo">
+						<input class="form-control C_estilosInputFormulario C_colorBaseBorder" type="number" id="pagoFijo" name="N_pagoFijo" placeholder="Pago Fijo">
+						<span id="errorPFijo" class="C.errormensaje"></span>
+					</div>
+
+					<div class="C_sueldo">
+						<label class="C_titulosGenerales">Sueldo (Comisión Productos)</label>
+					</div>
+
+					<div class="C_sueldo">
+						<input class="form-control C_comision C_estilosInputFormulario C_colorBaseBorder" type="number" id="comisionProductos" name="N_comisionProductos"
+						placeholder="Comisión de Productos" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorCP" class="C.errormensaje"></span>
+					</div>
+
+					<div class="C_sueldoServicios">
+						<label class="C_titulosGenerales">Sueldo (Comisión Servicios)</label>
+					</div>
+
+					<div class="C_sueldoServicios">
+						<input class="form-control C_comision C_estilosInputFormulario" type="number" id="comisionServicios" name="N_comisionServicios"
+						placeholder="Comisión de Servicios" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+						<span id="errorCS" class="C.errormensaje"></span>
+					</div>
+
+
+				<!--Termina el SEGUNDO formulario-->
+
+
+				<!--Inicia el tercer formulario Entrada Salida-->
+				<div class="C_lunes C_form_horario">
+					<label class="C_titulosLabel">Lunes</label>
+				</div>
+
+				<div class="C_lunes C_form_horario C_formHorarioDos">
+					<div class="col-sm-5">
+						<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="lunesEntrada" name="N_lunesEntrada">
+					</div>
+					<div class="col-sm-5">
+						<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="lunesSalida" name="N_lunesSalida">
+					</div>
+
+					<div class="col-sm-2">
+						<img id="iconoCopyLunes" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal" >
+					</div>
+				</div>
+
+					<div class="C_horaComidaLunes C_form_horario C_horarioComida ">
+						<label class="C_titulosLabel">Horario de Comida</label>
+					</div>
+
+
+					<div class="C_horarioComidaLunes C_form_horario C_horarioComida C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="lunesInicioHoraComida" name="N_lunesInicioHoraComida">
+						</div>
+
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="lunesFinHoraComida" name="N_lunesFinHoraComida">
+						</div>
+
+						<div class="col-sm-2">
+							<img id="iconoCopyHorarioComidaLunes" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+
+					<div class="C_martes C_form_horario">
+						<label class="C_titulosLabel">Martes</label>
+					</div>
+
+					<div class="C_martes C_form_horario C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="martesEntrada" name="N_martesEntrada">
+						</div>
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="martesSalida" name="N_martesSalida">
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopyMartes" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_horaComidaMartes C_form_horario C_horarioComida ">
+						<label class="C_titulosLabel">Horario de Comida</label>
+					</div>
+
+					<div class="C_horarioComidaMartes C_form_horario C_horarioComida C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="martesInicioHoraComida" name="N_martesInicioHoraComida">
+						</div>
+
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="martesFinHoraComida" name="N_martesFinHoraComida">
+						</div>
+
+						<div class="col-sm-2">
+							<img id="iconoCopyHorarioComidaMartes" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_miercoles C_form_horario">
+						<label class="C_titulosLabel">Miércoles</label>
+					</div>
+
+					<div class="C_miercoles C_form_horario C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="miercolesEntrada" name="N_miercolesEntrada">
+						</div>
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="miercolesSalida" name="N_miercolesSalida">
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopyMiercoles" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+					
+
+					<div class="C_horaComidaMiercoles C_form_horario C_horarioComida ">
+						<label class="C_titulosLabel">Horario de Comida</label>
+					</div>
+
+					<div class="C_horarioComidaMiercoles C_form_horario C_horarioComida C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="miercolesInicioHoraComida" name="N_miercolesInicioComida">
+						</div>
+
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="miercolesFinHoraComida" name="N_miercolesFinHoraComida">
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopyHorarioComidaMiercoles" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_jueves C_form_horario">
+						<label class="C_titulosLabel">Jueves</label>
+					</div>
+
+					<div class="C_jueves C_form_horario C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="juevesEntrada" name="N_juevesEntrada">
+						</div>
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="juevesSalida" name="N_juevesSalida">
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopyJueves" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_horaComidaJueves C_form_horario C_horarioComida ">
+						<label class="C_titulosLabel">Horario de Comida</label>
+					</div>
+
+					<div class="C_horarioComidaJueves C_form_horario C_horarioComida C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="juevesInicioHoraComida" name="N_juevesInicioHoraComida">
+						</div>
+
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="juevesFinHoraComida" name="N_juevesInicioHoraComida">
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopyHorarioComidaJueves" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_viernes C_form_horario">
+						<label class="C_titulosLabel">Viernes</label>
+					</div>
+
+					<div class="C_viernes C_form_horario C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="viernesEntrada" name="N_viernesEntrada">
+						</div>
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="viernesSalida" name="N_viernesSalida">
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopyViernes" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_horaComidaViernes C_form_horario C_horarioComida ">
+						<label class="C_titulosLabel">Horario de Comida</label>
+					</div>
+
+					<div class="C_horarioComidaViernes C_form_horario C_horarioComida C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="viernesInicioHoraComida" name="N_viernesInicioHoraComida">
+						</div>
+
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="viernesFinHoraComida" name="N_viernesFinHoraComida">
+						</div>
+
+						<div class="col-sm-2">
+							<img id="iconoCopyHorarioComidaViernes" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_sabado C_form_horario">
+						<label class="C_titulosLabel">Sábado</label>
+					</div>
+
+					<div class="C_sabado C_form_horario C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="sabadoEntrada" name="N_sabadoEntrada">
+						</div>
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="sabadoSalida" name="N_sabadoSalida"> 
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopySabado" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_horaComidaSabado C_form_horario C_horarioComida ">
+						<label class="C_titulosLabel">Horario de Comida</label>
+					</div>
+
+					<div class="C_horarioComidaSabado C_form_horario C_horarioComida C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="sabadoInicioHoraComida" name="N_sabadoInicioHoraComida">
+						</div>
+
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="sabadoFinHoraComida" name="N_sabadoFinHoraComida">
+						</div>
+
+						<div class="col-sm-2">
+							<img id="iconoCopyHorarioComidaSabado" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+
+					<div class="C_domingo C_form_horario">
+						<label class="C_titulosLabel">Domingo</label>
+					</div>
+
+					<div class="C_domingo C_form_horario C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="domingoEntrada" name="N_domingoEntrada">
+						</div>
+						<div class="col-sm-5">
+							<input class="form-control C_horarioInput C_colorBaseBorder" type="time" id="domingoSalida" name="N_domingoSalida">
+						</div>
+						<div class="col-sm-2">
+							<img id="iconoCopyDomingo" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+
+					<div class="C_horaComidaDomingo C_form_horario C_horarioComida ">
+						<label class="C_titulosLabel">Horario de Comida</label>
+					</div>
+
+
+					<div class="C_horarioComidaDomingo C_form_horario C_horarioComida C_formHorarioDos">
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="domingoInicioHoraComida" name="N_domingoInicioHoraComida">
+						</div>
+
+						<div class="col-sm-5">
+							<input class="form-control C_horaComida C_colorBaseBorder" type="time" id="domingoFinHoraComida" name="N_domingoFinHoraComida">
+						</div>
+
+						<div class="col-sm-2">
+							<img id="iconoCopyHorarioComidaDomingo" class="iconoCopyHorario" src="/static/icons/copy.svg" alt="" data-bs-toggle="modal">
+						</div>
+					</div>
+					<!--Termina TERCER formulario-->
+				</form>
+			</div>
+
+
+
+			<div class="col-sm-1">
+				<div class="row icn-brush" id="icn-Brush">
+					<img id="btnBrush" src="../../../static/icons/brushWhite.svg" alt="limpiar campos">
+				</div>
+	
+			</div>
+
+
+
+		</div>
+
+	<section class="C_Seccion_Footter"> 
+			<!--Footer-->
+			<div class="row C.campodeboton C_leyendasUnoyDos C_footer">
+				<div class="C_leyendas">
+					<p id="leyenda"><span>*</span>Se debe asociar algún contacto, correo electrónico o red social</p>
+				</div>
+
+				<div class="C_leyendas2">
+					<p id="leyenda2"><span>*</span>Se debe configurar al menos el horario de un dia </p>
+				</div>
+			</div>
+
+			<div class="row C_nav C_checkPrueba" >
+				<u class="C_textoNavegacion" id="DatosPersonales">Datos Personales</u>
+				<u class="C_textoNavegacion" id="ConfSueldo">Configuración Sueldo</u>
+				<u class="C_textoNavegacion" id="ConfiHorario">Configuración Horario</u>
+
+				<span class="checkbox-container"> <!--checkbox -->
+					<input class="C_Checklist_navegacion" type="checkbox" name="option" id="checkbox1">
+					<label for="checkbox1" id="labelCheckbox"></label>
+					<input class="C_Checklist_navegacion" type="checkbox" name="option" id="checkbox2">
+					<label for="checkbox2"></label>
+					<input class="C_Checklist_navegacion" type="checkbox" name="option" id="checkbox3">
+					<label for="checkbox3"></label>
+				</span>
+			</div>
+
+		
+
+			<div class="row C_botonesRegistro" >
+				<div class="C_btnregistrar">
+					<button type="submit" class="btn btn-success" id="btn_form_datos_personales" disabled>
+						Actualizar
+					</button>
+					<button type="submit" class="btn btn-success" id="btn_form_configuracion_sueldo" style="display: none;">
+						Actualizar
+					</button>
+					<button type="submit" class="btn btn-success" id="btn_form_registar" style="display: none;">
+						Actualizar
+					</button>
+				</div>
+			</div>
+			
+	</section>
+		
+
+	</div>
+
+
+	<div class="col-sm-1 C_headerfooter"></div>	
+
+
+</div>
+
+{% include "RegistroPersonal/modalHorarios.html" %}
+
+
+{% endblock %}

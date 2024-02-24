@@ -1,0 +1,550 @@
+/*Cuerpo de la página web enfocado en el fondo.*/
+
+body {
+    background-image: url('../../img/servicios.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#contenedor {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url('../../img/servicios.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 5%;
+    border-radius: 25px;
+    height: 80vh;
+    display: inline-block;
+}
+
+
+/*AJUSTES DE ICONOS  AJUSTES DE ICONOS  AJUSTES DE ICONOS  AJUSTES DE ICONOS  AJUSTES DE ICONOS  AJUSTES DE ICONOS*/
+/*Icono de Regresar (<-)*/
+#img-back {
+    /*Definición de tamaño*/
+    height: 60px;
+    width: 55px;
+}
+
+/*imagen de BACK*/
+.icn-back {
+    /*Separación,modo de visualización y ajuste a la derecha*/
+    padding: 12px;
+    display: flex;
+    padding-left: 95%;
+}
+
+
+/*Efecto de selección y selección de color */
+
+#img-back:hover{
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+/*Icono HOME*/
+.C_home{
+    display: none;
+}
+
+#home:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+/*Icono MENU*/
+
+#menu:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+
+
+.C_menu{
+    display: none;
+}
+
+
+
+/*Icono de Limpiar(Brocha)*/
+.icn-brush {
+    top: 100px;
+    left: 100px;
+    display: flex;
+    justify-content: end;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+#btnBrush {
+    /*Definición de tamaño*/
+    height: 20px;
+}
+
+/*Efecto de selección y selección de color */
+
+#btnBrush:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+/*Ajustes de Tooltip*/
+.tooltip{
+    color: #a6a6a6;
+}
+
+
+
+/*I N I C I O     C A M P O       I Z Q U I E R D O */
+
+
+/*Alineación del campo izquierdo*/
+
+.C_campoIzquierdo{
+    position: relative;
+}
+
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+
+.CampoIzquierdo h1 {
+    font-size: 70px;
+    color: white;
+    margin-top: auto;
+}
+
+.C_tituloCampoIzquierdo{
+    padding-left: 5%;
+}
+
+
+/*I N I C I O     C A M P O       D E R E C H O */
+/*Boton de registro*/
+#btn-reg:hover,
+#btn-reg:focus {
+    background-color: #6e842b;
+}
+
+#campoDerecho {
+    display: inline-block;
+    align-items: center;
+    height: 45vh;
+}
+
+
+/*Formulario*/
+form {
+    max-height: 97%;
+    overflow-y: scroll;
+}
+
+form:hover::-webkit-scrollbar {
+    display: initial;
+}
+
+form::-webkit-scrollbar-thumb {
+    background-color: #09C;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+}
+
+.C_divBrushColSm1 {
+    left: 92%;
+    bottom: 68%;
+}
+
+/*VALIDACIÓN DE COLORES*/
+.C_validacionCorrecta{
+    border-color: #86A135 !important;
+}
+
+.C_validacionIncorrecta{
+    border-color:red !important;
+}
+
+.C_colorBaseBorder{
+    border-color:#726561 !important;
+}
+
+.formulario-servicios {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 100%;
+    row-gap: 2.5rem;
+    padding: 2rem 1rem;
+    margin: auto 0;
+    
+}
+
+/*Input del formulario*/
+.formulario-servicios input {
+    border-radius: 20px;
+    background: #726561;
+    color: white;
+    width: 89%;
+}
+
+.formulario-servicios textarea{
+    width: 89%;
+}
+
+
+/*Label de frmulario*/
+.formulario-servicios label {
+    color: white;
+}
+
+
+select::-ms-expand {
+    display: none;
+    /*Evita que se muestre la flecha por defecto en versiones de IE*/
+}
+
+.formulario-servicios select {
+    margin: auto 0;
+    border-radius: 13px;
+    background: #726561;
+    color: white;
+    width: 95%;
+}
+
+.ayudausuario span {
+    color: red;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+
+
+
+#btn-reg {
+    padding: 10px 24px;
+    background-color: #86A135;
+    border-radius: 25px;
+}
+
+
+
+.C_btnregistrar input {
+    color: white;
+}
+
+
+
+  
+  
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+
+/*Desactivar flechas en el boton de tipo number*/
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    /*Desactivar flechas en el boton de tipo number*/
+    -moz-appearance: textfield;
+}
+
+
+
+#tiempoServicio{
+    background-color: #538898;
+    color: #ffffff;
+}
+
+
+/*INICIA CSS DE PRODUCTOS*/
+.C_estilosInput{
+    background: #726561;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: #726561;
+    color: #ffffff;
+}
+.C_estilosInputTextTarea {
+    background: #726561;
+    color: white;
+    height: 100px;
+    border-radius: 20px;
+    resize: none;
+}
+
+.C_campoCantidad {
+    width: 6rem;
+}
+
+textarea {
+    background: #726561;
+    color: white;
+}
+
+textarea::placeholder {
+    text-align: start;
+}
+
+#descripcionServicio {
+    background: #726561;
+    color: white;
+    height: 100px;
+    border-radius: 20px;
+    resize: none;
+}
+
+.btnsFormulario{
+    border-radius: 25px;
+    padding: 10px 24px;
+    border-radius: 25px;
+}
+
+
+.formulario-servicios input::placeholder {
+    color:#c6c6c6; /* Cambia "red" al color que desees */
+}
+
+
+.formulario-servicios textarea::placeholder {
+    color:#c6c6c6; /* Cambia "red" al color que desees */
+}
+
+
+
+.C_Seccion_Footter{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: unset;
+    justify-content: end;
+    padding-right: 15vh;
+}
+
+/*DECLARACION DE MEDIAS
+
+@media screen and (max-width: 1920px) {
+    .C_btnregistrar {
+        padding-left: 80%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .C_btnregistrar {
+        padding-left: 78%;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .C_btnregistrar {
+        padding-left: 75%;
+    }
+}
+*/
+
+/*Versión móvil*/
+@media screen and (max-width:1000px){
+    [class*="col-"] {
+        width: 100%;
+       }
+
+    .C_headerbody{
+        display: none;
+    }
+    
+    /*Body*/
+    body {
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;   
+    }
+    
+    /*CONTENEDOR col-sm-10*/
+    #contenedor {
+        position: fixed;
+        z-index: 1;
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 0%;
+        height:100vh;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+    }
+    
+    /*--ICONOS DE PAGINA--*/
+    /*Icono de MENU*/
+    .C_menu{
+        position: fixed;
+        padding-top: 6%;
+        padding-left: 82%;
+        display: none;
+    }
+
+    /*Icono de HOME*/
+    .C_home{
+        position: fixed;
+        padding-top: 5%;
+        padding-left: 70%;
+        display: block;
+    }
+
+    /*Icono de BACK*/
+    .icn-back{
+        position: absolute;
+        padding-top: 13%;
+        padding-left: 82%;
+        z-index: 1;
+    }
+
+    /*Icono de Brush*/
+    .icn-brush{
+        display: contents;
+        padding-right: 70%;
+    }
+    /*~~ICONOS DE PAGINA~~*/
+
+
+    /*SECCION DE FORMULARIO C_sectionformulario*/
+    .C_sectionformulario{
+        height: 75vh;
+    }   
+
+    /*CAMPO IZQUIERDO*/
+    .CampoIzquierdo {
+        /*Alineación a derecha*/
+        padding-left: 10%;
+        height: 15%;
+    }
+
+    .CampoIzquierdo h1 {
+        font-size: 35px;
+    }
+    
+    .CampoIzquierdo h5 {
+        font-size: 15px;
+    }
+    
+    .CampoIzquierdo span {
+        font-size: 18px;
+    }
+
+    /*CAMPO DERECHO campoDerecho*/
+    #campoDerecho {
+        padding-left: 10%;
+        padding-top: 5%;
+        height: 65%;
+    }
+
+    /*formulario-servicios*/
+    form {
+        max-height: 100%;
+    }
+
+    .formulario-servicios {
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 1rem;
+        padding-top: 0%;
+    }
+
+    
+    /*CARRUSEL DE IMAGENES*/
+        .carousel img{
+        width: calc(100%/2);
+    }
+
+    /*MODAL DE IMAGENES DE CARRUSEL*/
+    
+
+    .modal-content{
+        height: 80%;
+        width: 50%;
+    }
+    
+
+    /*ICONOS MODAL DE IMAGENES CARRUSEL */
+    /*Cerrar*/
+    .close{
+        top: 7px;
+        right: 20px;
+    }
+
+    /*Eliminar*/
+    .delete{
+        top: 48px;
+        right: 25px;
+    }
+
+
+    /*Div de icono Brush C_divBrushColSm1*/
+    .C_divBrushColSm1 {
+        width: 15vh;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-right: 0%;
+        top: 4vh;
+        left: 0%;
+        bottom: 0%;
+    }
+
+    /*Div de boton de Botón registrar C_seccion_Footter*/
+    .C_Seccion_Footter{
+        padding-right: 0;
+        justify-content: center;
+        height: 25vh;
+        margin: 0;
+    }
+
+    .C_btnregistrar{
+        margin: 0;
+        height: 30vh    ;
+    }
+    .C_headerfooter{
+        display: none;
+    }
+
+    
+
+}
+
+
+
+

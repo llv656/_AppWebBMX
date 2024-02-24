@@ -1,0 +1,40 @@
+/*HOJA DE ESTILO DE PAGINA-BASE REGISTRO-CITA*/
+
+/* Para input de tipo date */
+input[type="date"]::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+/* Para input de tipo time */
+input[type="time"]::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+body {
+    background-image: url('../../../img/citas.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedor {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url('../../../img/citas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;    
+    border-radius: 25px;
+    height: 80%;
+    width: 85%;
+}

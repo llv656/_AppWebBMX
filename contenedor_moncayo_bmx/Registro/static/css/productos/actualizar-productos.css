@@ -1,0 +1,1000 @@
+/*Cuerpo de la página web enfocado en el fondo.*/
+
+body {
+    background-image: url('../../img/registro_productos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#contenedor {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url('../../img/registro_productos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 5%;
+    border-radius: 25px;
+    height: 80vh;
+    display: inline-block;
+}
+
+/*Ajustes de ICONOS*/
+/*Icono de Regresar (<-)*/
+#img-back {
+    /*Definición de tamaño*/
+    height: 60px;
+    width: 55px;
+}
+
+/*imagen de BACK*/
+.icn-back {
+    /*Separación,modo de visualización y ajuste a la derecha*/
+    padding: 12px;
+    display: flex;
+    padding-left: 95%;
+}
+
+/*Efecto de selección y selección de color */
+#img-back:hover{
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+.C_home{
+    display: none;
+}
+
+#home:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+.C_menu{
+    display: none;
+}
+
+#menu:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+/*Icono de Limpiar(Brocha)*/
+.icn-brush {
+    top: 100px;
+    left: 100px;
+    display: flex;
+    justify-content: end;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+#btnBrush {
+    /*Definición de tamaño*/
+    height: 20px;
+}
+
+/*Efecto de selección y selección de color */
+
+#btnBrush:hover {
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+.tooltip{
+    color: #a6a6a6;
+}
+
+.C_divBrushColSm1{
+    left: 92%;
+    bottom: 68%;
+}
+
+.C_textoNavegacion{
+    display: absolute;
+    color: #71B6CB;
+    font-size: 15px;
+    margin-right: 20px;
+    padding-top: 4px;
+}
+
+/*Ajustes de MENUS y CHECKBOXES*/
+/*Texto de Navegacion*/
+.C_nav {
+    padding-left: 71%;
+    align-items: center;
+    display: flex;
+}
+
+/*Ajusta El texto y los checkbox en la misma linea*/
+.C_nav >*{
+    width: auto;
+}
+
+/*CheckBox*/
+.checkbox-container {
+    display: flex;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkbox-container input[type="checkbox"] + label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Hace que la casilla de verificación sea circular */
+    border: 1px solid #71B6CB;
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .checkbox-container input[type="checkbox"]:checked + label:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Hace que el punto central sea circular */
+    background-color:#71B6CB ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+/*I N I C I O     C A M P O       I Z Q U I E R D O */
+/*Asignación de fuente,tamaño de letra y color a las h1*/
+.CampoIzquierdo h1 {
+    font-size: 70px;
+    color: white;
+    margin-top: auto;
+}
+
+/*Alineación del campo izquierdo*/
+.C_tituloCampoIzquierdo{
+    padding-left: 5%;
+}
+
+
+/*I N I C I O     C A M P O       D E R E C H O */
+/*VALIDACIÓN DE COLORES*/
+/*Color Base de border*/
+.C_colorBaseBorder{
+    border-color: #726561;
+}
+
+.C_validacionCorrecta{
+    border-color: #86A135
+}
+
+.C_validacionIncorrecta{
+    border-color:red;
+}
+
+/*Boton de registro*/
+#btn-reg:hover,
+#btn-reg:focus {
+    background-color: #6e842b;
+}
+
+#campoDerecho {
+    display: flex;
+    align-items: center;
+    height: 50vh;
+}
+
+/*Formulario*/
+form {
+    max-height: 95%;
+    overflow-y: scroll;
+}
+
+form:hover::-webkit-scrollbar {
+    display: initial;
+}
+
+form::-webkit-scrollbar-thumb {
+    background-color: #09C;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+}
+
+.formulario-productos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 100%;
+    row-gap: 2.5rem;
+    padding: 2rem 1rem;
+    margin: auto 0;
+}
+
+/*Input del formulario*/
+.formulario-productos input {
+    border-radius: 20px;
+    background: #726561;
+    color: white;
+    width: 89%;
+}
+
+.formulario-productos textarea{
+    width: 89%;
+}
+
+/*Label de frmulario*/
+.formulario-productos label {
+    color: white;
+}
+
+select::-ms-expand {
+    display: none;
+    /*Evita que se muestre la flecha por defecto en versiones de IE*/
+}
+
+.formulario-productos select {
+    margin: auto 0;
+    border-radius: 13px;
+    background: #726561;
+    color: white;
+    width: 95%;
+}
+
+.ayudausuario span {
+    color: red;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.C_btnregistrar {
+    display: flex;
+    margin-top: 2rem;
+    margin: 14px; /*Se sube el boton de REGISTRAR*/
+}
+
+#btn-reg {
+    padding: 10px 24px;
+    background-color: #86A135;
+    border-radius: 25px;
+}
+
+.C_btnregistrar input {
+    color: white;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+
+/*Desactivar flechas en el boton de tipo number*/
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    /*Desactivar flechas en el boton de tipo number*/
+    -moz-appearance: textfield;
+}
+
+/*INICIA CSS DE PRODUCTOS*/
+.C_estilosInput{
+    background: #726561;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #726561;
+    color: #ffffff;
+}
+
+.C_estilosInputTextTarea {
+    background: #726561;
+    color: white;
+    height: 100px;
+    border-radius: 20px;
+    resize: none;
+}
+
+.C_cantidadProductos {
+    display: flex;
+    /*elementos adaptables*/
+    gap: .6rem;
+    /*Espacio entre columnas y filas */
+    margin-top: 1em;
+}
+
+.C_precioProductoMayoreUnidad {
+    display: flex;
+    /*elementos adaptables*/
+    gap: .6rem;
+    /*Espacio entre columnas y filas */
+    margin-top: 1em;
+}
+
+/*Color de botones del mas y menos*/
+#btn-menos {
+    background-color: rgba(255, 22, 22, .50);
+}
+
+#btn-mas {
+    background-color: rgba(134, 161, 53, .50);
+}
+
+/*Forma de los botones en circulo*/
+.btnForma {
+    width: 25px;
+    height: 25px;
+    line-height: initial;
+    border-radius: 50%;
+    margin: auto 0;
+    /*Centrar elemento*/
+    padding: .1;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btnForma button {
+    text-align: center;
+    align-items: center;
+}
+
+.C_campoCantidad {
+    width: 6rem;
+}
+
+#cantidadProductosMayoreo{
+    border-width: 2px;
+    text-align: center;;
+    background: #726561;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#inputPrecioMayoreoUnidad{
+    text-align: center;
+    background: #726561;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#inputUnidsMinVenta{
+    text-align: center;
+    background: #726561;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#inputUnidsMinUsoInter{
+    text-align: center;
+    background: #726561;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.C_cantidadProductos {
+    display: flex;
+    /*elementos adaptables*/
+    gap: .6rem;
+    /*Espacio entre columnas y filas */
+    margin-top: 1em;
+}
+
+.unidades-btn {
+    display: flex;
+    /*elementos adaptables*/
+    gap: .6rem;
+    /*Espacio entre columnas y filas */
+}
+
+textarea {
+    background: #726561;
+    color: white;
+}
+
+textarea::placeholder {
+    text-align: start;
+}
+
+#descripcion {
+    background: #726561;
+    color: white;
+    height: 100px;
+    border-radius: 20px;
+    resize: none;
+}
+
+/*Boton de MAS de AGREGAR DISTRIBUIDOR*/
+.C_btnDistribuidor{
+    width: 25px;
+    height: 25px;
+    line-height: initial;
+    border-radius: 50%;
+    border: none;
+    margin: auto 0;
+    /*Centrar elemento*/
+    padding: .1;
+    color: white;
+    font-weight: bold;
+    display: block;
+}
+
+#btnDistribuidor{
+    background-color: rgba(134, 161, 53, .50);
+}
+
+.inputconbtn{
+    display: flex;
+}
+
+.C_btnDistribuidor {
+    margin-left: 5px; /* Agrega un margen izquierdo de 10px */
+    /* O bien */
+    align-items: center;
+}
+
+.searchIcono {
+    position: relative;
+  }
+  
+.searchIcono input {
+    padding-right: 35px; /* Ajusta el espacio a la derecha para el icono de búsqueda */
+}
+  
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 51px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+}
+
+/*BOTON de MAS para TELEFONO*/
+#btnTelefono{
+    background-color: rgba(134, 161, 53, .50);
+}
+
+.C_btnTelefono{
+    width: 25px;
+    height: 25px;
+    line-height: initial;
+    border-radius: 50%;
+    border: none;
+    margin: auto 0;
+    /*Centrar elemento*/
+    padding: .1;
+    color: white;
+    font-weight: bold;
+    display: block;
+}
+
+.C_btnTelefono{
+    margin-left: 5px;
+    align-items: end;
+}
+
+  /* Estilos del modal */
+  .modal1 {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+.modal-dialog{
+    max-width: 50%;
+}
+
+  
+.modal-content {
+    margin: 15% auto;
+    border-radius: 20px;
+    width: 100%;
+}
+  
+.close {
+    color: #59534F;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header .btn-close {
+    background-color: #538898;
+}
+  
+.modal-tittle h5{
+    font-weight: bold;
+}
+
+   
+.modal-backdrop{
+    z-index: -1;
+}
+
+.modal-body{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+#formularioEmergente .modal-content  {
+    background-color:rgba(0.031, 0.051, 0.071,.7);/* Cambia "#ff0000" al color que desees utilizar */
+    color:#ffffff;
+    font-size: 14px;
+}
+
+
+
+#formularioEmergente input {
+    color:#ffffff;
+    font-size: 12px;
+    align-items: center;
+    background: #726561;
+    border-radius: 20px;
+}
+
+#formularioEmergente textarea{
+    font-size: 12px;
+    align-items: center;
+    background: #726561;
+    border-radius: 20px;
+    resize: none;
+}
+  
+#formularioEmergente .modal-body > div {
+    margin-bottom: 15px; /* Cambia el valor según el espacio de separación deseado */
+}
+
+#formularioEmergente placeholder{
+    color: #ffffff;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+#btnCancelarDistribuidor{ 
+    background:#ab3737;
+    color: #ffffff;
+    font-size: 14px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.btnsFormulario{
+    border-radius: 25px;
+    padding: 10px 24px;
+    border-radius: 25px;
+}
+
+#btnGuardarDistribuidor{ 
+    background: #6e842b;
+    color: #ffffff;
+    font-size: 14px;
+    align-items: center;
+    font-weight: bold;
+}
+
+#formularioEmergente ::placeholder {
+    color: #ffffff; /* Cambia "#ff0000" al color que desees utilizar */
+    align-items: center;
+    font-size: 14px;
+}
+
+#formularioEmergente input{
+    height:40px;
+    color:#ffffff;
+    font-size: 14px;
+    width: 89%;
+}
+
+#formularioEmergente textarea{
+    height: 90px;
+    color: #ffffff;
+    font-size: 14px;
+    width: 89%;
+}
+
+#formularioEmergente button{
+    text-align: center;
+    align-items: center;
+}
+
+.formulario-productos input::placeholder {
+    color:#c6c6c6; /* Cambia "red" al color que desees */
+}
+
+.formulario-productos textarea::placeholder {
+    color:#c6c6c6; /* Cambia "red" al color que desees */
+}
+.C_nuevoDiv{
+    display: flex;
+}
+
+.C_nuevoInput{
+    margin-top: 5px;
+    margin-bottom: 12px;
+    align-items: center;
+    text-align: center;
+}
+
+.C_btnTelMenos{
+    background-color: rgba(255, 22, 22, .50);
+  }
+  
+.C_btnTelMenos button{
+    text-align: center;
+    align-items: center;
+}
+
+.C_btnTelMenos{
+    width: 25px;
+    height: 25px;
+    line-height: initial;
+    border-radius: 50%;
+    border: none;
+    margin: auto 0;
+    /*Centrar elemento*/
+    padding: .1;
+    color: white;
+    font-weight: bold;
+}
+
+.C_btnTelMenos{
+    margin-left: 5px;
+    align-items: end;
+}
+
+.NumAdicional{
+    text-align: left;
+}
+
+
+/*SUGERENCIAS*/
+#suggestions-container{
+    position: absolute;
+    background: rgba(5, 7, 12, 1);
+    color: white;
+    width: 89%;
+    font-size: 12px;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius:10%;
+    display: none;
+    z-index: 1;
+}
+
+.suggestion {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 10% 50% 30% 10%;
+    overflow-y:auto;
+
+}
+
+.suggestion:hover {
+    background-color:rgba(134, 161, 53, .50);
+}
+
+.thumbnail{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.redirect-arrow{
+    margin-left: auto;
+}
+
+.suggestion-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion-info div{
+    margin-right: 10px;
+}
+/*SUGERENCIAS*/
+
+
+
+/*DECLARACION DE MEDIAS*/
+
+@media screen and (max-width: 1920px) {
+    .C_btnregistrar {
+        padding-left: 80%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .C_btnregistrar {
+        padding-left: 78%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .C_btnregistrar {
+        padding-left: 75%;
+    }
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*Versión móvil  Versión móvil  Versión móvil  Versión móvil  Versión móvil  Versión móvil  Versión móvil */
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:1000px){
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    body {
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;   
+    }
+
+    #contenedor {
+        position: fixed;
+        z-index: 1;
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../../img/prueba.jpeg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 0%;
+        height:100vh;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+    }
+    
+    .formulario-productos {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 1rem;
+    }
+
+    .C_nav{
+    padding-left: 26%;
+
+    }
+
+    .CampoIzquierdo {
+    /*Alineación a derecha*/
+    padding-left: 10%;
+    height: 20%;
+    }
+
+    .CampoIzquierdo h1 {
+        font-size: 35px;
+    }
+    
+    .CampoIzquierdo h5 {
+        font-size: 15px;
+    }
+    
+    .CampoIzquierdo span {
+        font-size: 18px;
+    }
+
+    #campoDerecho {
+        padding-left: 10%;
+        padding-top: 0%;
+        height: 65%;
+    }
+    
+    .C_headerbody{
+        display: none;
+    }
+
+    .C_headerfooter{
+        display: none;
+    }
+
+    .C_divBrushColSm1 {
+        width: 15vh;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-right: 0%;
+        height: 31%;
+        padding-bottom: 13vh;
+    }
+
+    .C_menu{
+        position: fixed;
+        padding-top: 6%;
+        padding-left: 82%;
+        display: none;
+    }
+
+    .C_home{
+        position: fixed;
+        padding-top: 5%;
+        padding-left: 70%;
+        display: block;
+    }
+
+    .icn-back{
+        position: absolute;
+        padding-top: 13%;
+        padding-left: 82%;
+    }
+
+    .icn-brush {
+        display: contents;
+        padding-top: 0%;
+        padding-right: 0%;
+    }
+   
+    .C_btnTelefono{
+        margin-left: 10px;
+        align-items: end;
+    }
+
+    #distribuidor{
+        width: 86%;
+    }
+
+    .formulario-productos input{
+    width: 96%;
+    }
+
+    .formulario-productos textarea{
+    width: 96%;
+    }
+
+    .C_sectionformulario{
+        height: 75vh;
+    }
+   
+    .C_btnregistrar a {
+        justify-content: start;
+    }
+    
+    .C_navegacionAntSig{
+        display: flex;
+		justify-content: end;
+		padding-right: 50%;
+    }
+
+    .C_leyendas p {
+        font-size: 15px;
+        padding-left: 10%;/*valor original 44%*/
+        padding-top:5%;
+    }
+
+    form {
+        max-height: 100%;
+    }
+   
+    .C_btnregistrar{
+        padding-left: 0%;
+        justify-content: center;
+    }
+
+    /*MODAL DISEÑO MOVIL*/
+ 
+    .modal-dialog{
+        max-width: 100%;
+    }
+
+    .modal-body{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 65vh;
+        overflow-y: auto;
+    }
+    
+    #formularioEmergente input{
+        font-size: 12px;
+        width: 100%;
+   }
+
+   #formularioEmergente textarea{
+        font-size: 12px;
+        width: 100%;
+   }
+
+   #formularioEmergente label{
+        font-size: 14px;
+        font-weight: bold;
+   }
+
+    .C_nuevoDiv{
+        display: flex;
+    }
+
+    .C_textoNavegacion{
+        font-size:12px ;
+    }
+
+    .NumAdicional{
+        align-items: center;
+    }
+
+    .search-icon { 
+        right: 56px;
+    }
+
+    .C_campodeboton{
+        width: 100%;
+    }
+
+    .C_Seccion_Footter{
+        padding-bottom: 10vh;
+        height: 20vh;
+    }
+    .seccionCheckbox{
+        height: 5vh;
+    }
+    
+    
+    #suggestions-container{
+        width: 89%;
+    }
+
+}
+
+
+
+
+
+

@@ -1,0 +1,823 @@
+{% extends "plantilla.html" %}
+
+{% block title %} Consulta De Citas {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="/static/css/consultas/consulta-cita.css" />
+<link rel="stylesheet" href="/static/DataTables/datatables.min.css">
+<link rel="stylesheet" href="/static/fullcalendar/css/main.min.css">
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="/static/js/consulta_citas/modales.js"></script>
+<script src="/static/js/consulta_citas/consulta_citas.js"></script>
+<script src="/static/js/consulta_citas/vistasdate.js"></script>
+<script src="https://kit.fontawesome.com/30c693948f.js" crossorigin="anonymous"></script>
+<script src="/static/DataTables/datatables.min.js"></script>
+<script src="/static/fullcalendar/js/main.min.js"></script>
+<script src="/static/js/es.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- contenedorRow -->
+<section id="section_header_id">
+
+    <div class="col-sm-2"></div>
+
+    <!-- Barra superior Navegacion  -->
+    <div class="col-sm-3">
+        <h2 class="header-titulo">Citas</h2>
+
+    </div>
+    <!-- Opciones de vista  -->
+    <div class="col-sm-3">
+    </div>
+
+    <!-- Nav fecha actual -->
+    <div class="col-sm-4">
+        <div class="fecha-select" id="fechaContainer">
+            <button class="izquierda" id="prevDay">&lt;</button>
+            <label class="fecha-select-actual" id="fecha-actual"></label>
+            <button class="derecha" id="nextDay">&gt;</button>
+        </div>
+        <div class="vista-semanal">
+            <i class="fa-regular fa-eye vista-user" aria-hidden="true"></i>
+            <!-- <span class="vista-titulo">Vista Diaria</span> -->
+            <!-- <i class="fa-solid fa-arrow-down navegacion-semana"></i> -->
+            <select class="navegacion-semana" id="opcionesVista">
+                <option value="diaria">Vista Diaria</option>
+                <option value="semanal">Vista Semanal</option>
+                <option value="mensual">Vista Mensual</option>
+                <option value="anual">Vista Anual</option>
+            </select>
+        </div>
+
+    </div>
+
+
+</section>
+
+<section id="section_content_id">
+    <!-- Inicia el Contenedor -->
+
+    <div id="contenedorConfig"> <!-- Inicia el divFiltrar -->
+
+        <div id="calendarioContainer">
+            <div id="navegacion">
+                <button id="prevMes">&lt;</button>
+                <div id="mesAnio"></div>
+                <button id="nextMes">&gt;</button>
+            </div>
+            <div id="diasSemana" class="filaSemana"></div>
+            <div id="calendario" class="fila"></div>
+        </div>
+
+        <!-- FIltro Elementos -->
+        <div class="SubMenuIco">
+
+            <div class="menu">
+                <a href="#" id="action_useradd_id">
+                    <i class="fas fa-user-plus"></i>
+                </a>
+                <span>Agregar</span>
+            </div>
+
+            <div class="menu">
+                <a href="#" id="action_userupdate_id">
+                    <i class="fas fa-rotate"></i>
+                </a>
+                <span>Actualizar</span>
+            </div>
+
+            <div class="menu">
+                <button href="#" id="action_userdelete_id" class="btn usertrash" data-bs-toggle="modal"
+                    data-bs-target="#motivoEliminar">
+                    <i class="fas fa-trash text-white"></i>
+                </button>
+                <span>Eliminar</span>
+            </div>
+
+        </div>
+
+        <!-- Mostrar Clientes Delete -->
+        <div class="clientesMostrarCE" id="elementClientesMostrarCE">
+            <span id="span_icon_delete_id">
+                <i class="fa-regular fa-eye view"></i>
+                <i class="fa-regular fa-trash-can eliminarIco"></i>
+            </span>
+            <span class="mostrarCE">Mostrar clientes eliminados</span>
+        </div>
+
+        <!-- Filtrar -->
+        <div class="filtrarCli">
+            <h3>Filtros</h3>
+            <span id="span_icon_filter_id">
+                <i class="fa-solid fa-filter filtrarIcono" aria-hidden="true"></i>
+                <i class="fa-regular fa-trash-can eliminarIcoFil"></i>
+
+            </span>
+        </div>
+
+        <!-- Formulario Busqueda Padre  -->
+        <div class="fomularioSc">
+            <!-- Busqueda Basic Filtrar -->
+            <form class="formulario">
+
+                <fieldset>
+
+                    <legend class="basicSearch" id="legend_basic_filter_id">
+                        <span>Búsqueda Básica</span>
+                        <i class="fa-solid fa-sort-down sortBS" id="sort_basic_filter_id"></i>
+                    </legend>
+
+                    <div class="contenedorFiltrarBS">
+                        <!-- Inicia Filtro Busqueda -->
+                        <div class="contenedorFiltrarBSC">
+                            <div id="label_name_form_filter_basic_id">
+                                <label for="nombreCl">
+                                    Nombre
+                                </label>
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-a-z iconoFiltAsc"></i>
+                                </span>
+                            </div>
+
+                            <div class="input-group">
+                                <input id="busqueda_nombre_cliente" type="text" class="form-control"
+                                    placeholder="Escribe un nombre" autocomplete="off" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="contenedorFiltrarBSC">
+                            <label for="contactoCliente">Contacto </label>
+                            <div class="input-group">
+                                <input id="busqueda_contacto" type="text" class="form-control"
+                                    placeholder="Escribe el Contacto" autocomplete="off">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            </div>
+
+                        </div>
+
+                        <div class="contenedorFiltrarBSC">
+                            <label for="fechaNacimiento">
+                                Fecha de nacimiento:
+                            </label>
+
+                            <div id="input_date_filter_basic_id">
+                                <input type="number" id="busqueda_fechaNacimientodd" class="form-control"
+                                    placeholder="dd" value="*" min="1" max="31">
+                                <input type="number" id="busqueda_fechaNacimientomm" class="form-control"
+                                    placeholder="mm" value="*" min="1" max="12">
+                                <input type="number" id="busqueda_fechaNacimientoaa" class="form-control"
+                                    placeholder="aaaa" value="*" min="1" step="1" maxlength="4">
+                            </div>
+                        </div>
+                        <!-- Inicia Filtro Busqueda -->
+                        <div class="contenedorFiltrarBSC">
+                            <label>Tipo Cliente </label>
+                            <select id="select_tipoCliente"></select>
+                        </div>
+                    </div> <!-- fin contenedorFBS -->
+
+                </fieldset>
+            </form>
+
+
+
+            <!-- Busqueda Avanzada Filtrar -->
+            <form class="formulario">
+
+                <fieldset>
+                    <legend class="basicSearch" id="legend_advanced_filter_id">
+                        <span>Búsqueda Avanzada</span>
+                        <i class="fa-solid fa-sort-down sortBSS" id="sort_advanced_filter_id"></i>
+                    </legend>
+
+                    <div class="contenedorFiltrarBSAV">
+                        <!-- Inicia Filtro Busqueda -->
+                        <div class="contenedorFiltrarBSC">
+                            <label>Dirección </label>
+                            <div class="input-group">
+
+                                <input id="busqueda_direccion_cliente" type="text" class="form-control"
+                                    placeholder="Escribe una Dirección" autocomplete="off">
+                                <span class="input-group-text" id="iconoSearch"><i class="fas fa-search"></i></span>
+                            </div>
+
+                        </div>
+                        <!-- Inicia Filtro Busqueda -->
+                        <div class="contenedorFiltrarBSC">
+                            <label>Servicio Favorito </label>
+                            <select id="busqueda_servicio_favorito">
+                                <option value="" disabled selected hidden>Selecciona una Opción</option>
+                                <option value="opcion1">Facebook</option>
+                                <option value="opcion2">Instagram</option>
+                                <option value="opcion3">Google</option>
+                            </select>
+
+                        </div>
+                        <div class="contenedorFiltrarBSC">
+                            <label>Barbero Favorito </label>
+                            <div class="input-group">
+
+                                <input id="busqueda_barbero_favorito" type="text" class="form-control"
+                                    placeholder="Nombre Barbero" autocomplete="off">
+                                <span class="input-group-text" id="iconoSearch"><i class="fas fa-search"></i></span>
+                            </div>
+                            <!-- Inicia Filtro Busqueda -->
+                            <div class="contenedorFiltrarBSC">
+                                <label>Producto Favorito </label>
+                                <select id="busqueda_producto_favorito">
+                                    <option value="" disabled selected hidden>Selecciona una Opción</option>
+                                    <option value="opcion1">Miembro</option>
+                                    <option value="opcion2">Vip</option>
+                                    <option value="opcion3">Gold</option>
+                                </select>
+
+                            </div>
+                        </div> <!-- fin contenedorFBS -->
+                    </div>
+                </fieldset>
+            </form>
+        </div> <!--Fin filtrarCli-->
+
+        <div class="elementVacioPorcent"></div>
+
+    </div> <!-- fin divFiltrar -->
+
+    <!-- Contenedor para el dataTable -->
+    <div id="contenedorTabla">
+        <!-- INICIA TABLE PARA MOSTRAR LAS CONSULTAS  -->
+        <table id="tblConsulta" class="table table-bordered table-striped table-hover align-middle nowrap visible">
+            <thead class="thead-oculto">
+                <tr>
+                    <th>
+                        <input type="radio" id="mostrarModal" name="opcionSeleccion" value="mostrarModal"
+                            class="thead-radio">
+                        <!-- <label for="seleccionTodaTabla">Seleccionar</label> -->
+                    </th>
+                    <th>Horario</th>
+                    <th>Cliente</th>
+                    <th>Barbero</th>
+                    <th>Servicio</th>
+                    <th>Productos</th>
+                    <th>Estatus Cita</th>
+                    <th class="none">Promoción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO: Prueba 1  -->
+                <tr>
+                    <!-- radio  -->
+                    <td>
+                        <input type="radio" id="" name="" value="" class="thead-radio">
+                    </td>
+                    <!-- horario  -->
+                    <td>
+                        <time datetime="10:00">10:00</time>
+                    </td>
+                    <!-- nombre cliente  -->
+                    <td>
+                        <select name="nombreCl" id="">
+                            <option value="mario">Lenin Mael Jose Clemente</option>
+                            <option value="cesar">Cesar</option>
+                            <option value="carlos">Carlos</option>
+                            <option value="andres">Andrés</option>
+                        </select>
+                    </td>
+                    <!-- barbero  -->
+                    <td>
+                        <select name="barberofav" id="">
+                            <option value="maria">María de Jesús</option>
+                            <option value="dolores">Dolores</option>
+                            <option value="constanza">Cony</option>
+                            <option value="kain22">Kaleb</option>
+                        </select>
+                    </td>
+                    <!-- servicio -->
+                    <td>
+                        <select name="servicio" id="">
+                            <option value="corteTrad">Corte Tradicional</option>
+                            <option value="depilado">Depilado</option>
+                            <option value="degradado">Degradado</option>
+                            <option value="pelon">Pelón</option>
+                        </select>
+                    </td>
+                    <!-- productos  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Cera Moncayo</option>
+                            <option value="">Shampoo Moncayo</option>
+                            <option value="">Gel Moncayo</option>
+                        </select>
+                    </td>
+                    <!-- estatusCita  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Pagado</option>
+                            <option value="">Pendiente</option>
+                        </select>
+                    </td>
+                    <!-- Promocion -->
+                    <td>
+                        <select name="" id="">
+                            <option value="">Día del Padre</option>
+                            <option value="">Día del Niño</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- TODO: Prueba 2  -->
+                <tr>
+                    <!-- radio  -->
+                    <td>
+                        <input type="radio" id="" name="" value="" class="thead-radio">
+                    </td>
+                    <!-- horario  -->
+                    <td>
+                        <time datetime="10:00">10:00</time>
+                    </td>
+                    <!-- nombre cliente  -->
+                    <td>
+                        <select name="nombreCl" id="">
+                            <option value="mario">Lenin Mael Jose Clemente</option>
+                            <option value="cesar">Cesar</option>
+                            <option value="carlos">Carlos</option>
+                            <option value="andres">Andrés</option>
+                        </select>
+                    </td>
+                    <!-- barbero  -->
+                    <td>
+                        <select name="barberofav" id="">
+                            <option value="maria">María de Jesús</option>
+                            <option value="dolores">Dolores</option>
+                            <option value="constanza">Cony</option>
+                            <option value="kain22">Kaleb</option>
+                        </select>
+                    </td>
+                    <!-- servicio -->
+                    <td>
+                        <select name="servicio" id="">
+                            <option value="corteTrad">Corte Tradicional</option>
+                            <option value="depilado">Depilado</option>
+                            <option value="degradado">Degradado</option>
+                            <option value="pelon">Pelón</option>
+                        </select>
+                    </td>
+                    <!-- productos  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Cera Moncayo</option>
+                            <option value="">Shampoo Moncayo</option>
+                            <option value="">Gel Moncayo</option>
+                        </select>
+                    </td>
+                    <!-- estatusCita  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Pagado</option>
+                            <option value="">Pendiente</option>
+                        </select>
+                    </td>
+                    <!-- Promocion -->
+                    <td>
+                        <select name="" id="">
+                            <option value="">Día del Padre</option>
+                            <option value="">Día del Niño</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- TODO: Prueba 3  -->
+                <tr>
+                    <!-- radio  -->
+                    <td>
+                        <input type="radio" id="" name="" value="" class="thead-radio">
+                    </td>
+                    <!-- horario  -->
+                    <td>
+                        <time datetime="10:00">10:00</time>
+                    </td>
+                    <!-- nombre cliente  -->
+                    <td>
+                        <select name="nombreCl" id="">
+                            <option value="mario">Lenin Mael Jose Clemente</option>
+                            <option value="cesar">Cesar</option>
+                            <option value="carlos">Carlos</option>
+                            <option value="andres">Andrés</option>
+                        </select>
+                    </td>
+                    <!-- barbero  -->
+                    <td>
+                        <select name="barberofav" id="">
+                            <option value="maria">María de Jesús</option>
+                            <option value="dolores">Dolores</option>
+                            <option value="constanza">Cony</option>
+                            <option value="kain22">Kaleb</option>
+                        </select>
+                    </td>
+                    <!-- servicio -->
+                    <td>
+                        <select name="servicio" id="">
+                            <option value="corteTrad">Corte Tradicional</option>
+                            <option value="depilado">Depilado</option>
+                            <option value="degradado">Degradado</option>
+                            <option value="pelon">Pelón</option>
+                        </select>
+                    </td>
+                    <!-- productos  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Cera Moncayo</option>
+                            <option value="">Shampoo Moncayo</option>
+                            <option value="">Gel Moncayo</option>
+                        </select>
+                    </td>
+                    <!-- estatusCita  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Pagado</option>
+                            <option value="">Pendiente</option>
+                        </select>
+                    </td>
+                    <!-- Promocion -->
+                    <td>
+                        <select name="" id="">
+                            <option value="">Día del Padre</option>
+                            <option value="">Día del Niño</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- TODO: Prueba 4  -->
+                <tr>
+                    <!-- radio  -->
+                    <td>
+                        <input type="radio" id="" name="" value="" class="thead-radio">
+                    </td>
+                    <!-- horario  -->
+                    <td>
+                        <time datetime="10:00">10:00</time>
+                    </td>
+                    <!-- nombre cliente  -->
+                    <td>
+                        <select name="nombreCl" id="">
+                            <option value="mario">Lenin Mael Jose Clemente</option>
+                            <option value="cesar">Cesar</option>
+                            <option value="carlos">Carlos</option>
+                            <option value="andres">Andrés</option>
+                        </select>
+                    </td>
+                    <!-- barbero  -->
+                    <td>
+                        <select name="barberofav" id="">
+                            <option value="maria">María de Jesús</option>
+                            <option value="dolores">Dolores</option>
+                            <option value="constanza">Cony</option>
+                            <option value="kain22">Kaleb</option>
+                        </select>
+                    </td>
+                    <!-- servicio -->
+                    <td>
+                        <select name="servicio" id="">
+                            <option value="corteTrad">Corte Tradicional</option>
+                            <option value="depilado">Depilado</option>
+                            <option value="degradado">Degradado</option>
+                            <option value="pelon">Pelón</option>
+                        </select>
+                    </td>
+                    <!-- productos  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Cera Moncayo</option>
+                            <option value="">Shampoo Moncayo</option>
+                            <option value="">Gel Moncayo</option>
+                        </select>
+                    </td>
+                    <!-- estatusCita  -->
+                    <td>
+                        <select name="productos" id="">
+                            <option value="">Pagado</option>
+                            <option value="">Pendiente</option>
+                        </select>
+                    </td>
+                    <!-- Promocion -->
+                    <td>
+                        <select name="" id="">
+                            <option value="">Día del Padre</option>
+                            <option value="">Día del Niño</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table> <!--FIN DEL TABLE-->
+
+        <div id="totalRegistros"> <!--Mostrar el total de los registros-->
+            <span id="RegistrosMos">Registros Mostrados:</span>
+            <!-- <span>1</span>
+				<span>/</span> -->
+            <span id="contadorRegistros">0</span>
+        </div> <!--Fin del total de registros-->
+
+        <!-- CREAR BOTONES DE PAGINACION - CONTENEDOR -->
+        <div class="pagination-box">
+            <button class="page-btn prev">Anterior </button>
+            <div class="page-info">
+                <span>Página:</span>
+                <!-- atualización al texto de la interfaz para mostrar el valor de totalPages  -->
+                <select class="pagination-select" id="pageSelect"></select>
+                <span>de</span>
+                <span id="span_total_pages_component_pager"></span>
+                <!-- <select class="pagination-select" id="pageSelect"></select> de 13 -->
+            </div>
+            <!-- Aquí generamos las opciones de página dinámicamente con JavaScript -->
+            <button class="page-btn next">Siguiente</button>
+        </div> <!--.pagination-container-->
+
+        <!-- VENTANA MODAL PARA SELECCIONAR TODA LA TABLA  -->
+        <div id="modalSeleccion" class="modal">
+            <div class="modal-content" id="modalSel">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="modalOption" id="selectAllRadio"
+                        value="selectAll">Seleccionar toda la columna
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="modalOption" id="deselectAllRadio"
+                        value="deselectAll">Seleccionar todos los elementos
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- VENTANA MODAL PARA ELIMINAR CLIENTES  -->
+        <div class="modal1 fade " id="motivoEliminar" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" id="modalEli">
+                    <!--Encabezado de Formulario-->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Eliminar Clientes</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!--Cuerpo de Formulario-->
+                    <div class="modal-body">
+                        <!-- Informacion del usuario a eliminar -->
+                        <div id="infoUsuarioEliminar">
+
+                        </div>
+
+                        <div>
+                            <label class="motivoDel">Motivo</label>
+                        </div>
+                        <!-- Descripcion  -->
+                        <div>
+                            <textarea type="text" id="motivoEliminarCl"
+                                class=" form-control entradaTexto C_colorBaseBorder"
+                                placeholder="Agrega el motivo por el cual se va a eliminar el Cliente"></textarea>
+                        </div>
+
+                        <div class="form-check EliminarClienteRadio">
+                            <input type="checkbox" class="form-check-input" name="modalOptionEli"
+                                id="selectAllRadioCliente" value="selectAll">
+                            <span class="adaptarText">Borrar cliente/s, sin conservar información generada.</span>
+                        </div>
+
+                    </div>
+
+                    <!--Pie de Formulario-->
+                    <div class="modal-footer">
+                        <button id="btnCancelarDatos" type="button" class="btn btn-danger btnsCliente"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button id="btnGuardarDatos" type="button" class="btn btn-success btnsCliente">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Inicia Vista Semanal fullCalendar -->
+    <div class="contenedorTbls" id="contenedorTblVS" style="display: none;">
+        <div id='calendarSemanal'></div>
+    </div> <!--Fin vista semanal-->
+
+    <!-- Inicia Vista Mensual fullCalendar -->
+    <div class="contenedorTbl" id="contenedorTblVM" style="display: none;">
+        <p class="text-white">VISTA MENSUAL</p>
+    </div> <!--Fin vista mensual-->
+
+    <!-- Inicia Vista Anual fullCalendar -->
+    <div class="contenedorTbl" id="contenedorTblVA" style="display: none;">
+        <p class="text-white">Vista Anual</p>
+    </div> <!--Fin vista mensual-->
+
+    <!-- VENTANA MODAL PARA TICKET  -->
+    <div class="modal fade modal-ticket" id="miModalTicket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" id="ticket-dialog">
+            <div class="modal-content" id="modalTic">
+                <div class="modal-header" id="encabezado-ticket">
+                    <h5 class="modal-title" id="exampleModalLabel">Recibo de venta de servicio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="contenido-principal">
+                    <!-- Informacion del usuario a eliminar -->
+                    <div class="detalles-impresion">
+                        <article class="entrada">
+                            <div class="entrada__contenido">
+                                <ul class="status">
+                                    <li class="widget-status">
+                                        <p class="widget-status__label">Corte Tradicional</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="entrada">
+                            <div class="entrada__contenido">
+                                <ul class="status">
+                                    <li class="widget-status">
+                                        <p class="widget-status__label">Día del padre</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="entrada">
+                            <div class="entrada__contenido">
+                                <ul class="status">
+                                    <li class="widget-status">
+                                        <p class="widget-status__label">Cera Moncayo</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="entrada">
+                            <div class="entrada__contenido">
+                                <ul class="status">
+                                    <li class="widget-status">
+                                        <p class="widget-status__label">Spray Deluxe</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="entrada">
+                            <div class="entrada__contenido">
+                                <ul class="status">
+                                    <li class="widget-status">
+                                        <p class="widget-status__label">Crema Style</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="entrada">
+                            <div class="entrada__contenido">
+                                <ul class="status">
+                                    <li class="widget-status">
+                                        <p class="widget-status__label">Pago con Puntos</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="sidebar">
+
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info">+ $200</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info">- $70</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info">+ $0</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info">+ $0</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info">+ $15</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info">- $10</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </aside>
+                    <!-- Total  -->
+                    <aside class="sidebar-1">
+                        <div class="entrada__contenido">
+                            <p class="entrada__contenido-status">Total</p>
+                        </div>
+                    </aside>
+                    <!-- Monto a pagar  -->
+                    <aside class="sidebar-2">
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info-montoFinal">+ $200</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </aside>
+                    <!-- Pago  -->
+                    <aside class="sidebar-3">
+                        <div class="entrada__contenido">
+                            <p class="entrada__contenido-pago">Pago</p>
+                        </div>
+                    </aside>
+
+                    <aside class="sidebar-4">
+                        <div class="entrada__contenido">
+                            <p class="entrada__contenido-pago"></p>
+                        </div>
+                    </aside>
+
+                    <article class="entrada">
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status">
+                                    <p class="widget-status__label">Efectivo</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status">
+                                    <p class="widget-status__label">Tarjeta de debito</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <aside class="sidebar-2">
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info-montoFinal-pago">+ $20</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="entrada__contenido">
+                            <ul class="status">
+                                <li class="widget-status__info">
+                                    <p class="widget-status__info-montoFinal-pago">+ $115</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </aside>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
+
+<section id="section_footer_id"></section>
+
+
+{% endblock %}

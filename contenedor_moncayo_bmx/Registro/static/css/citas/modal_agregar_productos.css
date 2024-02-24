@@ -1,0 +1,181 @@
+.C_contenedorModal{
+    background: rgba(8, 13, 18, 1) !important;
+}
+
+.modal-content.C_contenedorModal {
+    height: 380px;
+    width: 760px;
+    margin: auto -156px;
+    top: 167px;
+    border: 25px;
+}
+
+
+/*Header Modal*/
+#contenedor-header-modal {
+    display: flex;
+    align-items: center;
+}
+
+.C_modalTituloIzquierdo h2{
+    display: flex;
+    font-size: 40px;
+    justify-content: start;
+    color: #FFFFFF;
+}
+
+.C_modalTituloCentro {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.C_modalTituloCentro label {
+    font-size: 15px;
+    color: #538898;
+}
+
+#cantidad-total-productos-modal-titulo {
+    font-size: 18px;
+    color: #538898;
+    font-weight: bold;
+}
+
+.C_modalTituloDerecho {
+    display: flex;
+    justify-content: end;
+}
+
+#btnTitulo-cerrar-modal-tercerFormulario{
+    background: #538898 !important;
+    margin: 0px -8px 30px !important;
+    padding: 3px 8px !important;
+}
+
+#btnTitulo-cerrar-modal-tercerFormulario span{
+    color: #59534F ;
+}
+/*Header Modal*/
+
+
+
+.modal-content{
+    height: 100%;
+}
+
+#contenedor-header-modal{
+    height: 20%;
+    border: none !important;
+}
+
+#contenedor-modal-body{
+    display: -webkit-inline-box;
+    overflow: auto;
+    height: 80%;
+    width: 100%;
+    border: none !important;
+}
+
+/* Diseño de barra scroll */
+body #contenedor-modal-body::-webkit-scrollbar {
+    width: 5px !important;
+}
+
+#contenedor-modal-body::-webkit-scrollbar-thumb {
+    background-color: #538898;
+    border-radius: 5px !important;
+}
+
+/* Para Firefox */
+#contenedor-modal-body {
+    scrollbar-width: thin;
+    scrollbar-color: #538898 transparent;
+}
+
+
+
+
+
+#contenedor-footer{
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    border: none !important;
+}
+
+.C_imagenCarrusel img {
+    width: 40%;
+}
+
+.C_imagenProducto  {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+
+}
+
+#boton-cancelar-modal {
+    background: #590C0C;
+    border: none;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 3px 40px;
+}
+
+button#boton-aceptar-modal {
+    background: #4F601E;
+    border: none;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 3px 40px;
+}
+
+
+.C_imagenCarrusel {
+    display: -webkit-inline-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    color: #ffffff;
+}
+
+
+#div-input-checkbox-tercerFormulario{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position:relative;
+}
+
+.C_checkboxSeleccionProductoTercerForm{
+    position: absolute;
+    top: 1%;
+}
+
+#div-contenedor-datos-productos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+/*Imagenes*/
+#div-contenedor-datos-productos {
+    height: 100%;
+}
+
+#div-contenedor-datos-productos img{
+    height: 60%;
+    object-fit: cover;
+}
+
+#div-contenedor-datos-productos p{
+    height: 10%;
+}
+
+#div-contenedor-datos-productos span{
+    height: 30%;
+}
+
+
+

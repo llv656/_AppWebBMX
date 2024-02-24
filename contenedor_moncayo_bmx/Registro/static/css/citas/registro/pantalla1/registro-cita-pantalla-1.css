@@ -1,0 +1,209 @@
+#primer-pantalla{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Titulo e iconos*/
+#componente-titulo-pagina{
+    height: 20%;
+    width: 100%;
+}
+
+#componente-icono-brocha{
+    height: 10%;
+    width: 100%;
+}
+
+#componente-general-contenido{
+    height: 70%;
+    width: 100%;
+}
+
+
+#componente-icono-brocha{
+    align-items: flex-end;
+    padding-bottom: 1%;
+}
+
+
+
+b, label, span{
+    color: #ffffff;
+}
+
+
+/*Componente (contenedor) Icono brocha*/
+#componente-icono-brocha {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+    width: 100%;
+}
+
+/*Icono brocha*/
+#elemento-icono-brocha-1 {
+    height: 20px;
+}
+
+
+#componente-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 13, 18, 1);
+    flex-wrap: wrap;
+    height: 40%; /*Linea original es de 35%*/
+    border-radius: 20px;
+    width: 100%;
+}
+
+#elemento1-fecha-titulo{
+    margin-bottom: 3%;
+
+}
+
+
+#subcomponente-numero-de-clientes{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+}
+
+#elemento1-titulo-clientes{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+#elemento2-numero-clientes{
+    display: flex;
+    justify-content: center;
+    gap: 2;
+}
+
+#subelemento-iconos-de-suma-resta{
+    display: flex;
+    align-items: center;
+    gap: 6%;
+}
+
+.claseIconoDeSumaYResta{
+    height: 21px;
+    width: 21px;
+}
+
+#subcomponente-fecha-y-hora{
+    height: inherit;
+    width: fit-content;
+}
+
+#elemento2-entradas-de-fecha-y-hora{
+    display: flex;
+    width:fit-content;
+}
+
+#fecha-clientes{
+    border-radius: 25px 0px 0px 25px;
+    border: none;
+    color: #ffffff;
+    background: #214569;
+    width: auto;
+}
+
+#hora-clientes{
+    border-radius: 0px 25px 25px 0px;
+    border: none;
+    color: #ffffff;
+    background: #214569;
+    margin-left: 1%;
+    width: auto;
+}
+
+#subcomponente-boton-de-busqueda{
+    display: flex;
+    flex-direction: column-reverse;
+    height: inherit;
+    width: 20%;
+}
+
+#boton-de-busqueda-de-cita{
+    width: 70%;
+    background-color: #86A135;
+    border-radius: 25px;
+    align-self: end;
+}
+
+
+
+
+
+
+
+/*Revisar*/
+
+
+
+
+/*Versión Móvil*/
+@media screen and (max-width:700px) {
+    /*Css de plantilla*/
+    #contenedor{
+        position: fixed;
+        border-radius: 0%;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+    }
+
+    #componente-principal{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    #subcomponente-boton-de-busqueda{
+        width: fit-content;
+    }
+
+    #subcomponente-fecha-y-hora {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #fecha-clientes{
+        width: auto;
+    }
+    
+    #hora-clientes{
+        width: auto;
+    }
+
+    /*Revisar*/
+    
+   
+    #subcomponente-boton-de-busqueda{
+        flex-direction: initial;
+    }
+    /*Revisar*/
+
+}
+
+@media screen and (max-width:900px){
+    #boton-de-busqueda-de-cita {
+        width: auto;
+    }
+}
+
+
+
+

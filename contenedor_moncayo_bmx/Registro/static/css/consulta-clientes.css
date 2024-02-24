@@ -1,0 +1,513 @@
+/*Cuerpo de la página web enfocado en el fondo.*/
+body {
+    background-image: url('../img/clienteBarberia.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    display: block;
+    overflow-x: hidden;
+
+}
+#contenedor {
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url();
+    /* background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1)), url(../img/clienteBarberia.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 5%;
+    border-radius: 25px;
+    height: 80vh;
+    display: inline-block;
+ 
+}
+/* HEADER  */
+header{
+    height: 4rem; /*separacion de header y table */
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin-bottom: 35px; /* separar el header de la tabla*/
+}
+/* LOGO  */
+.logo{
+    color:white;
+    text-align: left;
+    font-size: 3rem;
+    font-family: 'Open Sans Semibold', sans-serif;
+    /* font-weight: 200; */
+}
+.menu a{
+    color:white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;/* 0px arriba y 10 izquierda a derecha;*/
+    transition: .4s;
+}
+/* MOSTRAR MENU  */
+.mostrar-menu,
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+.mostrar-menu{
+    order: 1;
+}
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color:#6cc091; /*color al seleccionar el link */
+}
+#check{
+    display: none;
+}
+/* RESPONSIVE DESIGN SLIDERBAR */
+@media(max-width: 768px){
+    /* HEADER  */
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        /* width: 100%; */
+        height: 100vh;
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 1));
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px;
+        z-index: 100;
+        transition: 0.4s;
+    }
+    .menu a{
+        display: block;
+        padding: .5rem;
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 16px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+}
+
+.contenedor-con-scroll {
+    height: 350px;
+    overflow-y: scroll;
+  }
+.botones{
+    text-align: right;
+    margin-left: 200px;
+}
+.botones buttons{
+    margin-left: 100px;
+}
+.useradd{
+    background: #86a135;
+    justify-content: flex-start;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+}
+.userrecargar{
+    background: #cdc11d;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+.usertrash{
+    background: #ad0c0c;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+.filtrarAsc{
+    background: #7d2d35;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+.filtrarDes{
+    background: #5953af;
+    width: 2.2rem;
+    height: 2.3rem;
+    border-radius: 5rem;
+    padding-left: .5rem;
+    margin-right: 1rem;
+
+}
+h1{
+    color:white;
+    text-align: left;
+    font-family: 'Open Sans Semibold', sans-serif;
+}
+/* ?thead tr:last-child{
+    display: none;
+} **/
+th {
+    color: #538898;
+    border: none;
+}
+
+td {
+    color: white;
+    /* background-color: rgb(238, 8, 8); */
+    border:none; /*Ajusta el valor según el radio de redondeo deseado */
+}
+
+select {
+    color: black;
+    border-radius: .7rem;
+    border: none;
+}
+
+input {
+    color: black;
+    border-radius: .7rem;
+    border: none;
+    cursor: pointer;
+}
+
+/*Icono de Regresar (<-)*/
+
+#img-back {
+    /*Definición de tamaño*/
+    height: 30px;
+    width: 30px;
+}
+
+/*imagen de BACK*/
+
+.icn-back {
+    /*Separación,modo de visualización y ajuste a la derecha*/
+    padding: 12px;
+    display: flex;
+    padding-left: 95%;
+}
+
+
+/*Efecto de selección y selección de color */
+
+#img-back:hover{
+    /*Selección de Color - Azul*/
+    filter: invert(27%) sepia(51%) saturate(1000%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+/* .hidden-info{
+    display: none;
+} */
+.additional-info {
+    padding: 10px; /* Espacio alrededor de la descripción */
+    border-top: 1px solid #ccc; /* Borde superior para separar de la fila anterior */
+}
+/** Estilo para los iconos de Font Awesome **/
+.show-details{
+    cursor: pointer;
+    /* color: #007bff; */
+}
+/* *Ocultar los iconos en dispositivos móviles y tabletas **/
+@media (max-width: 1024px) {
+    #ocultarIco {
+        display: none;
+    }
+}
+
+/* Boton para mostrar los registros totales */
+#totalRegistros{
+    text-align: right;
+    color: #797070;
+    padding: 1rem;
+    margin: 0 -18px;
+}
+#RegistrosMos{
+    margin: 0 10px;
+}
+/* Paginacion para filtrar busqueda  */
+.pagination-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0;
+    border-radius: none;
+}
+.page-btn{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: underline;
+}
+.page-btn.prev{
+    background-color: transparent;
+    color: #fff;
+    margin-right: 10px;
+}
+.page-btn.next{
+    background-color: transparent;
+    color: #fff;
+    margin-right: 5px;
+}
+.page-btn:hover{
+    background-color: #555;
+}
+.page-info{
+    font-size: 13px;
+    margin: 0 10px;
+    padding: 2px;
+    color: #fff;
+}
+#pageSelect {
+    border: 2px solid #555;
+    border-radius: 0;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 5px; /* añade el espacio entre el borde y el texto*/
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Responsive Web */
+@media screen and (max-width:768px) {
+    
+}
+/*imagen de BACK*/
+
+/*Versión móvil*/
+@media screen and (max-width:775px){
+    [class*="col-"] {
+        width: 100%;
+       }
+
+    #contenedor {
+        position: fixed;
+        z-index: 1;
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../img/prueba.jpeg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 0%;
+        height:100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+    }
+    body {
+        background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, 0.8)), url(../img/prueba.jpeg);
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        
+        
+    }
+    .C_headerbody{
+        display: none;
+    }
+    .C_headerfooter{
+        display: none;
+    }
+    .icn-back{
+        position: absolute;
+        z-index: 3;
+        padding-top: 18%;
+        padding-left: 90%;
+    }
+
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed; /* Cambia 'absolute' a 'fixed' para que se quede estático */
+    background: linear-gradient(rgba(5, 7, 12, 0.65), rgba(5, 7, 12, .5));
+    z-index: 100;
+    padding: 10px;
+    width: 20%; /* Cambia el ancho según tus necesidades para adaptarse a dispositivos móviles */
+    height: 65px; /* Limita el ancho máximo para evitar que sea demasiado ancho en tabletas */
+    top: 26%; /* Coloca el modal en el centro vertical */
+    left: 21%; /* Coloca el modal en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centra el modal en la pantalla */
+    border-radius: 25px;
+    overflow: hidden; /* Evita el scroll en el modal */
+    white-space: nowrap; /* Evita el scroll en el contenido del modal */
+}
+/*? Estilos para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .modal {
+        width: 75%; /* Ancho para dispositivos móviles y tabletas */
+        height: auto; /* Altura automática */
+        top: 22%; /* Posición en la parte superior para dispositivos móviles y tabletas */
+        left: 45%; /* Posición a la izquierda para dispositivos móviles y tabletas */
+    }
+}
+.form-check-input {
+    opacity: 1; /* Hacer el check del radio transparente (invisible) */
+    position: static;
+}
+/* Estilos para personalizar el fondo de la ventana modal */
+/* Cambia los valores de background según tus preferencias */
+.modal-content {
+    background: none;
+    border: none;
+    color: white;
+}
+/* Estilos para el botón de radio en el encabezado */
+#mostrarModal {
+    cursor: pointer;
+}
+
+/**Modal para hacerlo responsivo*/
+/* Estilos para pantallas más pequeñas (por ejemplo, dispositivos móviles) */
+/* Media query para pantallas más pequeñas, ajusta los estilos según tus necesidades */
+@media (max-width: 767px) {
+    .form-check.EliminarClienteRadio .adaptarText {
+        font-size: 10px; /* Tamaño de fuente para dispositivos móviles y tabletas */
+        
+    }
+}
+/** Modal para Eliminar */
+#motivoEliminar .modal-content  {
+    background-color:rgba(2, 12, 24, 0.7);/* Cambia "#ff0000" al color que desees utilizar */
+    color:#ffffff;
+    font-size: 15px;
+  }
+  #motivoEliminar textarea{
+    color: black;
+    font-size: 18px;
+    align-items: center;
+    background: transparent;
+    border-radius: 20px;
+    resize: none;
+  }
+  #motivoEliminar .modal-body > div {
+    margin-bottom: 15px; /* Cambia el valor según el espacio de separación deseado */
+  }
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 0;
+    }
+
+  /* Estilos para la ventana modal */
+  .modal1 {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    width: 80%; /* Ajusta el ancho del modal según tus necesidades */
+    max-width: 800px; /* Ancho máximo del modal si lo deseas */
+    height: auto; /* Puedes ajustar la altura según tus necesidades o dejarla como auto */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/*Ajustar el borde del modal*/
+.contenedoRadio {
+    background: none;
+    border-radius: 25px;
+    color: white;
+}
+/*Encabezado Header*/
+.modal1 .modal-header {
+    background-color: transparent; /* Cambia el color de fondo del header */
+    color: #fff; /* Cambia el color del texto en el header */
+    padding: 15px; /* Ajusta el relleno interno del header */
+}
+.modal-header .btn-close{
+    background-color: #538898;
+}
+.modal1 .modal-body {
+    padding: 25px; /* Ajusta el relleno interno del body */
+}
+.modal1 .modal-footer {
+    background-color: transparent; /* Cambia el color de fondo del footer */
+    padding: 15px; /* Ajusta el relleno interno del footer */
+}
+#infoUsuarioEliminar {
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 500px; /* Puedes ajustar la altura máxima según tus necesidades */
+}
+#motivoEliminar textarea{
+    height: 100px;
+    color: #fff;
+    background: transparent;
+    font-size: 17px;
+    border:none; /*Poner transparente el border del modal*/
+    width: 100%;
+  }
+  #motivoEliminar textarea::placeholder{
+    color: #fff; /** Cambiar color del texto para textTarea*/
+  }
+/* Estilos generales para pantallas más grandes */
+.adaptarText {
+    font-size: 15px; /* Tamaño de fuente para pantallas más grandes */
+    margin-bottom: 20px; /* Espaciado entre elementos */
+}
+
+  /* Estilos para los botones ModalELiminar */
+.btnsCliente{
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.8s;
+    text-align: center;
+}
+/* Estilos para el primer botón ModalEliminar*/
+#btnCancelarDatos {
+    position: relative;
+    top: -10px; /* Mueve el botón hacia arriba 20px */
+    margin-right: 50px; /* Separa el primer botón del segundo botón */
+  }
+/* Estilos para el segundo botón */
+#btnGuardarDatos {
+    position: relative;
+    top: -10px; /* Mueve el botón hacia abajo 20px */
+    margin-right: 55px; /* Separa el primer botón del segundo botón */
+  }
+  .modal-backdrop {
+    position: fixed;
+    opacity: .5;
+    z-index: -1; /* Un valor ligeramente más bajo que el modal */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}

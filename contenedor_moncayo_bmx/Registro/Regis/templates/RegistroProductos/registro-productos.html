@@ -1,0 +1,347 @@
+{% extends "plantilla.html" %}
+
+{% block title %}  Registro de Productos {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="/static/css/productos/registro-productos.css"/>
+<link rel="stylesheet" href="/static/css/productos/registro-mensajesError.css"/>
+<link rel="stylesheet" href="/static/css/productos/registro-carruselProductos.css"/>
+{% endblock %}
+
+{% block scripts %} 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<!--<script src="/static/js/uscripts/registro_productos_validaciones.js"></script> -->
+
+<script src="/static/js/productos/registro/registro_productos.js"></script> 
+<script src="/static/js/productos/registro/registro_productos_validaciones.js"></script> 
+<script src="/static/js/productos/registro/registro_mensajes.js"></script> 
+<script src="/static/js/productos/registro/registro_validacionColores.js"></script>
+<script src="/static/js/productos/registro/registro_carrusel.js"></script>
+<script src="/static/js/productos/registro/registro-busqueda-productos.js"></script>
+ 
+
+<!--<script src="/static/js/uscripts/registro_personal.js"></script> 
+<script src="/static/js/uscripts/bootstrap-multiselect.min.js"></script> -->
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+	<div class="col-sm-1 C_headerbody"></div>
+	<div class="col-sm-10 cont" id="contenedor">
+		<!--Header-->
+        <!--Inicio_Iconos_Header-->
+
+        <div class="row C_home">
+			<img id="home" src="../../../static/icons/home.svg" alt="home">
+		</div>
+			
+		<div class="row C_menu">
+			<img id="menu" src="../../../static/icons/menu2.svg" alt="menu">
+		</div>
+			
+		<div class="row icn-back">
+			<img id="img-back" src="../../../static/icons/back.svg" alt="regresar">	
+		</div><!--Finaliza_Iconos_Header-->
+
+		<!--Inicio_Cuerpo_de_formulario-->
+		<div class="row C_sectionformulario">
+            <!--Inicio_Campo_Izquierdo-->
+			<div class="col-sm-5 CampoIzquierdo CampoIzquierdo2">
+                <div class="C_tituloCampoIzquierdo">
+                    <h1>Registro<br> Productos</h1>
+                </div>
+
+                <!--Inicio_Carrusel-->
+                <section class="C_seccionCarrusel">
+                    <div class="wrapper">
+                        <i id="leftArrow" class="fa-solid fa-angle-left"></i><!--Flecha Izquierda Carrusel-->
+                        <!--Inicio_contenedor_de_imagenes_de_carrusel-->
+                        <div class="carousel">
+                            <!--Imagen e Input de agregar NUEVA imagen-->
+                            <img id="imagenNuevaPng" name="N_imagenNuevaPng" src="../../../static/img/addImagen.png" alt="Agregar imagen carrusel" 
+                            draggable="false" data-bs-toggle="tooltip" data-bs-placement="top" title="Agregar imagen"> 
+                            <input type="file" id="fileInput" name="N_fileInput" style="display: none;" accept="image/jpeg, image/png" multiple>
+                            <!--Aquí se insertan las imagenes que se insertan a través del input-->
+                        </div> <!--Finaliza__contenedor_de_imagenes_de_carrusel-->
+                        <i id="rightArrow" class="fa-solid fa-angle-right"></i> <!--Flecha Derecha Carrusel-->
+                    </div> 
+                </section> <!--Finaliza_Carrusel-->
+				
+			</div> <!--Finaliza_Campo_Izquierdo-->
+
+            <!--Inicia_Campo_Derecho-->
+			<div class="col-sm-6" id="campoDerecho">
+				<!--Inicia Formulario-->
+				<form class="formulario-productos" id="formulario-productos">
+
+                    <!--Primer formulario-->
+                    <div class="C_nombreProducto">
+                        <label> Nombre Producto </label>
+                    </div>
+                    
+                    <div class="C_nombreProducto">
+                        <input id="nombreProducto" name="N_nombreProducto" class="C_estilosInput form-control C_colorBaseBorder" type="text" 
+                        placeholder="Nombre del producto" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                    </div>
+                    
+
+                    <div class="C_distribuidor">
+                        <label> Distribuidor </label>
+                    </div>
+
+                    <div class="C_distribuidor inputconbtn searchIcono">
+                        <input id="distribuidor" name="N_distribuidor" class="C_estilosInput form-control C_colorBaseBorder" type="text" placeholder="Distribuidor" 
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                        <span class="search-icon"><i class="fas fa-search"></i></span>
+                        <button type="button" id="btnDistribuidor" class="C_btnDistribuidor" data-bs-toggle="modal" data-bs-target="#formularioEmergente">+</button>    
+                        <!--INPUT SUGERENCIAS PARA PRODUCTOS-->
+                        <div id="suggestions-container" ></div>
+                        <!--INPUT SUGERENCIAS PARA PRODUCTOS-->
+                    </div>
+
+                    <!--SUGERENCIAS PARA PRODUCTOS-->
+                    <script>
+                        const sugerenciasDistribuidor = [
+                        { tipo: "reciente", nombre: "Cesar Alberto Ruiz Garcia", imagen: "../../../static/img/citas_dos.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "Cesar", imagen: "../../../static/img/clienteBarberia_mobile.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "Ramon", imagen: "../../../static/img/servicios.jpg", tipo: "reciente"},
+                        { tipo: "reciente", nombre: "zzz", imagen: "../../../static/img/servicios.jpg", tipo: "reciente"}
+                        ];
+                    </script> 
+
+
+                    <!--SUGERENCIAS PARA PRODUCTOS-->
+
+
+                    <div class="C_descripcion">
+                        <label>Descripción</label>
+                    </div>
+                    
+                    <div class="C_descripcion">
+                        <textarea id="descripcion" name="N_descripcion" class="C_estilosInputTextTarea form-control C_colorBaseBorder" 
+                        placeholder="Descripción"></textarea>
+                    </div>
+
+
+                    <div class="C_precioCompra">
+                        <label>Precio de Compra<br>por Unidad</label>
+                    </div>
+                    
+                    <div class="C_precioCompra">
+                        <input type="number" id="precioCompra" name="N_precioCompra" class="C_estilosInput form-control C_colorBaseBorder" 
+                        placeholder="Precio de Compra/Unidad" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                    </div>
+
+
+                    <div class="C_cantidadProductos">
+                        <label>Cantidad de Productos<br>por Mayoreo</label>
+                    </div>
+        
+                    <div class="C_cantidadProductos">
+                        <button id="btn-menos" type="button" class="btnForma" onclick="disminuirCantidadProd()">-</button>
+                        <input type="number" class="C_campoCantidad" id="cantidadProductosMayoreo" name="N_cantidadProductosMayoreo" 
+                        min="0" max="100" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                        <button id="btn-mas" type="button" class="btnForma C_aumentoCantidad" onclick="aumentarCantidadProd()">+</button>
+                     </div>
+
+
+                    <div class="C_precioProductoMayoreUnidad">
+                        <label>Precio de Producto<br>Por Mayoreo (Unidad)</label>
+                    </div>
+
+                    <div class="C_precioProductoMayoreUnidad">
+                        <input type="number" id="precioProductoMayoreoUnidad" name="N_precioProductoMayoreoUnidad" class="C_estilosInput form-control C_colorBaseBorder" 
+                        placeholder="Precio de Mayoreo (Unidad)">
+                    </div>	
+					
+					<!--Segundo Formulario-->
+
+					<div class="C_unidadesMinimasVenta">
+                        <label>Unidades Mínimas<br>Disponibles para Venta</label>
+                    </div>
+
+
+					<div class="C_unidadesMinimasVenta">
+                        <button id="btn-menos" type="button" class="btnForma" onclick="dismiUnidsMinVent()">-</button>
+                        <input type="number" class="C_campoCantidad" id="inputUnidsMinVenta" name="N_inputUnidsMinVenta" min="0" max="100" 
+                        onKeyUp="validaciones_entradas_numericas2()" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                        <button id="btn-mas" type="button" class="btnForma C_aumentoUnidades" onclick="aumenUnidsMinVent()">+</button>
+                    </div>
+
+
+
+					<div class="C_unidadesMinimasUsoInterno">
+                        <label>Unidades Mínimas<br>Disponibles para uso Interno</label>
+                    </div>
+
+					<div class="C_unidadesMinimasUsoInterno">
+                        <button id="btn-menos" type="button" class="btnForma" onclick="dismiUnidsMinUsoInterno()">-</button>
+                        <input type="number" class="C_campoCantidad" id="inputUnidsMinUsoInter" name="N_inputUnidsMinUsoInter" min="0" max="100" 
+                        onKeyUp="validaciones_entradas_numericas2()" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                        <button id="btn-mas" type="button" class="btnForma aumentoUnidadesMinimas" onclick="aumenUnidsMinUsoInterno()">+</button>
+                    </div>
+
+
+
+					<div class="C_precioVentaUnidad">
+                        <label>Precio de Venta por<br>Unidad/Público</label>
+                    </div>
+                    
+                    <div class="C_precioVentaUnidad">
+                        <input type="number" id="precioVentaUnidad" name="N_precioVentaUnidad" class="C_estilosInput form-control C_colorBaseBorder" 
+                        placeholder="Precio de Venta Unidad" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                    </div>
+
+
+
+                    <div class="C_precioVentaUnidadInterno">
+                        <label>Precio de Venta por<br>Unidad/Interno</label>
+                    </div>
+                    
+                    <div class="C_precioVentaUnidadInterno">
+                        <input type="number" id="precioVentaUnidadInterno" name="N_precioVentaUnidadInterno" class="C_estilosInput form-control C_colorBaseBorder"
+                        placeholder="Precio de Venta Interno" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                    </div>
+
+                    <!--Select para las imagenes importadas en carrusel del Campo Izquierdo-->
+                    <div class="C_imagenesCarrusel" style="display: none;">
+                        <select id="copiaimagenesCargadasEnCarrusel" name="N_copiaimagenesCargadasEnCarrusel">
+                        </select>
+                    </div>
+
+				</form>
+
+			</div>
+
+            
+
+            <!--MODAL Carrusel-->
+		    <div id="modal" class="modal">
+                <span class="close" onclick="closeModal()" data-bs-toggle="tooltip" data-bs-placement="top" title="Cerrar imagen">&times;</span> <!--Icono cerrar modal-->
+                <img id="modal-content" class="modal-content" alt=""><!--Modal con imagen-->
+                <span class="delete" onclick="deleteImg()"><i id="deleteImage" class="fa-solid fa-trash" style="color: #ffffff; text-shadow: 0 0 5px #ffffff;" 
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar imagen"></i><!--Icono borrar imagen-->
+			    </span>
+		    </div><!--FINALIZA Carrusel-->
+
+
+
+			<div class="col-sm-1 C_divBrushColSm1">
+				<div class="row icn-brush">
+					<img id="btnBrush" src="../../../static/icons/brushWhite.svg" alt="limpiar campos">
+				</div>
+	
+			</div>
+
+
+
+		</div>
+
+		<section class="seccionCheckbox">
+            <div class="row C_nav">
+                <u class="C_textoNavegacion" id="compraProductos">Registro de Producto</u>
+                <u class="C_textoNavegacion" id="ventaProductos">Venta de Productos</u>
+                <!--<u class="C_textoNavegacion" id="ConfiHorario">Configuración Horario</u>-->
+            
+                <span class="checkbox-container"> <!--checkbox -->
+                    <input class="C_Checklist_navegacion" type="checkbox" name="option" id="checkbox1">
+                    <label for="checkbox1" id="labelCheckbox"></label>
+                    <input class="C_Checklist_navegacion" type="checkbox" name="option" id="checkbox2">
+                    <label for="checkbox2"></label>
+                    <!--<input class="C_Checklist_navegacion" type="checkbox" name="option" id="checkbox3">
+                    <label for="checkbox3"></label>-->
+                </span>
+            </div>
+		</section>
+
+		<section class="C_Seccion_Footter"> 
+			<div class="row C_campodeboton">
+				<div class="C_btnregistrar">
+					<button type="submit" class="btn btn-success" id="btn-reg">Registrar</button>
+				</div>
+			</div>
+			
+		</section>
+
+        <!-- Modal -->
+        <div class="modal1 fade " id="formularioEmergente" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!--Encabezado de Formulario-->
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Distribuidor</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+    
+            <!--Cuerpo de Formulario-->
+            <div class="modal-body">
+                
+                <div>
+                    <label>Nombre Distribuidor</label>
+                </div>
+    
+                <div>
+                    <input id="nombreDistribuidor" name="N_nombreDistribuidor" type="text" class="form-control C_colorBaseBorder" placeholder="Nombre de Distribuidor"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es requerido">
+                </div>
+    
+    
+                <div>
+                    <label>Dirección</label>
+                </div>
+    
+                <div>
+                    <textarea type="text" id="direccionDistribuidor" name="N_direccionDistribuidor" class=" form-control entradaTexto C_colorBaseBorder" 
+                    placeholder="Dirección Distribuidor"></textarea>
+                </div>
+    
+                <div id="divContainerTel" class="grid-cont">
+                    <label>Teléfono</label>
+                </div>
+    
+                <div class="C_telefonoAdicional inputconbtn" id="telAdic">
+                        <input type="text" id="telefonoDistribuidor" name="N_telefonoDistribuidor0" class="form-control C_numerosTelefonicos C_colorBaseBorder" 
+                        placeholder="Teléfono Distribuidor">
+                        <button id="btnTelefono" type="button" class="C_btnTelefono">+</button>
+                </div>
+    
+                <div>
+                    <label>Correo Electrónico</label>
+                </div>
+    
+                <div>
+                    <input type="email" id="correoDistribuidor" name="N_correoDistribuidor" class="form-control entradaTexto C_colorBaseBorder" 
+                    placeholder="Correo Distribuidor">
+                </div>
+    
+                <div>
+                    <label>Giro Comercial</label>
+                </div>
+    
+                <div>
+                    <input type="type" id="giroComercial" name="N_giroComercial" class="form-control entradaTexto C_colorBaseBorder" placeholder="Giro Comercial">
+                </div>
+    
+            </div>
+                    <!--Pie de Formulario-->
+                    <div class="modal-footer">
+                    <button id="btnCancelarDistribuidor" type="button" class="btn btn-secondary btnsFormulario" data-bs-dismiss="modal">Cancelar</button>
+                    <button id="btnGuardarDistribuidor" type="button" class="btn btn-primary btnsFormulario">Guardar</button>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+	</div>
+
+
+	<div class="col-sm-1 C_headerfooter"></div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<section id="primer-pantalla">
+	<!--TITULO-->
+	<div id="componente-titulo-pagina">
+		<div id="elemento1-titulo-pagina">
+			<h1>Registro Citas</h1>
+		</div>
+    
+    	<div id="elemento2-icono">
+        	<img id="elemento-icono-home" class="elementos-tamanos-iconos" src="../../../static/icons/home.svg">
+        	<img id="elemento-icono-menu" class="elementos-tamanos-iconos" src="../../../static/icons/menu2.svg">
+        	<img id="elemento-icono-back" class="elementos-tamanos-iconos" src="../../../static/icons/back.svg">
+    	</div>
+	</div>
+
+	<!-BROCHA-->
+	<div id="componente-icono-brocha">
+		<img id="elemento-icono-brocha-1" src="../../../static/icons/brushWhite.svg" alt="limpiar campos">
+	</div>
+
+
+	<!--CONTENIDO-->
+	<div id="componente-general-contenido">
+		<div id="componente-principal">
+			<!--Números de clientes_APARTADO DE BUSQUEDA-->
+			{% include './componentes/componente-numero-clientes.html'%}
+
+			<!--Fecha y Hora-->
+			{% include './componentes/componente-fecha-y-hora.html'%}
+
+			<!--Botón de búsqueda de cita-->
+			<div id="subcomponente-boton-de-busqueda">
+				<button type="submit" id="boton-de-busqueda-de-cita" class="btn btn-success">Buscar Cita</button>
+			</div>
+		</div>
+
+	</div>
+
+
+</section>
